@@ -86,6 +86,12 @@
     <Filter Include="Engine\03. Manager\SoundMgr">
       <UniqueIdentifier>{e09d7cab-b2dc-4a5f-8924-8af5317c88d2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\04. Object\HP">
+      <UniqueIdentifier>{dcc2549d-e163-4d9d-a18c-71f41c7a48c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\04. Object\Stress">
+      <UniqueIdentifier>{b7e35c39-d114-4449-ba49-d7dc946932dc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core.h">
@@ -184,6 +190,12 @@
     <ClInclude Include="SoundMgr.h">
       <Filter>Engine\03. Manager\SoundMgr</Filter>
     </ClInclude>
+    <ClInclude Include="HP.h">
+      <Filter>Engine\04. Object\HP</Filter>
+    </ClInclude>
+    <ClInclude Include="Stress.h">
+      <Filter>Engine\04. Object\Stress</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="apiframeworktest.rc">
@@ -277,6 +289,12 @@
     </ClCompile>
     <ClCompile Include="SoundMgr.cpp">
       <Filter>Engine\03. Manager\SoundMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="HP.cpp">
+      <Filter>Engine\04. Object\HP</Filter>
+    </ClCompile>
+    <ClCompile Include="Stress.cpp">
+      <Filter>Engine\04. Object\Stress</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
