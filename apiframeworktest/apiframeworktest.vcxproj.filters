@@ -92,6 +92,9 @@
     <Filter Include="Engine\04. Object\Stress">
       <UniqueIdentifier>{b7e35c39-d114-4449-ba49-d7dc946932dc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\04. Object\Card">
+      <UniqueIdentifier>{a55a2a8d-65f3-4756-a146-7176dcf6510b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core.h">
@@ -196,6 +199,9 @@
     <ClInclude Include="Stress.h">
       <Filter>Engine\04. Object\Stress</Filter>
     </ClInclude>
+    <ClInclude Include="Card.h">
+      <Filter>Engine\04. Object\Card</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="apiframeworktest.rc">
@@ -296,5 +302,11 @@
     <ClCompile Include="Stress.cpp">
       <Filter>Engine\04. Object\Stress</Filter>
     </ClCompile>
+    <ClCompile Include="Card.cpp">
+      <Filter>Engine\04. Object\Card</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>

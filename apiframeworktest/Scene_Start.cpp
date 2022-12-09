@@ -10,6 +10,7 @@
 #include "KeyMgr.h"
 #include "SceneMgr.h"
 #include "SoundMgr.h"
+#include "Card.h"
 Scene_Start::Scene_Start()
 {
 }
@@ -58,6 +59,20 @@ void Scene_Start::Enter()
 		pMonsterObj->SetMoveDistance(fMoveDist);
 		AddObject(pMonsterObj, GROUP_TYPE::MONSTER);
 	}
+#pragma region 카드배치
+	Card* pCardObj = nullptr;
+
+	for (int i = 0; i < GetCardAmount(); i++)
+	{
+		pCardObj = new Card;
+		pCardObj->SetName(L"Card");
+		pCardObj->SetPos(Vec2((vResolution.x / (GetCardAmount() + 1)) * (i + 1),
+			vResolution.y / 2));
+		pCardObj->SetScale(Vec2(100.f, 100.f));
+		pCardObj->SetCenterPos(pCardObj->GetPos());
+		AddObject(pCardObj, GROUP_TYPE::CARD);
+	}
+#pragma endregion
 	//pObj = new Object;
 
 	//pObj->SetPos(Vec2(640.f, 384.f));

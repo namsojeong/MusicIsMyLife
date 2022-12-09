@@ -31,8 +31,8 @@ enum class KEY
 	DOWN,
 	Q,W,E,R,T,Y,U,I,O,P,
 	A,S,D,F,G,Z,X,C,V,B,
-	ALT,LSHIFT, CTRL, SPACE, ENTER, ESC,
-	LBTN,RBTN, 
+	/*ALT,LSHIFT, CTRL,  ESC,
+	LBTN,RBTN, */CLICK, SPACE, ENTER,
 	LAST // 끝 (END=는 있으니까)
 };
 
@@ -43,6 +43,7 @@ enum class GROUP_TYPE
 	BULLET_PLAYER,
 	BULLET_MONSTER,
 	MONSTER,
+	CARD,
 
 	END = 32,
 };

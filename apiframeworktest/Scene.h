@@ -7,6 +7,14 @@ private:
 	// 오브젝트를 저장 및 관리할 벡터를 그룹 개수만큼 선언
 	vector<Object*> m_vecObj[(UINT)GROUP_TYPE::END];
 	wstring         m_strName; // Scene이름
+private:
+	int iCard = 3;
+public:
+	const void SetCardAmount(const int& _amount)
+	{
+		iCard = _amount;
+	}
+	const int& GetCardAmount() { return iCard; }
 public:
 	void SetName(const wstring& _strName) { m_strName = _strName; }
 	const wstring& GetName() { return m_strName; }

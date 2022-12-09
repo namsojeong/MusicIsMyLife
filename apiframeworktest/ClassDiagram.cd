@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BWindow" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAARABACAAAAAEAAAAAIAAAAAASAQACAY=</HashCode>
+      <FileName>BWindow.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Core" Collapsed="true">
+    <Position X="0.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAwAASAAgAAAIAIgAAAAAABEiDECAAgA=</HashCode>
+      <FileName>Core.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Vec2" Collapsed="true">
+    <Position X="13.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAGAAAAQBAAAAAAAAAAABggAAAAAA=</HashCode>
+      <FileName>Vec2.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KeyMgr" Collapsed="true">
+    <Position X="13.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAIAAgAQIAAAAAAAAQAACAQAAAAA=</HashCode>
+      <FileName>KeyMgr.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeMgr" Collapsed="true">
+    <Position X="12" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAoAAAAABAAABAIAAAAAAEABBAAIAABQCAAAIBAA=</HashCode>
+      <FileName>TimeMgr.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneMgr" Collapsed="true">
+    <Position X="12" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAACIAACAgAAAAAQAAAABACAAAQAgA=</HashCode>
+      <FileName>SceneMgr.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PathMgr" Collapsed="true">
+    <Position X="15.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAUAAAAAAAAAAAAKAAABAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>PathMgr.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResMgr" Collapsed="true">
+    <Position X="10.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAKAAAAAAAAAAAIAAIAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ResMgr.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CollisionMgr" Collapsed="true">
+    <Position X="15.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAASgAEAEBAAAAAIAAAEAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CollisionMgr.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EventMgr" Collapsed="true">
+    <Position X="10.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAQABAAIAAAAEAAAABAAAAAAAAQAAAAAg=</HashCode>
+      <FileName>EventMgr.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoundMgr" Collapsed="true">
+    <Position X="15.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAgAAIAQAAAIAECAACAAoAICAAAAIAA=</HashCode>
+      <FileName>SoundMgr.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Object" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QMQAAAAAAUAAEAAgAIEAEApQAAAACAAAIBAAwgEARBA=</HashCode>
+      <FileName>Object.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Player" Collapsed="true">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAEAAAAAAAAAAAAAAAAAAAAAAAABABAAAQAAABA=</HashCode>
+      <FileName>Player.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monster" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAABAAWAAACAACEBAAAAEAAAAAAgAAAQAAAAA=</HashCode>
+      <FileName>Monster.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bullet" Collapsed="true">
+    <Position X="7.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAEAAAAAGAAAAgAAAAAAAAAAAAAGABAAAAAQAAA=</HashCode>
+      <FileName>Bullet.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HP" Collapsed="true">
+    <Position X="12" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAQAAAAEAAAQBAAAAQAQAAAAAAAAAA=</HashCode>
+      <FileName>HP.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Stress" Collapsed="true">
+    <Position X="10.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAIAAAAAAAAAAACAAAAAAAAACAAAAAAAAAAAgAgAA=</HashCode>
+      <FileName>Stress.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Card" Collapsed="true">
+    <Position X="0.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AARAEAEgAAAAAAAAAAAAABAAAAAAAEAAABAAAQAAAEA=</HashCode>
+      <FileName>Card.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Scene" Collapsed="true">
+    <Position X="6.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAggAAAAAAARAAESAAAIBAAQAAARDA=</HashCode>
+      <FileName>Scene.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Scene_Start" Collapsed="true">
+    <Position X="5.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAgAAAAAAAAAAAEAQAAIAAAAAAAAAA=</HashCode>
+      <FileName>Scene_Start.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Scene_01" Collapsed="true">
+    <Position X="8" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAEAAAAIAIAAAQAAAA=</HashCode>
+      <FileName>Scene_01.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Res" Collapsed="true">
+    <Position X="1.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QABEAAAAAAAgAgQAAAAAAAQAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Res.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Image" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAgAAAAAAAABAAAAAAJIAAAIAAEAIAAA=</HashCode>
+      <FileName>Image.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sound" Collapsed="true">
+    <Position X="2.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sound.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Animator" Collapsed="true">
+    <Position X="12" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAIAIAAAAAAABAAAAACgAIAgBQgAAQAAAA=</HashCode>
+      <FileName>Animator.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Collider" Collapsed="true">
+    <Position X="13.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAgIFIAgAAEAgAAABAAACAAUIBJgEgQAAAA=</HashCode>
+      <FileName>Collider.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Animation" Collapsed="true">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAEAAQAAAABEgAAAAABAAAAAAEABABAEYIAARAE=</HashCode>
+      <FileName>Animation.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SelectGDI" Collapsed="true">
+    <Position X="13.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIgAAAAAAAAACAAAAQAAAAAAAAAAAAAI=</HashCode>
+      <FileName>SelectGDI.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="tKeyInfo" Collapsed="true">
+    <Position X="13.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>KeyMgr.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="tEvent" Collapsed="true">
+    <Position X="12" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAQAAAAAAAAAAAACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EventMgr.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="tSoundInfo" Collapsed="true">
+    <Position X="4.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SoundMgr.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="tAniFrm" Collapsed="true">
+    <Position X="10.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAABAAAADAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Animation.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Typedef Name="SOUNDINFO" Collapsed="true">
+    <Position X="7.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SoundMgr.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="PSOUNDINFO" Collapsed="true">
+    <Position X="4.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SoundMgr.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Enum Name="KEY_STATE" Collapsed="true">
+    <Position X="10.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAgAAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>define.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="KEY" Collapsed="true">
+    <Position X="15.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IgAAAACAAAAQAgAAAAAAAAQAQAICgAAgAAAAvin+YQE=</HashCode>
+      <FileName>define.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GROUP_TYPE" Collapsed="true">
+    <Position X="13.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAEAIAAAAAAAAAgAgAAAAAAAEAAAAAAAAIA=</HashCode>
+      <FileName>define.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SCENE_TYPE" Collapsed="true">
+    <Position X="13.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgAAIgAAABAAAAAgAAAA=</HashCode>
+      <FileName>define.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BRUSH_TYPE" Collapsed="true">
+    <Position X="10.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>define.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PEN_TYPE" Collapsed="true">
+    <Position X="12" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAggAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>define.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EVENT_TYPE" Collapsed="true">
+    <Position X="12" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAoAAAAAAAAAAAgAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>define.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SOUND_CHANNEL" Collapsed="true">
+    <Position X="15.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAACAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SoundMgr.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="맑은 고딕" Size="9" />
+</ClassDiagram>
