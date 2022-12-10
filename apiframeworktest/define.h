@@ -51,9 +51,8 @@ enum class GROUP_TYPE
 enum class SCENE_TYPE
 {
 	START,
-	SCENE_01,
-	TOOL,
-	SCENE_02,
+	GAME,
+	OVER,
 	END,
 };
 
