@@ -1,11 +1,13 @@
 #pragma once
 class Object;
+class UI;
 class Scene
 {
 private:
 //	Object a;
 	// 오브젝트를 저장 및 관리할 벡터를 그룹 개수만큼 선언
 	vector<Object*> m_vecObj[(UINT)GROUP_TYPE::END];
+	vector<Object*> m_vecUI[(UINT)UI_TYPE::END];
 	wstring         m_strName; // Scene이름
 private:
 	int iCard = 3;
@@ -29,11 +31,20 @@ public:
 	{
 		m_vecObj[(UINT)_eType].push_back(_pObj);
 	}
+	void AddUI(Object* _pUI, UI_TYPE _eType)
+	{
+		m_vecUI[(UINT)_eType].push_back(_pUI);
+	}
 	const vector<Object*>& GetGroupObject(GROUP_TYPE _eType)
 	{
 		return m_vecObj[(UINT)_eType];
 	}
+	const vector<Object*>& GetGroupUI(UI_TYPE _eType)
+	{
+		return m_vecUI[(UINT)_eType];
+	}
 	void DeleteGroup(GROUP_TYPE _eTarget);
+	void DeleteUIGroup(UI_TYPE _eTarget);
 	void DeleteAll();
 public:
 	Scene();

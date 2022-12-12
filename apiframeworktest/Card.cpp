@@ -34,7 +34,7 @@ void Card::Update()
 	{
 		POINT* m_point = EventMgr::GetInst()->GetPoint();
 		GetCursorPos(m_point);
-		if (EventMgr::GetInst()->IsOn(*m_point, GetPos(), GetScale()));
+		if (EventMgr::GetInst()->IsOn(GetPos(), GetScale()));
 	}
 }
 
