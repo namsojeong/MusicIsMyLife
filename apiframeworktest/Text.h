@@ -6,8 +6,9 @@ class Text:
 {
 private:
 	RECT m_rect;
+	TCHAR* textStr;
 public:
-	Text(Vec2 pos, Vec2 scale);
+	Text(Vec2 pos, Vec2 scale, TCHAR str);
 	void Update() override;
 	void Render(HDC hdc) override;
 private:

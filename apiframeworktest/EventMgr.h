@@ -26,12 +26,5 @@ private:
 	void Excute(const tEvent& _eve);
 public:
 	POINT* GetPoint() { return &ptMouse; }
-	bool IsOn(Vec2 pos, Vec2 scale) 
-	{
-		POINT* m_point = EventMgr::GetInst()->GetPoint();
-		return ((m_point->x <= pos.x + scale.x && m_point->x >= pos.x - scale.x)
-			&& (m_point->y <= pos.y + scale.y && m_point->y >= pos.y - scale.y));
-			
-	}
 };
 
