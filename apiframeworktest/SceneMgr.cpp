@@ -39,9 +39,6 @@ void SceneMgr::Init()
 	m_arrScene[(UINT)SCENE_TYPE::OVER] = new Scene_Over;
 	m_arrScene[(UINT)SCENE_TYPE::OVER]->SetName(L"Over Scene");
 
-//	m_arrScene[(UINT)SCENE_TYPE::TOOL] = new Scene_Tool;
-//	m_arrScene[(UINT)SCENE_TYPE::SCENE_02] = new Scene02;
-
 
 	// 현재 씬 지정
 	m_pCurScene = m_arrScene[(UINT)SCENE_TYPE::START];

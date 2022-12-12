@@ -95,6 +95,15 @@
     <Filter Include="Engine\05. Scene\Scene_Over">
       <UniqueIdentifier>{38ffd52c-6501-44b8-935c-0076af518712}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\03. Manager\UIMgr">
+      <UniqueIdentifier>{92bc1287-43a5-49db-bef4-6d9a17e164a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\09. UI">
+      <UniqueIdentifier>{43b085b5-f862-4608-a4b2-cfa7e66263e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\09. UI\Button">
+      <UniqueIdentifier>{9880ece0-64e9-48f0-aff3-a4f4a4587bb5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core.h">
@@ -205,6 +214,15 @@
     <ClInclude Include="Scene_Over.h">
       <Filter>Engine\05. Scene\Scene_Over</Filter>
     </ClInclude>
+    <ClInclude Include="UIManager.h">
+      <Filter>Engine\03. Manager\UIMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="UI.h">
+      <Filter>Engine\09. UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>Engine\09. UI\Button</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="apiframeworktest.rc">
@@ -310,6 +328,15 @@
     </ClCompile>
     <ClCompile Include="Scene_Over.cpp">
       <Filter>Engine\05. Scene\Scene_Over</Filter>
+    </ClCompile>
+    <ClCompile Include="UIManager.cpp">
+      <Filter>Engine\03. Manager\UIMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="UI.cpp">
+      <Filter>Engine\09. UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>Engine\09. UI\Button</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
