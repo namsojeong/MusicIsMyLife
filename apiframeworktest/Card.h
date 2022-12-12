@@ -7,15 +7,14 @@ class Card :
 private:
     int _attackPower;
     int _stressPower;
-    Vec2    m_vDir;
     Image* m_pImage;
-
+    Vec2 m_vPos;
 public:
     Card();
     ~Card();
     CLONE(Card);
 public:
-    void SetCenterPos(Vec2 _vPos) { m_vDir = _vPos; }
+    void SetCenterPos(Vec2 _vPos) { m_vPos = _vPos; }
 public:
     virtual void Update() override;
     void Render(HDC _dc) override;

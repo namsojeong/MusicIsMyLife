@@ -10,6 +10,7 @@ class EventMgr
 private:
 	vector<tEvent> m_vecEvent;
 	vector<Object*> m_vecDead;
+	POINT ptMouse;
 public:
 	SINGLE(EventMgr);
 private:
@@ -23,5 +24,14 @@ public:
 	}
 private:
 	void Excute(const tEvent& _eve);
+public:
+	POINT* GetPoint() { return &ptMouse; }
+	bool IsOn(POINT mousePos, Vec2 pos, Vec2 scale) 
+	{
+		return (mousePos.x <= pos.x + scale.x &&
+			mousePos.x >= pos.x - scale.x &&
+			mousePos.y <= pos.y + scale.y &&
+			mousePos.y >= pos.y - scale.y);
+	}
 };
 
