@@ -31,32 +31,34 @@ void Card::Update()
 	if(GetAnimator() != nullptr)
 		GetAnimator()->Update();
 
-	bool isHamgingAttack = SceneMgr::GetInst()->IsHamgingAttack();
-	bool isPlayerAttack = SceneMgr::GetInst()->IsAttack();
-	if (isHamgingAttack && !isPlayerAttack)// 내가 공격을 안했고, 햄깅이가 공격을 했다면 진행
+	if (bool isHamgingAttack = SceneMgr::GetInst()->IsHamgingAttack())
 	{
-		if (KEY_TAP(KEY::CLICK))
+		bool isPlayerAttack = SceneMgr::GetInst()->IsAttack();
+		if (isHamgingAttack && !isPlayerAttack)// 내가 공격을 안했고, 햄깅이가 공격을 했다면 진행
 		{
-			POINT* m_point = EventMgr::GetInst()->GetPoint();
-			GetCursorPos(m_point);
-			if (EventMgr::GetInst()->IsOn(GetPos(), GetScale()))
+			if (KEY_TAP(KEY::CLICK))
 			{
-				Vec2 pos = GetPos();
-				SetPos(pos + Vec2(0, -50));
+				POINT* m_point = EventMgr::GetInst()->GetPoint();
+				GetCursorPos(m_point);
+				if (EventMgr::GetInst()->IsOn(GetPos(), GetScale()))
+				{
+					Vec2 pos = GetPos();
+					SetPos(pos + Vec2(0, -50));
+				}
 			}
-		}
-		else if (KEY_AWAY(KEY::CLICK))
-		{
-			POINT* m_point = EventMgr::GetInst()->GetPoint();
-			if (EventMgr::GetInst()->IsOn(GetPos(), GetScale()))
+			else if (KEY_AWAY(KEY::CLICK))
 			{
-				Vec2 pos = GetPos();
-				SetPos(pos + Vec2(0, 50));
-				SceneMgr::GetInst()->SetIsAttack(true);
+				POINT* m_point = EventMgr::GetInst()->GetPoint();
+				if (EventMgr::GetInst()->IsOn(GetPos(), GetScale()))
+				{
+					Vec2 pos = GetPos();
+					SetPos(pos + Vec2(0, 50));
+					SceneMgr::GetInst()->SetIsAttack(true);
+				}
 			}
 		}
 	}
-		SceneMgr::GetInst()->IsHamgingAttack();
+	
 }
 
 

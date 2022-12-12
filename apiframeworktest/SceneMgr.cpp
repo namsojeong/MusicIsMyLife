@@ -60,6 +60,9 @@ void SceneMgr::Render(HDC _dc)
 const bool SceneMgr::IsHamgingAttack()
 {
 	if (TimeMgr::GetInst()->IsOverDelay(5))
+	{
+		SceneMgr::GetInst()->SetIsAttack(false);
 		return true;
+	}
 	return false;
 }
