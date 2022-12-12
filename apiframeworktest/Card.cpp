@@ -6,7 +6,7 @@
 #include "SceneMgr.h"
 #include "KeyMgr.h"
 #include "EventMgr.h"
-
+#include "TimeMgr.h"
 Card::Card() :
 	_attackPower(0),
 	_stressPower(0),
@@ -30,26 +30,36 @@ void Card::Update()
 	Vec2 vPos = GetPos();
 	if(GetAnimator() != nullptr)
 		GetAnimator()->Update();
-	if (KEY_TAP(KEY::CLICK))
+
+	bool isHamgingAttack = SceneMgr::GetInst()->IsHamgingAttack();
+	bool isPlayerAttack = SceneMgr::GetInst()->IsAttack();
+	if (isHamgingAttack && !isPlayerAttack)// 내가 공격을 안했고, 햄깅이가 공격을 했다면 진행
 	{
-		POINT* m_point = EventMgr::GetInst()->GetPoint();
-		GetCursorPos(m_point);
-		if (EventMgr::GetInst()->IsOn(*m_point, GetPos(), GetScale()))
+		if (KEY_TAP(KEY::CLICK))
 		{
-			Vec2 pos = GetPos();
-			SetPos(pos + Vec2(0, 100));
+			POINT* m_point = EventMgr::GetInst()->GetPoint();
+			GetCursorPos(m_point);
+			if (EventMgr::GetInst()->IsOn(GetPos(), GetScale()))
+			{
+				Vec2 pos = GetPos();
+				SetPos(pos + Vec2(0, -50));
+			}
+		}
+		else if (KEY_AWAY(KEY::CLICK))
+		{
+			POINT* m_point = EventMgr::GetInst()->GetPoint();
+			if (EventMgr::GetInst()->IsOn(GetPos(), GetScale()))
+			{
+				Vec2 pos = GetPos();
+				SetPos(pos + Vec2(0, 50));
+				SceneMgr::GetInst()->SetIsAttack(true);
+			}
 		}
 	}
-	else if (KEY_AWAY(KEY::CLICK))
-	{
-		POINT* m_point = EventMgr::GetInst()->GetPoint(); 
-		if (EventMgr::GetInst()->IsOn(*m_point, GetPos(), GetScale()))
-		{
-			Vec2 pos = GetPos();			
-			SetPos(pos + Vec2(0, -100));
-		}
-	}
+		SceneMgr::GetInst()->IsHamgingAttack();
 }
+
+
 
 void Card::Render(HDC _dc)
 {

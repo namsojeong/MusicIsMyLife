@@ -4,6 +4,7 @@
 #include "Scene_Game.h"
 #include "Scene_Over.h"
 #include "EventMgr.h"
+#include "TimeMgr.h"
 SceneMgr::SceneMgr()
 	: m_pCurScene(nullptr)
 	, m_arrScene{}
@@ -54,4 +55,11 @@ void SceneMgr::Update()
 void SceneMgr::Render(HDC _dc)
 { 
 	m_pCurScene->Render(_dc);
+}
+
+const bool SceneMgr::IsHamgingAttack()
+{
+	if (TimeMgr::GetInst()->IsOverDelay(5))
+		return true;
+	return false;
 }
