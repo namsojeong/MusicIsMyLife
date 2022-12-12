@@ -70,7 +70,7 @@ void Scene_Game::Enter()
 		pCardObj->SetName(L"Card");
 		pCardObj->SetPos(Vec2((vResolution.x / (GetCardAmount() + 1)) * (i + 1),
 			vResolution.y / 2));
-		pCardObj->SetScale(Vec2(100.f, 100.f));
+		pCardObj->SetScale(Vec2(200.f, 277.f));
 		pCardObj->SetCenterPos(pCardObj->GetPos());
 		AddObject(pCardObj, GROUP_TYPE::CARD);
 	}
