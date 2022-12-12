@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "TimeMgr.h"
 #include "Core.h"
+#include "EventMgr.h"
 TimeMgr::TimeMgr()
 	:m_llCurCount{}
 	, m_llFrequency{}
@@ -50,9 +51,10 @@ void TimeMgr::Render()
 		m_dAcc = 0.;
 		m_iCallCount = 0;
 		static wchar_t szBuffer[255] = {};
-		swprintf_s(szBuffer, L"FPS : %d,  DT: %lf", m_iFPS, m_dDT);
-		//		wsprintf(szBuffer, L"FPS : %d,  DT: %lf", m_iFPS, m_dDT);
+		/*swprintf_s(szBuffer, L"FPS : %d,  DT: %lf", m_iFPS, m_dDT);*/
+		swprintf_s(szBuffer, L"MOUSE POS : %d", EventMgr::GetInst()->GetPoint()->x);
 		SetWindowText(Core::GetInst()->GetWndHandle(), szBuffer);
+
 	}
 
 }

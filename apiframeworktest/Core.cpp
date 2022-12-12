@@ -88,6 +88,7 @@ void Core::Render()
 	// 더블버퍼링으로 그리기
 		BitBlt(m_hDC, 0, 0, m_ptResolution.x, m_ptResolution.y
 			,m_memDC, 0, 0, SRCCOPY);
+		//이자식은 위에 표시
 		TimeMgr::GetInst()->Render();
 	// === 이벤트 지연 처리 === //
 		EventMgr::GetInst()->Update();
