@@ -28,3 +28,4 @@ void ChangeScene(SCENE_TYPE _eNext)
 
 	EventMgr::GetInst()->AddEvent(evn);
 }
+

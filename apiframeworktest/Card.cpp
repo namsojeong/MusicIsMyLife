@@ -33,6 +33,7 @@ void Card::Update()
 	if (KEY_TAP(KEY::CLICK))
 	{
 		POINT* m_point = EventMgr::GetInst()->GetPoint();
+		GetCursorPos(m_point);
 		if (EventMgr::GetInst()->IsOn(*m_point, GetPos(), GetScale()))
 		{
 			Vec2 pos = GetPos();
