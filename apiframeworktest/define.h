@@ -45,7 +45,16 @@ enum class GROUP_TYPE
 	MONSTER,
 	CARD,
 
+	UI=31,
 	END = 32,
+};
+
+enum class UI_TYPE
+{
+	BUTTON,
+	TEXT,
+	IMAGE,
+	END,
 };
 
 enum class SCENE_TYPE
