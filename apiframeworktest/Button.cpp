@@ -8,7 +8,7 @@
 
 void Button::Click()
 {
-	ChangeScene(SCENE_TYPE::GAME);
+	ButtonEvent();
 }
 
 bool Button::IsOnButton()
@@ -19,17 +19,16 @@ bool Button::IsOnButton()
 	return PtInRect(&m_rect, mousePos);
 }
 
-Button::Button(Vec2 pos, Vec2 scale)
+void Button::SetRect(Vec2 pos, Vec2 scale)
 {
-	SetName(L"Button");
-
 	m_rect.left = pos.x - scale.x / 2;
 	m_rect.right = pos.x + scale.x / 2;
 	m_rect.top = pos.y - scale.y / 2;
 	m_rect.bottom = pos.y + scale.y / 2;
+}
 
-	SetPos(pos);
-	SetScale(scale);
+void Button::ButtonEvent()
+{
 }
 
 void Button::Update()
@@ -49,7 +48,6 @@ void Button::Render(HDC hdc)
 
 Button::Button()
 {
-
 }
 
 Button::~Button()

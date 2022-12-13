@@ -229,6 +229,12 @@
     <ClInclude Include="Text.h">
       <Filter>Engine\09. UI\Text</Filter>
     </ClInclude>
+    <ClInclude Include="StartButton.h">
+      <Filter>Engine\09. UI\Button</Filter>
+    </ClInclude>
+    <ClInclude Include="QuitButton.h">
+      <Filter>Engine\09. UI\Button</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="apiframeworktest.rc">
@@ -346,6 +352,12 @@
     </ClCompile>
     <ClCompile Include="Text.cpp">
       <Filter>Engine\09. UI\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="StartButton.cpp">
+      <Filter>Engine\09. UI\Button</Filter>
+    </ClCompile>
+    <ClCompile Include="QuitButton.cpp">
+      <Filter>Engine\09. UI\Button</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

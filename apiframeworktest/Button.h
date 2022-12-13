@@ -1,22 +1,21 @@
 #pragma once
 #include"UI.h";
-class Image;
 class Button:
 	public UI
 {
 private:
 	RECT m_rect;
-public:
+private:
+	CLONE(Button);
+protected:
 	void Click();
 	bool IsOnButton();
-public:
-	Button(Vec2 pos, Vec2 scale);
+	void SetRect(Vec2 pos, Vec2 scale);
+protected:
+	virtual void ButtonEvent();
 	void Update() override;
 	void Render(HDC hdc) override;
-private:
-
-	CLONE(Button);
-private:
+protected:
 	Button();
 	~Button();
 };

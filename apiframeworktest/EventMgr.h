@@ -26,12 +26,15 @@ private:
 	void Excute(const tEvent& _eve);
 public:
 	POINT* GetPoint() { return &ptMouse; }
-	bool IsOn(Vec2 pos, Vec2 scale) 
+	bool isOn(Vec2 pos, Vec2 scale)
 	{
-		POINT* m_point = EventMgr::GetInst()->GetPoint();
-		return ((m_point->x <= pos.x + scale.x && m_point->x >= pos.x - scale.x)
-			&& (m_point->y <= pos.y + scale.y && m_point->y >= pos.y - scale.y));
-			
+		RECT rt;
+		rt.left = pos.x - scale.x / 2;
+		rt.right = pos.x + scale.x / 2;
+		rt.top = pos.y - scale.y / 2;
+		rt.bottom = pos.y + scale.y / 2;
+
+		return PtInRect(&rt, ptMouse);
 	}
 };
 
