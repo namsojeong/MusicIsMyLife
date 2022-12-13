@@ -180,6 +180,7 @@
     <ClInclude Include="PathMgr.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="QuitButton.h" />
     <ClInclude Include="Res.h" />
     <ClInclude Include="ResMgr.h" />
     <ClInclude Include="Resource.h" />
@@ -191,6 +192,7 @@
     <ClInclude Include="SelectGDI.h" />
     <ClInclude Include="Sound.h" />
     <ClInclude Include="SoundMgr.h" />
+    <ClInclude Include="StartButton.h" />
     <ClInclude Include="Stress.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Text.h" />
@@ -224,6 +226,7 @@
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="PathMgr.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="QuitButton.cpp" />
     <ClCompile Include="Res.cpp" />
     <ClCompile Include="ResMgr.cpp" />
     <ClCompile Include="Scene.cpp" />
@@ -234,6 +237,7 @@
     <ClCompile Include="SelectGDI.cpp" />
     <ClCompile Include="Sound.cpp" />
     <ClCompile Include="SoundMgr.cpp" />
+    <ClCompile Include="StartButton.cpp" />
     <ClCompile Include="Stress.cpp" />
     <ClCompile Include="Text.cpp" />
     <ClCompile Include="TimeMgr.cpp" />
