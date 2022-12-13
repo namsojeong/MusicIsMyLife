@@ -2,12 +2,14 @@
 #include "TimeMgr.h"
 #include "Core.h"
 #include "EventMgr.h"
+#include "SceneMgr.h"
 TimeMgr::TimeMgr()
 	:m_llCurCount{}
 	, m_llFrequency{}
 	, m_llPrevCount{}
 	, m_dDT(0.)
 	, m_iCallCount(0)
+	, m_delayAcc(0)
 {
 }
 
@@ -52,9 +54,19 @@ void TimeMgr::Render()
 		m_iCallCount = 0;
 		static wchar_t szBuffer[255] = {};
 		/*swprintf_s(szBuffer, L"FPS : %d,  DT: %lf", m_iFPS, m_dDT);*/
-		swprintf_s(szBuffer, L"MOUSE POS : %d", EventMgr::GetInst()->GetPoint()->x);
+		swprintf_s(szBuffer, L"MOUSE POS : %d, $d", EventMgr::GetInst()->GetPoint()->x, EventMgr::GetInst()->GetPoint()->y);
 		SetWindowText(Core::GetInst()->GetWndHandle(), szBuffer);
-
 	}
+}
 
+bool TimeMgr::IsOverDelay(double delay)
+{
+	m_delayAcc += m_dDT;
+	if (m_delayAcc >= delay)
+	{
+		if(SceneMgr::GetInst()->IsAttack())
+			m_delayAcc = 0.;
+		return true;
+	}
+	return false;
 }
