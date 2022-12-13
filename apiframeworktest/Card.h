@@ -9,6 +9,7 @@ private:
     int _stressPower;
     Image* m_pImage;
     Vec2 m_vPos;
+    RECT m_rect;
 public:
     Card();
     ~Card();

@@ -26,5 +26,15 @@ private:
 	void Excute(const tEvent& _eve);
 public:
 	POINT* GetPoint() { return &ptMouse; }
+	bool isOn(Vec2 pos, Vec2 scale)
+	{
+		RECT rt;
+		rt.left = pos.x - scale.x / 2;
+		rt.right = pos.x + scale.x / 2;
+		rt.top = pos.y - scale.y / 2;
+		rt.bottom = pos.y + scale.y / 2;
+
+		return PtInRect(&rt, ptMouse);
+	}
 };
 

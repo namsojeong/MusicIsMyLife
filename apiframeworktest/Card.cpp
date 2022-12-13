@@ -14,6 +14,7 @@ Card::Card() :
 {
 	// image 업로드
 	m_pImage = ResMgr::GetInst()->ImgLoad(L"card", L"Image\\Cardb.bmp");
+
 	// animator 생성 및 animation 사용
 	/*CreateAnimator();
 	GetAnimator()->CreateAnimation(L"Jiwoofront", m_pImage, Vec2(0.f, 150.f), Vec2(50.f, 50.f), Vec2(50.f, 0.f), 5, 0.2f);
@@ -34,7 +35,7 @@ void Card::Update()
 	{
 		POINT* m_point = EventMgr::GetInst()->GetPoint();
 		GetCursorPos(m_point);
-		if (EventMgr::GetInst()->IsOn(*m_point, GetPos(), GetScale()))
+		if (EventMgr::GetInst()->isOn(GetPos(), GetScale()))
 		{
 			Vec2 pos = GetPos();
 			SetPos(pos + Vec2(0, 100));
@@ -43,7 +44,7 @@ void Card::Update()
 	else if (KEY_AWAY(KEY::CLICK))
 	{
 		POINT* m_point = EventMgr::GetInst()->GetPoint(); 
-		if (EventMgr::GetInst()->IsOn(*m_point, GetPos(), GetScale()))
+		if (EventMgr::GetInst()->isOn(GetPos(), GetScale()))
 		{
 			Vec2 pos = GetPos();			
 			SetPos(pos + Vec2(0, -100));

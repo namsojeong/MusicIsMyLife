@@ -11,6 +11,7 @@
 #include "SceneMgr.h"
 #include "SoundMgr.h"
 #include "Card.h"
+#include "Text.h"
 
 Scene_Game::Scene_Game()
 {
@@ -30,21 +31,7 @@ void Scene_Game::Enter()
 	pObj->SetScale(Vec2(100.f, 100.f));
 	AddObject(pObj, GROUP_TYPE::PLAYER);
 
-	//	Object* pOtherPlayer = new Player(*(Player*)pObj);
-		/*Object* pOtherPlayer = pObj->Clone();
-		pOtherPlayer->SetPos(Vec2(Core::GetInst()->GetResolution().x / 2.f + 100.f, Core::GetInst()->GetResolution().y / 2.f));
-		AddObject(pOtherPlayer, GROUP_TYPE::PLAYER);*/
-
-		//m_vecObj[(UINT)GROUP_TYPE::DEFAULT].push_back(pObj); 
-
-		// Monster Object 추가
-		//Monster* pMonsterObj = new Monster;
-		//pMonsterObj->SetPos(Vec2(640.f, 50.f));
-		//pMonsterObj->SetScale(Vec2(50.f, 50.f));
-		//pMonsterObj->SetCenterPos(pMonsterObj->GetPos());
-		//AddObject(pMonsterObj, GROUP_TYPE::MONSTER);
-
-		// 몬스터 배치
+	// 몬스터 배치
 	Vec2 vResolution(Vec2(Core::GetInst()->GetResolution()));
 	int iMonster = 16;
 	float fMoveDist = 25.f;
@@ -85,7 +72,13 @@ void Scene_Game::Enter()
 	// Player - Monster 그룹 간의 충돌 체크
 	CollisionMgr::GetInst()->CheckGroup(GROUP_TYPE::PLAYER, GROUP_TYPE::MONSTER);
 	CollisionMgr::GetInst()->CheckGroup(GROUP_TYPE::BULLET_PLAYER, GROUP_TYPE::MONSTER);
-
+	
+	Vec2 timeScale = Vec2(100.0f, 100.0f);
+	Vec2 timePos = Vec2(0, 0);
+	wstring timeT = L"Time : " + to_wstring(gameTime);
+	Text* timeText = new Text(timePos, timeScale, timeT);
+	timeText->SetFontColor(RGB(0, 0, 0));
+	AddUI(timeText, UI_TYPE::TEXT);
 }
 
 void Scene_Game::Exit()
@@ -97,4 +90,7 @@ void Scene_Game::Exit()
 void Scene_Game::Update()
 {
 	Scene::Update();
+
+	
+	
 }
