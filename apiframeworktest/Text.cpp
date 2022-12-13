@@ -1,7 +1,14 @@
 #include "pch.h"
 #include "Text.h"
 
-Text::Text(Vec2 pos, Vec2 scale, TCHAR str)
+void Text::SetFontSize()
+{
+	font = CreateFont(50, 0, 0, 0, 0, 0, 0, 0,
+		HANGEUL_CHARSET, 0, 0, 0, VARIABLE_PITCH | FF_ROMAN,
+		textStr.c_str());
+}
+
+Text::Text(Vec2 pos, Vec2 scale, wstring str)
 {
 	SetName(L"Text");
 
@@ -10,7 +17,7 @@ Text::Text(Vec2 pos, Vec2 scale, TCHAR str)
 	m_rect.top = pos.y - scale.y / 2;
 	m_rect.bottom = pos.y + scale.y / 2;
 
-	textStr = &str;
+	textStr = str;
 	SetPos(pos);
 	SetScale(scale);
 }
@@ -21,8 +28,9 @@ void Text::Update()
 
 void Text::Render(HDC hdc)
 {
+	HFONT hTmp = (HFONT)SelectObject(hdc, font);
 	SetTextColor(hdc, RGB(255, 0, 255));
-	TextOut(hdc, GetPos().x, GetPos().y, textStr, lstrlen(textStr));
+	TextOut(hdc, GetPos().x, GetPos().y, textStr.c_str(), textStr.length());
 	Component_Render(hdc);
 }
 

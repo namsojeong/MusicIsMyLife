@@ -1,32 +1,13 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(534,5): warning MSB8028: 중간 디렉터리(x64\Debug\)에 다른 프로젝트(apiframeworktest.vcxproj)에서 공유하는 파일이 포함되어 있습니다.  이로 인해 잘못된 정리 및 다시 빌드 동작이 수행될 수 있습니다.
   Button.cpp
 D:\CPP\MusicLife\apiframeworktest\Button.h(2,9): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
-D:\CPP\MusicLife\apiframeworktest\Button.cpp(26,22): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-D:\CPP\MusicLife\apiframeworktest\Button.cpp(27,23): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-D:\CPP\MusicLife\apiframeworktest\Button.cpp(28,21): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-D:\CPP\MusicLife\apiframeworktest\Button.cpp(29,24): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  Card.cpp
-D:\CPP\MusicLife\apiframeworktest\Card.cpp(37,28): error C2039: 'IsOn': 'EventMgr'의 멤버가 아닙니다.
-D:\CPP\MusicLife\apiframeworktest\EventMgr.h(8): message : 'EventMgr' 선언을 참조하십시오.
-  Core.cpp
-  EventMgr.cpp
-  SceneMgr.cpp
+D:\CPP\MusicLife\apiframeworktest\Button.cpp(24,22): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\CPP\MusicLife\apiframeworktest\Button.cpp(25,23): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\CPP\MusicLife\apiframeworktest\Button.cpp(26,21): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\CPP\MusicLife\apiframeworktest\Button.cpp(27,24): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  QuitButton.cpp
+D:\CPP\MusicLife\apiframeworktest\Button.h(2,9): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
   Scene_Start.cpp
 D:\CPP\MusicLife\apiframeworktest\Button.h(2,9): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
 D:\CPP\MusicLife\apiframeworktest\Text.h(2,9): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
-D:\CPP\MusicLife\apiframeworktest\Scene_Start.cpp(24,70): error C2665: 'Text::Text': 3개의 오버로드 중 모든 인수 형식을 변환할 수 있는 오버로드가 없습니다.
-D:\CPP\MusicLife\apiframeworktest\Text.h(11,2): message : 'Text::Text(Vec2,Vec2,TCHAR)'일 수 있습니다.
-D:\CPP\MusicLife\apiframeworktest\Scene_Start.cpp(24,28): message : 'Text::Text(Vec2,Vec2,TCHAR)': 인수 3을(를) 'const wchar_t [16]'에서 'TCHAR'(으)로 변환할 수 없습니다.
-D:\CPP\MusicLife\apiframeworktest\Scene_Start.cpp(24,51): message : 이 변환이 가능한 컨텍스트가 없습니다.
-D:\CPP\MusicLife\apiframeworktest\Text.h(11,2): message : 'Text::Text' 선언을 참조하십시오.
-D:\CPP\MusicLife\apiframeworktest\Scene_Start.cpp(24,70): message : 인수 목록 '(Vec2, Vec2, const wchar_t [16])'을(를) 일치시키는 동안
-  Text.cpp
-D:\CPP\MusicLife\apiframeworktest\Text.h(2,9): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
-D:\CPP\MusicLife\apiframeworktest\Text.cpp(8,22): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-D:\CPP\MusicLife\apiframeworktest\Text.cpp(9,23): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-D:\CPP\MusicLife\apiframeworktest\Text.cpp(10,21): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-D:\CPP\MusicLife\apiframeworktest\Text.cpp(11,24): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-D:\CPP\MusicLife\apiframeworktest\Text.cpp(25,35): warning C4244: '인수': 'const float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-D:\CPP\MusicLife\apiframeworktest\Text.cpp(25,23): warning C4244: '인수': 'const float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  TimeMgr.cpp
-  func.cpp
+  apiframeworktest.vcxproj -> D:\CPP\MusicLife\OutPut\bin_debug\Gamep_winapiframework.exe

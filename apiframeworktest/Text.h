@@ -6,9 +6,13 @@ class Text:
 {
 private:
 	RECT m_rect;
-	TCHAR* textStr;
+	wstring textStr;
+	HFONT font;
 public:
-	Text(Vec2 pos, Vec2 scale, TCHAR str);
+	void SetFontSize();
+	void SetFontColor();
+public:
+	Text(Vec2 pos, Vec2 scale, wstring str);
 	void Update() override;
 	void Render(HDC hdc) override;
 private:
