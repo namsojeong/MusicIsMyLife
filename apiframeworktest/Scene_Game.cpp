@@ -25,29 +25,31 @@ void Scene_Game::Enter()
 {
 	SoundMgr::GetInst()->LoadSound(L"BGM", true, L"Sound\\pianobgm.wav");
 	SoundMgr::GetInst()->Play(L"BGM");
+
+	Vec2 vResolution(Vec2(Core::GetInst()->GetResolution()));
+
 	// Object 추가
 	Object* pObj = new Player;
-	pObj->SetPos(Vec2(Core::GetInst()->GetResolution().x / 2, Core::GetInst()->GetResolution().y / 2));
+	pObj->SetPos(Vec2(vResolution.x / 2, vResolution.y / 2));
 	pObj->SetScale(Vec2(100.f, 100.f));
 	AddObject(pObj, GROUP_TYPE::PLAYER);
 
-	// 몬스터 배치
-	Vec2 vResolution(Vec2(Core::GetInst()->GetResolution()));
-	int iMonster = 16;
-	float fMoveDist = 25.f;
-	float fObjScale = 50.f;
-	float fTerm = (vResolution.x - ((fMoveDist + fObjScale / 2.f) * 2)) / (float)(iMonster - 1);
-	Monster* pMonsterObj = nullptr;
-	for (int i = 0; i < iMonster; i++)
-	{
-		pMonsterObj = new Monster;
-		pMonsterObj->SetName(L"Monster");
-		pMonsterObj->SetPos(Vec2((fMoveDist + fObjScale / 2.f) + (float)i * fTerm, 50.f));
-		pMonsterObj->SetScale(Vec2(fObjScale, fObjScale));
-		pMonsterObj->SetCenterPos(pMonsterObj->GetPos());
-		pMonsterObj->SetMoveDistance(fMoveDist);
-		AddObject(pMonsterObj, GROUP_TYPE::MONSTER);
-	}
+	//// 몬스터 배치
+	//int iMonster = 16;
+	//float fMoveDist = 25.f;
+	//float fObjScale = 50.f;
+	//float fTerm = (vResolution.x - ((fMoveDist + fObjScale / 2.f) * 2)) / (float)(iMonster - 1);
+	//Monster* pMonsterObj = nullptr;
+	//for (int i = 0; i < iMonster; i++)
+	//{
+	//	pMonsterObj = new Monster;
+	//	pMonsterObj->SetName(L"Monster");
+	//	pMonsterObj->SetPos(Vec2((fMoveDist + fObjScale / 2.f) + (float)i * fTerm, 50.f));
+	//	pMonsterObj->SetScale(Vec2(fObjScale, fObjScale));
+	//	pMonsterObj->SetCenterPos(pMonsterObj->GetPos());
+	//	pMonsterObj->SetMoveDistance(fMoveDist);
+	//	AddObject(pMonsterObj, GROUP_TYPE::MONSTER);
+	//}
 #pragma region 카드배치
 	Card* pCardObj = nullptr;
 
@@ -73,12 +75,11 @@ void Scene_Game::Enter()
 	CollisionMgr::GetInst()->CheckGroup(GROUP_TYPE::PLAYER, GROUP_TYPE::MONSTER);
 	CollisionMgr::GetInst()->CheckGroup(GROUP_TYPE::BULLET_PLAYER, GROUP_TYPE::MONSTER);
 	
-	Vec2 timeScale = Vec2(100.0f, 100.0f);
-	Vec2 timePos = Vec2(0, 0);
+	/*Vec2 timePos = Vec2(0, 0);
 	wstring timeT = L"Time : " + to_wstring(gameTime);
-	Text* timeText = new Text(timePos, timeScale, timeT);
-	timeText->SetFontColor(RGB(0, 0, 0));
-	AddUI(timeText, UI_TYPE::TEXT);
+	Text* timeText = new Text(timePos, 50, timeT);
+	timeText->SetTextColor(RGB(0, 0, 0));
+	AddUI(timeText, UI_TYPE::TEXT);*/
 }
 
 void Scene_Game::Exit()

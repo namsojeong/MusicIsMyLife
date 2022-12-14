@@ -2,11 +2,14 @@
 #include "Text.h"
 #include "string.h"
 
-void Text::SetFontSize()
+void Text::SetText(wstring str)
 {
-	font = CreateFont(50, 0, 0, 0, 0, 0, 0, 0,
-		HANGEUL_CHARSET, 0, 0, 0, VARIABLE_PITCH | FF_ROMAN,
-		textStr.c_str());
+	wsprintf(textStr, str.c_str());
+}
+
+void Text::SetTextSize(int size)
+{
+	lf.lfHeight = size;
 }
 
 void Text::SetFontColor(COLORREF rgb)
@@ -14,18 +17,27 @@ void Text::SetFontColor(COLORREF rgb)
 	color = rgb;
 }
 
-Text::Text(Vec2 pos, Vec2 scale, wstring str)
+Text::Text(Vec2 pos, int size, wstring str)
 {
-	SetName(L"Text");
+	lf.lfHeight = size;
+	lf.lfWeight = 0;
+	lf.lfEscapement = 0;
+	lf.lfOrientation = 0;
+	lf.lfWeight = 0;
+	lf.lfItalic = false;
+	lf.lfUnderline = 0;
+	lf.lfStrikeOut = 0;
+	lf.lfCharSet = HANGUL_CHARSET;
+	lf.lfOutPrecision = 0;
+	lf.lfClipPrecision = 0;
+	lf.lfQuality = 0;
+	lf.lfPitchAndFamily = VARIABLE_PITCH | FF_ROMAN;
+	lstrcpy(lf.lfFaceName, TEXT("안동엄마까투리"));
 
-	m_rect.left = pos.x - scale.x / 2;
-	m_rect.right = pos.x + scale.x / 2;
-	m_rect.top = pos.y - scale.y / 2;
-	m_rect.bottom = pos.y + scale.y / 2;
+	font = CreateFontIndirect(&lf);
 
-	textStr = str;
 	SetPos(pos);
-	SetScale(scale);
+	SetText(str);
 }
 
 void Text::Update()
@@ -34,9 +46,12 @@ void Text::Update()
 
 void Text::Render(HDC hdc)
 {
-	HFONT hTmp = (HFONT)SelectObject(hdc, font);
+
 	SetTextColor(hdc, color);
-	TextOut(hdc, GetPos().x, GetPos().y, textStr.c_str(), textStr.length());
+	SetBkMode(hdc, TRANSPARENT);
+	SelectObject(hdc, font);
+	TextOut(hdc, GetPos().x, GetPos().y, textStr, lstrlen(textStr));
+
 	Component_Render(hdc);
 }
 
