@@ -80,10 +80,11 @@ void Scene_Game::Enter()
 	Text* timeText = new Text(timePos, 30, timeT);
 	AddUI(timeText, UI_TYPE::TEXT);
 
-	Vec2 playerHPTextPos = Vec2(0.0f, vResolution.y/2);
+	Vec2 playerHPTextPos = Vec2(0.0f, vResolution.y / 2);
 	wstring playerHPTextStr = L"HP : " + to_wstring(player->GetPlayerHP());
 	playerHPText = new Text(playerHPTextPos, 30, playerHPTextStr);
 	AddUI(playerHPText, UI_TYPE::TEXT);
+	
 }
 
 void Scene_Game::Exit()
