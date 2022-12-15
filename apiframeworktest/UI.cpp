@@ -9,12 +9,6 @@ void UI::Render(HDC hdc)
 {
 }
 
-UI::UI(Vec2 pos, Vec2 scale)
-{
-	SetPos(pos);
-	SetScale(scale);
-}
-
 UI::UI()
 {
 }

@@ -11,8 +11,11 @@
 #include "Collider.h"
 #include "Animator.h"
 #include "Animation.h"
+
 Player::Player()
 {
+	hp = new HP(100);
+
 	// collider »õ¼º
 	CreateCollider();
 	GetCollider()->SetScale(Vec2(20.f, 30.f));
@@ -67,16 +70,14 @@ void Player::CreateBullet()
 	Vec2 vBulletPos = GetPos();
 	vBulletPos.y -= GetScale().y / 2.f;
 
-	// 
 	Bullet* pBullet = new Bullet;
 	pBullet->SetName(L"Bullet_Player");
 	pBullet->SetPos(vBulletPos);
 	pBullet->SetScale(Vec2(25.f, 25.f));
 	pBullet->SetDir(Vec2(0.f, -1.f));
 	CreateObject(pBullet, GROUP_TYPE::BULLET_PLAYER);
-	//Scene* pCurScene = SceneMgr::GetInst()->GetCurScene();
-	//pCurScene->AddObject(pBullet,GROUP_TYPE::BULLET);
 }
+
 void Player::Render(HDC _dc)
 {
 	Component_Render(_dc);

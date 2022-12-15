@@ -1,5 +1,6 @@
 #pragma once
 #include "Object.h"
+#include "HP.h"
 
 class Image;
 class Player :
@@ -7,20 +8,18 @@ class Player :
 {
 private:
     Image* m_pImage;
-public:
-    Player();
-    //Player(const Player& _origin) 
-    //    : Object(_origin)
-    //    , m_pImage(_origin.m_pImage)
-    //{}
-    ~Player();
 private:
     void CreateBullet();
-
-//    Player* Clone{ return new Player(*this); }
-    CLONE(Player);
+public:
+    HP* hp;
+    int GetPlayerHP(){ return hp->GetHP(); }
 public:
     void Update()       override;
     void Render(HDC _dc) override;
+private:
+    CLONE(Player);
+public:
+    Player();
+    ~Player();
 };
 
