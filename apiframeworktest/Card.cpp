@@ -7,18 +7,22 @@
 #include "KeyMgr.h"
 #include "EventMgr.h"
 #include "TimeMgr.h"
-Card::Card() :
+#include "CardMgr.h"
+Card::Card(int type) :
 	_attackPower(0),
 	_stressPower(0),
 	m_pImage(nullptr)
 {
 	// image 업로드
 	m_pImage = ResMgr::GetInst()->ImgLoad(L"card", L"Image\\Cardb.bmp");
-	// animator 생성 및 animation 사용
-	/*CreateAnimator();
-	GetAnimator()->CreateAnimation(L"Jiwoofront", m_pImage, Vec2(0.f, 150.f), Vec2(50.f, 50.f), Vec2(50.f, 0.f), 5, 0.2f);
-	GetAnimator()->Play(L"Jiwoofront", true);*/
-
+	for (UINT i = 0; i < (UINT)CARD_TYPE::END; i++)
+	{
+		if (type == i)
+		{
+			_attackPower = CardMgr::GetInst()->GetCardStat(i)._attackPower;
+			_stressPower = CardMgr::GetInst()->GetCardStat(i)._stressPower;
+		}
+	}
 }
 
 Card::~Card()
@@ -30,7 +34,7 @@ void Card::Update()
 	Vec2 vPos = GetPos();
 	if (GetAnimator() != nullptr)
 		GetAnimator()->Update();
-
+	bool isMove = false;
 	if (bool isHamgingAttack = SceneMgr::GetInst()->IsHamgingAttack())
 	{
 		bool isPlayerAttack = SceneMgr::GetInst()->IsAttack();
@@ -42,23 +46,20 @@ void Card::Update()
 				GetCursorPos(m_point);
 				if (EventMgr::GetInst()->isOn(GetPos(), GetScale()))
 				{
-					Vec2 pos = GetPos();
-					SetPos(pos + Vec2(0, -50));
+					SetPos(vPos + Vec2(0,-50));
 				}
 			}
-			else if (KEY_AWAY(KEY::CLICK))
+			if (KEY_AWAY(KEY::CLICK))
 			{
 				POINT* m_point = EventMgr::GetInst()->GetPoint();
 				if (EventMgr::GetInst()->isOn(GetPos(), GetScale()))
 				{
-					Vec2 pos = GetPos();
-					SetPos(pos + Vec2(0, 50));
+					SetPos(vPos + Vec2(0,50));
 					SceneMgr::GetInst()->SetIsAttack(true);
 				}
 			}
 		}
 	}
-
 }
 
 

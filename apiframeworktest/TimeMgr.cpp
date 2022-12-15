@@ -54,7 +54,7 @@ void TimeMgr::Render()
 		m_iCallCount = 0;
 		static wchar_t szBuffer[255] = {};
 		/*swprintf_s(szBuffer, L"FPS : %d,  DT: %lf", m_iFPS, m_dDT);*/
-		swprintf_s(szBuffer, L"MOUSE POS : %d, $d", EventMgr::GetInst()->GetPoint()->x, EventMgr::GetInst()->GetPoint()->y);
+		swprintf_s(szBuffer, L"MOUSE POS : %d $d", EventMgr::GetInst()->GetPoint()->x, EventMgr::GetInst()->GetPoint()->y);
 		SetWindowText(Core::GetInst()->GetWndHandle(), szBuffer);
 	}
 }

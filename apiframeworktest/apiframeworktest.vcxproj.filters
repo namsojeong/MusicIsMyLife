@@ -107,6 +107,9 @@
     <Filter Include="Engine\09. UI\Text">
       <UniqueIdentifier>{8c4b5a07-2a54-44df-ac4c-fc73127cf327}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\03. Manager\CardMgr">
+      <UniqueIdentifier>{6489518c-7dee-42bf-8481-39f759607110}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core.h">
@@ -235,6 +238,9 @@
     <ClInclude Include="QuitButton.h">
       <Filter>Engine\09. UI\Button</Filter>
     </ClInclude>
+    <ClInclude Include="CardMgr.h">
+      <Filter>Engine\03. Manager\CardMgr</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="apiframeworktest.rc">
@@ -358,6 +364,9 @@
     </ClCompile>
     <ClCompile Include="QuitButton.cpp">
       <Filter>Engine\09. UI\Button</Filter>
+    </ClCompile>
+    <ClCompile Include="CardMgr.cpp">
+      <Filter>Engine\03. Manager\CardMgr</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -57,6 +57,16 @@ enum class UI_TYPE
 	END,
 };
 
+enum class CARD_TYPE
+{
+	A=1,
+	B,
+	C,
+	D,
+	E,
+	END,
+};
+
 enum class SCENE_TYPE
 {
 	START,

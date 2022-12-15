@@ -32,31 +32,25 @@ void Scene_Game::Enter()
 	AddObject(pObj, GROUP_TYPE::PLAYER);
 
 	// 몬스터 배치
-	Vec2 vResolution(Vec2(Core::GetInst()->GetResolution()));
-	int iMonster = 16;
-	float fMoveDist = 25.f;
-	float fObjScale = 50.f;
-	float fTerm = (vResolution.x - ((fMoveDist + fObjScale / 2.f) * 2)) / (float)(iMonster - 1);
+	/*Vec2 vResolution(Vec2(Core::GetInst()->GetResolution()));
+	Vec2 fObjScale = Vec2(330,370);
 	Monster* pMonsterObj = nullptr;
-	for (int i = 0; i < iMonster; i++)
-	{
-		pMonsterObj = new Monster;
-		pMonsterObj->SetName(L"Monster");
-		pMonsterObj->SetPos(Vec2((fMoveDist + fObjScale / 2.f) + (float)i * fTerm, 50.f));
-		pMonsterObj->SetScale(Vec2(fObjScale, fObjScale));
-		pMonsterObj->SetCenterPos(pMonsterObj->GetPos());
-		pMonsterObj->SetMoveDistance(fMoveDist);
-		AddObject(pMonsterObj, GROUP_TYPE::MONSTER);
-	}
+	pMonsterObj = new Monster;
+	pMonsterObj->SetName(L"Monster");
+	pMonsterObj->SetPos(Vec2((fObjScale / 2.f) + (float)i * fTerm, 50.f));
+	pMonsterObj->SetScale(Vec2(fObjScale, fObjScale));
+	pMonsterObj->SetCenterPos(pMonsterObj->GetPos());
+	pMonsterObj->SetMoveDistance(fMoveDist);
+	AddObject(pMonsterObj, GROUP_TYPE::MONSTER);*/
 #pragma region 카드배치
 	Card* pCardObj = nullptr;
 
 	for (int i = 0; i < GetCardAmount(); i++)
 	{
-		pCardObj = new Card;
+		pCardObj = new Card(1);
 		pCardObj->SetName(L"Card");
-		pCardObj->SetPos(Vec2((vResolution.x / (GetCardAmount() + 1)) * (i + 1),
-			vResolution.y / 2));
+		pCardObj->SetPos(Vec2((1280/ (GetCardAmount() + 1)) * (i + 1),
+			800 / 2));
 		pCardObj->SetScale(Vec2(200.f, 277.f));
 		pCardObj->SetCenterPos(pCardObj->GetPos());
 		AddObject(pCardObj, GROUP_TYPE::CARD);
