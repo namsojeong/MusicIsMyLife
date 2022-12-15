@@ -98,12 +98,8 @@ C:\Users\daehe\Documents\GitHub\MusicLife\apiframeworktest\EventMgr.h(35,21): wa
   HP.cpp
 D:\CPP\MusicLife\apiframeworktest\Text.h(2,9): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
   Player.cpp
-D:\CPP\MusicLife\apiframeworktest\Player.cpp(34,20): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  SceneMgr.cpp
-D:\CPP\MusicLife\apiframeworktest\EventMgr.h(32,19): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-D:\CPP\MusicLife\apiframeworktest\EventMgr.h(33,20): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-D:\CPP\MusicLife\apiframeworktest\EventMgr.h(34,18): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-D:\CPP\MusicLife\apiframeworktest\EventMgr.h(35,21): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\CPP\MusicLife\apiframeworktest\Text.h(2,9): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+D:\CPP\MusicLife\apiframeworktest\Player.cpp(37,20): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   Scene_Game.cpp
 D:\CPP\MusicLife\apiframeworktest\Text.h(2,9): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
   apiframeworktest.vcxproj -> D:\CPP\MusicLife\OutPut\bin_debug\Gamep_winapiframework.exe

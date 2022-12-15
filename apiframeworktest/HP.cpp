@@ -16,7 +16,8 @@ void HP::AddHP(const int hp)
 
 void HP::UpdateUiHp(Text* text)
 {
-	text->SetText(L"HP : " + curHP);
+	wstring str = L"HP : " + to_wstring(GetHP());
+ 	text->SetText(str);
 }
 
 HP::HP()
