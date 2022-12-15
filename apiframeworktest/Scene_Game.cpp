@@ -29,10 +29,10 @@ void Scene_Game::Enter()
 	Vec2 vResolution(Vec2(Core::GetInst()->GetResolution()));
 
 	// Object 추가
-	Object* pObj = new Player;
-	pObj->SetPos(Vec2(vResolution.x / 2, vResolution.y / 2));
-	pObj->SetScale(Vec2(100.f, 100.f));
-	AddObject(pObj, GROUP_TYPE::PLAYER);
+	player = new Player;
+	player->SetPos(Vec2(vResolution.x / 2, vResolution.y / 2));
+	player->SetScale(Vec2(100.f, 100.f));
+	AddObject(player, GROUP_TYPE::PLAYER);
 
 	//// 몬스터 배치
 	//int iMonster = 16;
@@ -75,11 +75,15 @@ void Scene_Game::Enter()
 	CollisionMgr::GetInst()->CheckGroup(GROUP_TYPE::PLAYER, GROUP_TYPE::MONSTER);
 	CollisionMgr::GetInst()->CheckGroup(GROUP_TYPE::BULLET_PLAYER, GROUP_TYPE::MONSTER);
 	
-	/*Vec2 timePos = Vec2(0, 0);
+	Vec2 timePos = Vec2(0, 0);
 	wstring timeT = L"Time : " + to_wstring(gameTime);
-	Text* timeText = new Text(timePos, 50, timeT);
-	timeText->SetTextColor(RGB(0, 0, 0));
-	AddUI(timeText, UI_TYPE::TEXT);*/
+	Text* timeText = new Text(timePos, 30, timeT);
+	AddUI(timeText, UI_TYPE::TEXT);
+
+	Vec2 playerHPTextPos = Vec2(0.0f, vResolution.y/2);
+	wstring playerHPTextStr = L"HP : " + to_wstring(player->GetPlayerHP());
+	playerHPText = new Text(playerHPTextPos, 30, playerHPTextStr);
+	AddUI(playerHPText, UI_TYPE::TEXT);
 }
 
 void Scene_Game::Exit()
@@ -92,6 +96,9 @@ void Scene_Game::Update()
 {
 	Scene::Update();
 
-	
-	
+	if (KEY_TAP(KEY::SPACE))
+	{
+		player->hp->AddHP(-10);
+		player->hp->UpdateUiHp(playerHPText);
+	}
 }

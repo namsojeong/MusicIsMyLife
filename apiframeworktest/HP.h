@@ -1,4 +1,6 @@
 #pragma once
+
+class Text;
 class HP
 {
 private:
@@ -8,11 +10,13 @@ private:
 public:
 	const bool IsDead() { return isDead; }
 	const int GetHP() { return curHP; }
-	void SetHP(const int hp) { curHP = hp; }
+	void SetHP(const int hp);
+	void AddHP(const int hp);
+public:
+	void UpdateUiHp(Text* text);
 public:
 	HP();
 	HP(const int maxHP=100);
 	~HP();
 
 };
-

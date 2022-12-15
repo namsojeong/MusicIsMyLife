@@ -11,6 +11,7 @@ private:
 	LOGFONT lf;
 	COLOR16 color = RGB(0, 0, 0);
 public:
+	void SetFont(int size);
 	void SetText(wstring str);
 	void SetTextSize(int size);
 	void SetFontColor(COLORREF rgb);
