@@ -96,6 +96,10 @@ void Scene_Game::Update()
 	if (KEY_TAP(KEY::SPACE))
 	{
 		player->hp->AddHP(-10);
+		if (player->hp->IsDead())
+		{
+			ChangeScene(SCENE_TYPE::OVER);
+		}
 		player->hp->UpdateUiHp(playerHPText);
 	}
 }
