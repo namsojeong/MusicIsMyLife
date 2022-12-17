@@ -10,10 +10,12 @@ private:
 	bool isChooseCard;
 	HAMGING_STATE m_hamgingState;
 	Hamging* m_hamging;
+	Player* m_player;
 public:
 	GameMgr();
 	~GameMgr();
 public:
+	const void SetObject(Player * p, Hamging * h);
 	const int GetIsChooseCard() { return isChooseCard; }
 	const void SetIsChooseCard(bool value) { isChooseCard = value; }
 	const HAMGING_STATE GetHamgingState() { return m_hamgingState; }

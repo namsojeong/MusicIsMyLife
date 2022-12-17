@@ -65,6 +65,7 @@ void Scene_Game::Enter()
 	wstring playerHPTextStr = L"HP : " + to_wstring(player->GetPlayerHP());
 	playerHPText = new Text(playerHPTextPos, 30, playerHPTextStr);
 	AddUI(playerHPText, UI_TYPE::TEXT);
+	GameMgr::GetInst()->SetObject(player, hamging);
 }
 
 void Scene_Game::Exit()

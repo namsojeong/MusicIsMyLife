@@ -8,7 +8,7 @@
 #include "Core.h"
 #include "Player.h"
 
-Hamging::Hamging()
+Hamging::Hamging():state(HAMGING_STATE::WAIT)
 {
 	hp = new HP(100);
 	// image 업로드
@@ -41,11 +41,13 @@ void Hamging::Update()
 			if (TimeMgr::GetInst()->IsCanPlayerAttack())// 플레이어 공격시간이 지났다면
 			{
 				state = HAMGING_STATE::ATTACKING;
+				GameMgr::GetInst()->SetHamgingState(state);
 			}
 		}
 	}
 	if (HAMGING_ATTACKING)
 	{
+		GameMgr::GetInst()->AttackPlayer(m_attackPower + m_attackPower * m_stress / 100);
 		state = TimeMgr::GetInst()->IsOverDelay(3)?HAMGING_STATE::ATTACKEND:state;
 	}
 	if (HAMGING_ATTACKEND)

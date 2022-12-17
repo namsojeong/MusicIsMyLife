@@ -52,6 +52,7 @@ void Card::Update()
 			if (EventMgr::GetInst()->isOn(GetPos(), GetScale()))
 			{
 				SetPos(vPos + Vec2(0, -50));
+				GameMgr::GetInst()->AttackHamging(10);
 			}
 		}
 		if (KEY_AWAY(KEY::CLICK))
