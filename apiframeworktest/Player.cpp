@@ -13,6 +13,7 @@
 #include "Animation.h"
 #include "Core.h"
 #include "Text.h"
+#include "Hamging.h"
 
 Player::Player()
 {

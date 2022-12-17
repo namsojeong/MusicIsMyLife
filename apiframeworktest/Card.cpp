@@ -8,11 +8,14 @@
 #include "EventMgr.h"
 #include "TimeMgr.h"
 #include "CardMgr.h"
-Card::Card(int type) :
+#include "GameMgr.h"
+#include "Player.h"
+Card::Card(int type, Player* p) :
 	_attackPower(0),
 	_stressPower(0),
 	m_pImage(nullptr)
 {
+	m_player = p;
 	// image 업로드
 	m_pImage = ResMgr::GetInst()->ImgLoad(L"card", L"Image\\Cardb.bmp");
 	for (UINT i = 0; i < (UINT)CARD_TYPE::END; i++)
@@ -31,34 +34,36 @@ Card::~Card()
 
 void Card::Update()
 {
+	if (m_player == nullptr)
+		return;
 	Vec2 vPos = GetPos();
 	if (GetAnimator() != nullptr)
 		GetAnimator()->Update();
-	bool isMove = false;
-	if (bool isHamgingAttack = SceneMgr::GetInst()->IsHamgingAttack())
+	bool isChooseCard = !GameMgr::GetInst()->GetIsChooseCard();//플레이어가 공격을 할 수 있다면
+	bool isCanAttackTime = false;
+	if(isChooseCard)
+		isCanAttackTime = !TimeMgr::GetInst()->IsCanPlayerAttack(); // 플레이어 공격시간이 지나지 않았다면
+	if ( isChooseCard && isCanAttackTime)
 	{
-		bool isPlayerAttack = SceneMgr::GetInst()->IsAttack();
-		if (isHamgingAttack && !isPlayerAttack)// 내가 공격을 안했고, 햄깅이가 공격을 했다면 진행
+		if (KEY_TAP(KEY::CLICK))
 		{
-			if (KEY_TAP(KEY::CLICK))
+			POINT* m_point = EventMgr::GetInst()->GetPoint();
+			GetCursorPos(m_point);
+			if (EventMgr::GetInst()->isOn(GetPos(), GetScale()))
 			{
-				POINT* m_point = EventMgr::GetInst()->GetPoint();
-				GetCursorPos(m_point);
-				if (EventMgr::GetInst()->isOn(GetPos(), GetScale()))
-				{
-					SetPos(vPos + Vec2(0,-50));
-				}
-			}
-			if (KEY_AWAY(KEY::CLICK))
-			{
-				POINT* m_point = EventMgr::GetInst()->GetPoint();
-				if (EventMgr::GetInst()->isOn(GetPos(), GetScale()))
-				{
-					SetPos(vPos + Vec2(0,50));
-					SceneMgr::GetInst()->SetIsAttack(true);
-				}
+				SetPos(vPos + Vec2(0, -50));
 			}
 		}
+		if (KEY_AWAY(KEY::CLICK))
+		{
+			POINT* m_point = EventMgr::GetInst()->GetPoint();
+			if (EventMgr::GetInst()->isOn(GetPos(), GetScale()))
+			{
+				SetPos(vPos + Vec2(0, 50));
+				GameMgr::GetInst()->SetIsChooseCard(true);
+			}
+		}
+
 	}
 }
 

@@ -9,6 +9,7 @@
 #include "EventMgr.h"
 #include "SoundMgr.h"
 #include "CardMgr.h"
+#include "GameMgr.h"
 Core::Core()
 	: m_hDC(0)
 	, m_ptResolution{}
@@ -56,6 +57,7 @@ int Core::Init(HWND _hWnd, POINT _ptResolution)
 	KeyMgr::GetInst()->Init();
 	SceneMgr::GetInst()->Init();
 	CardMgr::GetInst()->Init();
+	GameMgr::GetInst()->Init();
 	return S_OK;
 }
 
@@ -70,7 +72,7 @@ void Core::Update()
 	// ==== Manager Update====
 	TimeMgr::GetInst()->Update();
 	KeyMgr::GetInst()->Update();
-
+	GameMgr::GetInst()->Update();
 	// ==== Scene Update ====
 	SceneMgr::GetInst()->Update();
 

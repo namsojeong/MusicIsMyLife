@@ -2,12 +2,14 @@
 #include "Scene.h"
 
 class Player;
+class Hamging;
 class Text;
 class Scene_Game
 	:public Scene
 {
 private:
     Player* player;
+    Hamging* hamging;
     Text* playerHPText;
     float gameTime = 0;
 public:

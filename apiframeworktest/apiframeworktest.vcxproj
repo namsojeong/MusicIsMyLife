@@ -173,6 +173,8 @@
     <ClInclude Include="EventMgr.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="func.h" />
+    <ClInclude Include="GameMgr.h" />
+    <ClInclude Include="Hamging.h" />
     <ClInclude Include="HP.h" />
     <ClInclude Include="Image.h" />
     <ClInclude Include="KeyMgr.h" />
@@ -216,6 +218,8 @@
     <ClCompile Include="Core.cpp" />
     <ClCompile Include="EventMgr.cpp" />
     <ClCompile Include="func.cpp" />
+    <ClCompile Include="GameMgr.cpp" />
+    <ClCompile Include="Hamging.cpp" />
     <ClCompile Include="HP.cpp" />
     <ClCompile Include="Image.cpp" />
     <ClCompile Include="KeyMgr.cpp" />

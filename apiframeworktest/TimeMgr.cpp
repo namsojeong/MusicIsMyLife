@@ -64,8 +64,7 @@ bool TimeMgr::IsOverDelay(double delay)
 	m_delayAcc += m_dDT;
 	if (m_delayAcc >= delay)
 	{
-		if(SceneMgr::GetInst()->IsAttack())
-			m_delayAcc = 0.;
+		m_delayAcc = 0.;
 		return true;
 	}
 	return false;
