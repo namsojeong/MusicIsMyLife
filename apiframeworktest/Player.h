@@ -4,17 +4,21 @@
 
 class Image;
 class Text;
+class Hamging;
 class Player :
     public Object
 {
 private:
     Image* m_pImage;
+    static Hamging* m_hamging;
+    int m_attackPower;
 private:
     //void CreateBullet();
 public:
     HP* hp;
     Text* hpText;
     int GetPlayerHP(){ return hp->GetHP(); }
+    void SetAttackPower(int value) { m_attackPower = value; }
 public:
     void Update()       override;
     void Render(HDC _dc) override;

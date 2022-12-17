@@ -29,5 +29,6 @@ public:
 	float  GetfDT() { return (float)m_dDT; }
 public:
 	bool IsOverDelay(double delay);
+	bool IsCanPlayerAttack() { return IsOverDelay(5); }
 };
 

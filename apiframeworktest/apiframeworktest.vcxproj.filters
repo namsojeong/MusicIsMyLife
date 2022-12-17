@@ -110,6 +110,12 @@
     <Filter Include="Engine\03. Manager\CardMgr">
       <UniqueIdentifier>{6489518c-7dee-42bf-8481-39f759607110}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\04. Object\Hamging">
+      <UniqueIdentifier>{974df049-37f5-483d-80ef-313d22227616}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03. Manager\GameMgr">
+      <UniqueIdentifier>{948d1832-78d5-4c46-9ce1-562804c5126e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core.h">
@@ -241,6 +247,12 @@
     <ClInclude Include="CardMgr.h">
       <Filter>Engine\03. Manager\CardMgr</Filter>
     </ClInclude>
+    <ClInclude Include="Hamging.h">
+      <Filter>Engine\04. Object\Hamging</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMgr.h">
+      <Filter>Engine\03. Manager\GameMgr</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="apiframeworktest.rc">
@@ -367,6 +379,12 @@
     </ClCompile>
     <ClCompile Include="CardMgr.cpp">
       <Filter>Engine\03. Manager\CardMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="Hamging.cpp">
+      <Filter>Engine\04. Object\Hamging</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMgr.cpp">
+      <Filter>Engine\03. Manager\GameMgr</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

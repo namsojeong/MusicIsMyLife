@@ -12,6 +12,14 @@
 #define KEY_TAP(key) KEY_CHECK(key, KEY_STATE::TAP)
 #define KEY_AWAY(key) KEY_CHECK(key, KEY_STATE::AWAY)
 #define KEY_NONE(key) KEY_CHECK(key, KEY_STATE::NONE)
+#define HAMGING_CHECK(state) GameMgr::GetInst()->GetHamgingState() == state
+
+#define HAMGING_WAIT  HAMGING_CHECK(HAMGING_STATE::WAIT)
+
+#define HAMGING_ATTACKING  HAMGING_CHECK(HAMGING_STATE::ATTACKING)
+
+#define HAMGING_ATTACKEND  HAMGING_CHECK(HAMGING_STATE::ATTACKEND)
+
 #define CLONE(type) type* Clone() {return new type(*this);}
 #define PI 3.1415926535897932384f
 
@@ -42,6 +50,7 @@ enum class GROUP_TYPE
 	PLAYER,
 	BULLET_PLAYER,
 	BULLET_MONSTER,
+	HAMGING,
 	MONSTER,
 	CARD,
 
@@ -95,5 +104,13 @@ enum class EVENT_TYPE
 	SCENE_CHANGE,
 	START_BUTTON,
 
+	END,
+};
+
+enum class HAMGING_STATE
+{
+	WAIT,
+	ATTACKING,
+	ATTACKEND,
 	END,
 };
