@@ -56,16 +56,26 @@ void Scene_Game::Enter()
 	}
 #pragma endregion
 
+#pragma region Text
 	Vec2 timePos = Vec2(0, 0);
 	wstring timeT = L"Time : " + to_wstring(gameTime);
 	Text* timeText = new Text(timePos, 30, timeT);
 	AddUI(timeText, UI_TYPE::TEXT);
 
 	Vec2 playerHPTextPos = Vec2(0.0f, vResolution.y / 2);
+	Vec2 hamgingHPTextPos = Vec2(0.0f, vResolution.y / 4);
 	wstring playerHPTextStr = L"HP : " + to_wstring(player->GetPlayerHP());
+	wstring hamgingHPTextStr = L"HP : " + to_wstring(hamging->GetHamgingHP());
 	playerHPText = new Text(playerHPTextPos, 30, playerHPTextStr);
 	AddUI(playerHPText, UI_TYPE::TEXT);
+	hamgingHPText = new Text(hamgingHPTextPos, 30, hamgingHPTextStr);
+	AddUI(playerHPText, UI_TYPE::TEXT);
+	AddUI(hamgingHPText, UI_TYPE::TEXT);
+
+	GameMgr::GetInst()->SetHamgingText(hamgingHPText);
+	GameMgr::GetInst()->SetPlayerText(playerHPText);
 	GameMgr::GetInst()->SetObject(player, hamging);
+#pragma endregion
 }
 
 void Scene_Game::Exit()

@@ -21,6 +21,7 @@ public:
     const void SetAttackPower(int value) { m_attackPower = value; }
     const int GetStress() { return m_stress; }
     const void SetStress(int value) { m_stress = value; }
+    const void AddStress(int value) { m_stress += value; }
 public:
     void Update()       override;
     void Render(HDC _dc) override;

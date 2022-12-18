@@ -11,6 +11,7 @@ private:
     Player* player;
     Hamging* hamging;
     Text* playerHPText;
+    Text* hamgingHPText;
     float gameTime = 0;
 public:
     virtual void Enter() override;

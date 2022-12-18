@@ -21,6 +21,7 @@ public:
     void SetCenterPos(Vec2 _vPos) { m_vPos = _vPos; }
     void SetCardAttackPower(const int pow) { _attackPower = pow; };
     void SetCardStressPower(const int stress) { _stressPower = stress; };
+    void Attack();
 public:
     virtual void Update() override;
     void Render(HDC _dc) override;

@@ -34,41 +34,35 @@ Card::~Card()
 
 void Card::Update()
 {
-	if (m_player == nullptr)
-		return;
-	Vec2 vPos = GetPos();
-	if (GetAnimator() != nullptr)
-		GetAnimator()->Update();
-	bool isChooseCard = !GameMgr::GetInst()->GetIsChooseCard();//플레이어가 공격을 할 수 있다면
-	bool isCanAttackTime = false;
-	if(isChooseCard)
-		isCanAttackTime = !TimeMgr::GetInst()->IsCanPlayerAttack(); // 플레이어 공격시간이 지나지 않았다면
-	if ( isChooseCard && isCanAttackTime)
+	if (!GameMgr::GetInst()->GetIsPlayerAttack())
 	{
-		if (KEY_TAP(KEY::CLICK))
-		{
-			POINT* m_point = EventMgr::GetInst()->GetPoint();
-			GetCursorPos(m_point);
-			if (EventMgr::GetInst()->isOn(GetPos(), GetScale()))
-			{
-				SetPos(vPos + Vec2(0, -50));
-				GameMgr::GetInst()->AttackHamging(10);
-			}
-		}
-		if (KEY_AWAY(KEY::CLICK))
-		{
-			POINT* m_point = EventMgr::GetInst()->GetPoint();
-			if (EventMgr::GetInst()->isOn(GetPos(), GetScale()))
-			{
-				SetPos(vPos + Vec2(0, 50));
-				GameMgr::GetInst()->SetIsChooseCard(true);
-			}
-		}
-
+		Attack();
 	}
 }
 
-
+void Card::Attack()
+{
+	Vec2 vPos = GetPos();
+	if (KEY_TAP(KEY::CLICK))
+	{
+		POINT* m_point = EventMgr::GetInst()->GetPoint();
+		GetCursorPos(m_point);
+		if (EventMgr::GetInst()->isOn(GetPos(), GetScale()))
+		{
+			SetPos(vPos + Vec2(0, -50));
+			GameMgr::GetInst()->AttackHamging(10);
+			GameMgr::GetInst()->SetIsPlayerAttack(true);
+		}
+	}
+	if (KEY_AWAY(KEY::CLICK))
+	{
+		POINT* m_point = EventMgr::GetInst()->GetPoint();
+		if (EventMgr::GetInst()->isOn(GetPos(), GetScale()))
+		{
+			SetPos(vPos + Vec2(0, 50));
+		}
+	}
+}
 
 void Card::Render(HDC _dc)
 {
