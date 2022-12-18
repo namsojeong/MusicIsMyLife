@@ -11,6 +11,7 @@
 Hamging::Hamging():state(HAMGING_STATE::WAIT)
 {
 	hp = new HP(100);
+	stress = new Stress(100);
 	// image 업로드
 	pImg = ResMgr::GetInst()->ImgLoad(L"HamgingAni", L"Image\\Hamging_Attack.bmp");
 
@@ -65,12 +66,16 @@ void Hamging::Render(HDC _dc)
 	int Height = (int)pImg->GetHeight();
 	//마젠타 색상 뺄때 transparent: 투명한
 	TransparentBlt(_dc
-		, (int)(vPos.x - (float)(Width / 2))
+		, (int)(vPos.x - (float)(Width / 2))  
 		, (int)(vPos.y - (float)(Height / 2))
 		,Width, Height
 	    , pImg->GetDC()
 	    ,0,0, Width, Height
 	    , RGB(255,0,255));
+
+	Vec2 resolition = Vec2(Core::GetInst()->GetResolution());
+	stress->UpdateUiStress(_dc, Vec2(resolition.x, resolition.y/2));
+
 	Component_Render(_dc);
 }
 

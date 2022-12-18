@@ -86,5 +86,8 @@ void Scene_Game::Update()
 			ChangeScene(SCENE_TYPE::OVER);
 		}
 		player->hp->UpdateUiHp(playerHPText);
+
+		hamging->stress->AddStress(10);
+
 	}
 }
