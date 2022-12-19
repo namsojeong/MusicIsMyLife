@@ -38,7 +38,7 @@ void Hamging::Update()
 		if (state == HAMGING_STATE::WAIT)
 		{
 			// 시간 함수
-			if (TimeMgr::GetInst()->IsCanPlayerAttack())// 플레이어 공격시간이 지났다면
+			if (GameMgr::GetInst()->GetIsPlayerAttack())
 			{
 				state = HAMGING_STATE::ATTACKING;
 				GameMgr::GetInst()->SetHamgingState(state);
@@ -47,12 +47,17 @@ void Hamging::Update()
 	}
 	if (HAMGING_ATTACKING)
 	{
-		GameMgr::GetInst()->AttackPlayer(m_attackPower + m_attackPower * m_stress / 100);
-		state = TimeMgr::GetInst()->IsOverDelay(3)?HAMGING_STATE::ATTACKEND:state;
+		if (!GameMgr::GetInst()->GetIsHamgingAttack())
+		{
+			GameMgr::GetInst()->AttackPlayer(10 + m_attackPower * m_stress / 100);
+			GameMgr::GetInst()->SetIsHamgingAttack(true);
+			state = TimeMgr::GetInst()->IsOverDelay(2)?HAMGING_STATE::ATTACKEND:state;
+		}
 	}
 	if (HAMGING_ATTACKEND)
 	{
 		state = HAMGING_STATE::WAIT;
+		GameMgr::GetInst()->SetIsHamgingAttack(false);
 	}
 	GetAnimator()->Update();
 }

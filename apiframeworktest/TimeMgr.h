@@ -34,6 +34,5 @@ public:
 	bool IsOverDelay(double delay);
 	bool IsOverPlayerAttackDelay(double delay);
 	bool IsOverHamgingAttackDelay(double delay);
-	bool IsCanPlayerAttack() { return IsOverDelay(5); }
 };
 

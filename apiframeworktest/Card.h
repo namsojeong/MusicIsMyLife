@@ -13,6 +13,7 @@ private:
     Vec2 m_vPos;
     RECT m_rect;
     Player* m_player;
+    bool isUsed = false;
 public:
     Card(int type, Player* p);
     ~Card();

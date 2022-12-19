@@ -34,9 +34,19 @@ Card::~Card()
 
 void Card::Update()
 {
+	Vec2 vPos = GetPos();
 	if (!GameMgr::GetInst()->GetIsPlayerAttack())
 	{
 		Attack();
+	}
+	if (KEY_AWAY(KEY::CLICK))
+	{
+		POINT* m_point = EventMgr::GetInst()->GetPoint();
+		if (EventMgr::GetInst()->isOn(GetPos() + GetScale() / 2, GetScale())&& isUsed)
+		{
+			SetPos(vPos + Vec2(0, 50));
+			isUsed = false;
+		}
 	}
 }
 
@@ -50,18 +60,12 @@ void Card::Attack()
 		if (EventMgr::GetInst()->isOn(GetPos()+GetScale()/2, GetScale()))
 		{
 			SetPos(vPos + Vec2(0, -50));
-		}
-	}
-	if (KEY_AWAY(KEY::CLICK))
-	{
-		POINT* m_point = EventMgr::GetInst()->GetPoint();
-		if (EventMgr::GetInst()->isOn(GetPos(), GetScale()))
-		{
-			GameMgr::GetInst()->AttackHamging(10);
 			GameMgr::GetInst()->SetIsPlayerAttack(true);
-			SetPos(vPos + Vec2(0, 50));
+			GameMgr::GetInst()->AttackHamging(10);
+			isUsed = true;
 		}
 	}
+	
 }
 
 void Card::Render(HDC _dc)

@@ -43,16 +43,12 @@ Player::~Player()
 	//if(nullptr !=m_pImage)
 	//	delete m_pImage;
 }
-void Player::Update()
+void Player::Update() 
 {
 	if (GameMgr::GetInst()->GetIsPlayerAttack())
 	{
 		if (GameMgr::GetInst()->PlayerAttackTimer())
 			GameMgr::GetInst()->SetIsPlayerAttack(true);
-	}
-	else
-	{
-		GameMgr::GetInst()->SetIsPlayerAttack(false);
 	}
 }
 
