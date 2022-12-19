@@ -22,7 +22,6 @@ public://����� �����̴� �����ϴ°�?
 	GameMgr();
 	~GameMgr();
 public:
-	const int GetRound() { return round; }
 	const void SetObject(Player * p, Hamging * h);
 public:
 	const HAMGING_STATE GetHamgingState() { return m_hamgingState; }

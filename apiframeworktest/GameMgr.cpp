@@ -35,16 +35,7 @@ const void GameMgr::SetObject(Player* p, Hamging* h)
 	m_player = p;
 	m_hamging = h;
 }
-const void GameMgr::AttackHamging(int _attackPow)
-{
-	m_hamging->hp->AddHP(-_attackPow);
-	m_hamging->hp->UpdateUiHp(m_hamgingText);
-}
-const void GameMgr::AttackPlayer(int _attackPow)
-{
-	m_player->hp->AddHP(-_attackPow);
-	m_player->hp->UpdateUiHp(m_playerText);
-}
+
 
 const bool GameMgr::HamgingAttackTimer()
 {
