@@ -87,7 +87,7 @@ enum class SCENE_TYPE
 enum class BRUSH_TYPE
 {
 	HOLLOW,
-	GREEN,
+	COLOR,
 	END,
 };
 enum class PEN_TYPE

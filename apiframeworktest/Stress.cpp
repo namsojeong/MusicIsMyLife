@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "Stress.h"
 #include "SelectGDI.h"
+#include "Core.h"
 
 
 void Stress::AddStress(const int stress)
@@ -30,7 +31,8 @@ void Stress::UpdateUiStress(HDC hdc, Vec2 pos)
 	Rectangle(hdc, rect.left, rect.top, rect.right, rect.bottom);
 
 	SelectGDI pg(hdc, PEN_TYPE::GREEN);
-	SelectGDI bg(hdc, BRUSH_TYPE::GREEN);
+	Core::GetInst()->SetBrushColor(&hdc, RGB(255, 0, 0));
+	SelectGDI bg(hdc, BRUSH_TYPE::COLOR);
 	Rectangle(hdc, rect.left, rect.bottom-curStress, rect.right, rect.bottom);
 }
 
