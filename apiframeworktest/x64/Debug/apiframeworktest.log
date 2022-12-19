@@ -1,4 +1,11 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(534,5): warning MSB8028: 중간 디렉터리(x64\Debug\)에 다른 프로젝트(apiframeworktest.vcxproj)에서 공유하는 파일이 포함되어 있습니다.  이로 인해 잘못된 정리 및 다시 빌드 동작이 수행될 수 있습니다.
   Hamging.cpp
-C:\Users\daehe\Documents\GitHub\MusicLife\apiframeworktest\GameMgr.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
-  apiframeworktest.vcxproj -> C:\Users\daehe\Documents\GitHub\MusicLife\OutPut\bin_debug\Gamep_winapiframework.exe
+D:\CPP\MusicLife\apiframeworktest\GameMgr.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  Stress.cpp
+D:\CPP\MusicLife\apiframeworktest\Stress.cpp(28,22): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\CPP\MusicLife\apiframeworktest\Stress.cpp(29,24): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\CPP\MusicLife\apiframeworktest\Stress.cpp(30,25): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\CPP\MusicLife\apiframeworktest\Stress.cpp(31,25): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\CPP\MusicLife\apiframeworktest\Stress.cpp(42,10): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\CPP\MusicLife\apiframeworktest\Stress.cpp(57,13): warning C4244: '초기화 중': 'const int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  apiframeworktest.vcxproj -> D:\CPP\MusicLife\OutPut\bin_debug\Gamep_winapiframework.exe

@@ -10,8 +10,9 @@
 
 Hamging::Hamging(int setHP) :state(HAMGING_STATE::WAIT)
 {
+	Vec2 vResolution(Vec2(Core::GetInst()->GetResolution()));
 	hp = new HP(setHP);
-	stress = new Stress(100);
+	stress = new Stress(100, Vec2(vResolution.x-50, vResolution.y/2 + 150));
 	// image 업로드
 	pImg = ResMgr::GetInst()->ImgLoad(L"HamgingAni", L"Image\\Hamging_Attack.bmp");
 
@@ -32,8 +33,10 @@ Hamging::Hamging(int setHP) :state(HAMGING_STATE::WAIT)
 
 Hamging::Hamging():state(HAMGING_STATE::WAIT)
 {
+	Vec2 vResolution(Vec2(Core::GetInst()->GetResolution()));
+
 	hp = new HP(100);
-	stress = new Stress(100);
+	stress = new Stress(100, Vec2(vResolution.x, vResolution.y / 2));
 	// image 업로드
 	pImg = ResMgr::GetInst()->ImgLoad(L"HamgingAni", L"Image\\Hamging_Attack.bmp");
 
@@ -75,7 +78,7 @@ const void Hamging::Heal(int addHP)
 const void Hamging::AttackStress(int damage)
 {
 	stress->AddStress(damage);
-	if (stress->GetStress() <= stress->GetMaxStress())
+	if (stress->GetStress() >= stress->GetMaxStress())
 	{
 		stress->SetStress(stress->GetMaxStress());
 	}
@@ -137,8 +140,8 @@ void Hamging::Render(HDC _dc)
 	    ,0,0, Width, Height
 	    , RGB(255,0,255));
 
-	Vec2 resolition = Vec2(Core::GetInst()->GetResolution());
-	stress->UpdateUiStress(_dc, Vec2(resolition.x, resolition.y/2));
+	stress->Render(_dc);
+	stress->Update();
 
 	Component_Render(_dc);
 }

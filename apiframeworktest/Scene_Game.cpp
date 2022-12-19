@@ -68,7 +68,6 @@ void Scene_Game::Enter()
 	wstring hamgingHPTextStr = L"HP : " + to_wstring(hamging->GetHamgingHP());
 	playerHPText = new Text(playerHPTextPos, 30, playerHPTextStr);
 
-	AddUI(playerHPText, UI_TYPE::TEXT);
 	hamgingHPText = new Text(hamgingHPTextPos, 30, hamgingHPTextStr);
 	AddUI(playerHPText, UI_TYPE::TEXT);
 	AddUI(hamgingHPText, UI_TYPE::TEXT);
