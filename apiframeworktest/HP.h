@@ -10,6 +10,7 @@ private:
 public:
 	const bool IsDead() { return curHP<=0; }
 	const int GetHP() { return curHP; }
+	const int GetMaxHP() { return maxHP; }
 	void SetHP(const int hp);
 	void AddHP(const int hp);
 public:

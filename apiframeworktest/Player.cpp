@@ -11,6 +11,7 @@
 #include "Collider.h"
 #include "Animator.h"
 #include "Animation.h"
+#include "GameMgr.h"
 #include "Core.h"
 #include "Text.h"
 #include "Hamging.h"
@@ -41,6 +42,24 @@ Player::~Player()
 {
 	//if(nullptr !=m_pImage)
 	//	delete m_pImage;
+}
+void Player::Attack(int damage)
+{
+	hp->AddHP(-damage);
+	if (hp->IsDead())
+	{
+		Die();
+	}
+	hp->UpdateUiHp(hpText);
+}
+void Player::Heal(int addHP)
+{
+	hp->AddHP(addHP);
+	if (hp->GetHP() > hp->GetMaxHP())
+	{
+		hp->SetHP(hp->GetMaxHP());
+	}
+	hp->UpdateUiHp(hpText);
 }
 void Player::Update()
 {
@@ -101,4 +120,9 @@ void Player::Render(HDC _dc)
 	//    ,0,0, Width, Height
 	//    , RGB(255,0,255));
 
+}
+
+void Player::Die()
+{
+	ChangeScene(SCENE_TYPE::OVER);
 }

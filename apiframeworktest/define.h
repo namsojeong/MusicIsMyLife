@@ -99,6 +99,7 @@ enum class SCENE_TYPE
 {
 	START,
 	GAME,
+	WIN,
 	OVER,
 	END,
 };

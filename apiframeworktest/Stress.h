@@ -11,6 +11,7 @@ private:
 	float maxStress;
 public:
 	const float GetStress() { return curStress; }
+	const float GetMaxStress() { return maxStress; }
 	void SetStress(float stress) { curStress = stress; }
 	void AddStress(const int stress);
 	void SetBackgroundColor(const HDC hdc, const BRUSH_TYPE brush);

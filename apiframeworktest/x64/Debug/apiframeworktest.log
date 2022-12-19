@@ -50,7 +50,7 @@ D:\CPP\MusicLife\apiframeworktest\Text.h(2,9): warning C4067: 전처리기 지�
 D:\CPP\MusicLife\apiframeworktest\PathMgr.cpp(17,35): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   Player.cpp
 D:\CPP\MusicLife\apiframeworktest\Text.h(2,9): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
-D:\CPP\MusicLife\apiframeworktest\Player.cpp(38,20): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\CPP\MusicLife\apiframeworktest\Player.cpp(39,20): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   QuitButton.cpp
 D:\CPP\MusicLife\apiframeworktest\Button.h(2,9): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
   Res.cpp
@@ -69,6 +69,31 @@ D:\CPP\MusicLife\apiframeworktest\Text.h(2,9): warning C4067: 전처리기 지�
   Scene_Start.cpp
 D:\CPP\MusicLife\apiframeworktest\Button.h(2,9): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
 D:\CPP\MusicLife\apiframeworktest\Text.h(2,9): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  Scene_Win.cpp
   SelectGDI.cpp
   Sound.cpp
+  SoundMgr.cpp
+  StartButton.cpp
+D:\CPP\MusicLife\apiframeworktest\Button.h(2,9): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  Stress.cpp
+D:\CPP\MusicLife\apiframeworktest\Stress.cpp(24,17): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\CPP\MusicLife\apiframeworktest\Stress.cpp(25,19): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\CPP\MusicLife\apiframeworktest\Stress.cpp(26,25): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\CPP\MusicLife\apiframeworktest\Stress.cpp(27,25): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\CPP\MusicLife\apiframeworktest\Stress.cpp(36,39): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\CPP\MusicLife\apiframeworktest\Stress.cpp(47,13): warning C4244: '초기화 중': 'const int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Text.cpp
+D:\CPP\MusicLife\apiframeworktest\Text.h(2,9): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+D:\CPP\MusicLife\apiframeworktest\Text.cpp(37,10): warning C4244: '=': 'COLORREF'에서 'COLOR16'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\CPP\MusicLife\apiframeworktest\Text.cpp(59,35): warning C4244: '인수': 'const float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\CPP\MusicLife\apiframeworktest\Text.cpp(59,23): warning C4244: '인수': 'const float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  TimeMgr.cpp
+D:\CPP\MusicLife\apiframeworktest\EventMgr.h(32,19): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\CPP\MusicLife\apiframeworktest\EventMgr.h(33,20): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\CPP\MusicLife\apiframeworktest\EventMgr.h(34,18): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\CPP\MusicLife\apiframeworktest\EventMgr.h(35,21): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\CPP\MusicLife\apiframeworktest\TimeMgr.cpp(57,113): warning C4474: 'swprintf_s' : 서식 문자열에 전달된 인수가 너무 많습니다.
+D:\CPP\MusicLife\apiframeworktest\TimeMgr.cpp(57,113): message : 자리 표시자 및 해당 매개 변수에는 variadic 인수가 1개 필요하지만 2개가 제공되었습니다.
+  UI.cpp
+  UIManager.cpp
   apiframeworktest.vcxproj -> D:\CPP\MusicLife\OutPut\bin_debug\Gamep_winapiframework.exe

@@ -19,16 +19,26 @@ public:
     Stress* stress;
     Text* hpText;
     Text* stressText;
+public:
     const int GetHamgingHP() { return hp->GetHP(); }
     const int GetAttackPower() { return m_attackPower; }
     const void SetAttackPower(int value) { m_attackPower = value; }
     const int GetStress() { return m_stress; }
     const void SetStress(int value) { m_stress = value; }
 public:
+    const void Attack(int damage);
+    const void Heal(int addHP);
+    const void AttackStress(int damage);
+    const void HealStress(int addHP);
+public:
     void Update()       override;
     void Render(HDC _dc) override;
 private:
+    void Die();
+private:
     CLONE(Hamging);
+public:
+    Hamging(int setHP);
 public:
     Hamging();
     ~Hamging();

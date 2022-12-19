@@ -31,7 +31,7 @@ void Scene_Game::Enter()
 	Vec2 vResolution(Vec2(Core::GetInst()->GetResolution()));
 
 	// Object Ãß°¡
-	hamging = new Hamging();
+	hamging = new Hamging(100);
 	hamging->SetPos(Vec2(vResolution.x / 2, vResolution.y / 4));
 	hamging->SetScale(Vec2(330.f, 370.f));
 	AddObject(hamging, GROUP_TYPE::HAMGING);
@@ -64,7 +64,9 @@ void Scene_Game::Enter()
 	Vec2 playerHPTextPos = Vec2(0.0f, vResolution.y / 2);
 	wstring playerHPTextStr = L"HP : " + to_wstring(player->GetPlayerHP());
 	playerHPText = new Text(playerHPTextPos, 30, playerHPTextStr);
-	AddUI(playerHPText, UI_TYPE::TEXT);
+	player->hpText = playerHPText;
+	AddUI(player->hpText, UI_TYPE::TEXT);
+
 	GameMgr::GetInst()->SetObject(player, hamging);
 }
 
@@ -80,14 +82,7 @@ void Scene_Game::Update()
 
 	if (KEY_TAP(KEY::SPACE))
 	{
-		player->hp->AddHP(-10);
-		if (player->hp->IsDead())
-		{
-			ChangeScene(SCENE_TYPE::OVER);
-		}
-		player->hp->UpdateUiHp(playerHPText);
-
-		hamging->stress->AddStress(10);
-
+		hamging->Attack(10);
+		hamging->AttackStress(10);
 	}
 }

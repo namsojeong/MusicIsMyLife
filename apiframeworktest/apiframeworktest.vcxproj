@@ -195,6 +195,7 @@
     <ClInclude Include="Scene_Game.h" />
     <ClInclude Include="Scene_Over.h" />
     <ClInclude Include="Scene_Start.h" />
+    <ClInclude Include="Scene_Win.h" />
     <ClInclude Include="SelectGDI.h" />
     <ClInclude Include="Sound.h" />
     <ClInclude Include="SoundMgr.h" />
@@ -245,6 +246,7 @@
     <ClCompile Include="Scene_Game.cpp" />
     <ClCompile Include="Scene_Over.cpp" />
     <ClCompile Include="Scene_Start.cpp" />
+    <ClCompile Include="Scene_Win.cpp" />
     <ClCompile Include="SelectGDI.cpp" />
     <ClCompile Include="Sound.cpp" />
     <ClCompile Include="SoundMgr.cpp" />

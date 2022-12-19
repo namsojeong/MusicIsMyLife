@@ -8,6 +8,28 @@
 #include "Core.h"
 #include "Player.h"
 
+Hamging::Hamging(int setHP) :state(HAMGING_STATE::WAIT)
+{
+	hp = new HP(setHP);
+	stress = new Stress(100);
+	// image 업로드
+	pImg = ResMgr::GetInst()->ImgLoad(L"HamgingAni", L"Image\\Hamging_Attack.bmp");
+
+	// animator 생성 및 animation 사용
+	CreateAnimator();
+	GetAnimator()->CreateAnimation(
+		L"HamgingAni",
+		pImg,
+		Vec2(0.f, 0.f),
+		Vec2(330.f, 370.f),
+		Vec2(330.f, 0.f),
+		4,
+		0.2f);
+	pImg;
+	Animation* pAnim = GetAnimator()->FindAnimation(L"HamgingAni");
+	GetAnimator()->Play(L"HamgingAni", true);
+}
+
 Hamging::Hamging():state(HAMGING_STATE::WAIT)
 {
 	hp = new HP(100);
@@ -28,6 +50,42 @@ Hamging::Hamging():state(HAMGING_STATE::WAIT)
 	pImg;
 	Animation* pAnim = GetAnimator()->FindAnimation(L"HamgingAni");
 	GetAnimator()->Play(L"HamgingAni", true);
+}
+
+const void Hamging::Attack(int damage)
+{
+	hp->AddHP(-damage);
+	if (hp->IsDead())
+	{
+		Die();
+	}
+}
+
+const void Hamging::Heal(int addHP)
+{
+	hp->AddHP(addHP);
+	if (hp->GetHP() > hp->GetMaxHP())
+	{
+		hp->SetHP(hp->GetMaxHP());
+	}
+}
+
+const void Hamging::AttackStress(int damage)
+{
+	stress->AddStress(damage);
+	if (stress->GetStress() <= stress->GetMaxStress())
+	{
+		stress->SetStress(stress->GetMaxStress());
+	}
+}
+
+const void Hamging::HealStress(int addHP)
+{
+	stress->AddStress(-addHP);
+	if (stress->GetStress() <= 0)
+	{
+		stress->SetStress(0);
+	}
 }
 
 void Hamging::Update()
@@ -77,6 +135,11 @@ void Hamging::Render(HDC _dc)
 	stress->UpdateUiStress(_dc, Vec2(resolition.x, resolition.y/2));
 
 	Component_Render(_dc);
+}
+
+void Hamging::Die()
+{
+	ChangeScene(SCENE_TYPE::GAME);
 }
 
 

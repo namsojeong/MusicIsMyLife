@@ -25,7 +25,6 @@ void CreateUI(UI* _pObj, UI_TYPE _eGroup)
 	tEvent evn = {};
 	evn.eEven = EVENT_TYPE::CREATE_OBJECT;
 	evn.lParam = (DWORD_PTR)_pObj;
-	evn.wParam = (DWORD_PTR)_eGroup;
 
 	EventMgr::GetInst()->AddEvent(evn);
 }

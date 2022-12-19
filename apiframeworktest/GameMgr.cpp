@@ -10,6 +10,16 @@ GameMgr::~GameMgr()
 {
 }
 
+const void GameMgr::AttackPlayer(int damage)
+{
+	m_player->Attack(damage);
+}
+
+const void GameMgr::AttackHamging(int damage)
+{
+	m_hamging->Attack(damage);
+}
+
 void GameMgr::Init()
 {
 
@@ -23,12 +33,4 @@ const void GameMgr::SetObject(Player* p, Hamging* h)
 {
 	m_player = p;
 	m_hamging = h;
-}
-const void GameMgr::AttackHamging(int _attackPow)
-{
-	m_hamging->hp->AddHP(-_attackPow);
-}
-const void GameMgr::AttackPlayer(int _attackPow)
-{
-	m_player->hp->AddHP(-_attackPow);
 }
