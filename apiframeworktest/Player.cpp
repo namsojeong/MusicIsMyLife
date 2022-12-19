@@ -51,7 +51,7 @@ void Player::Attack(int damage)
 	{
 		Die();
 	}
-	hp->UpdateUiHp(hpText);
+	hp->UpdateUiHp(GameMgr::GetInst()->GetPlayerText());
 }
 void Player::Heal(int addHP)
 {
@@ -60,7 +60,7 @@ void Player::Heal(int addHP)
 	{
 		hp->SetHP(hp->GetMaxHP());
 	}
-	hp->UpdateUiHp(hpText);
+	hp->UpdateUiHp(GameMgr::GetInst()->GetPlayerText());
 }
 void Player::Update()
 {

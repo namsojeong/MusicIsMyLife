@@ -59,6 +59,7 @@ const void Hamging::Attack(int damage)
 	{
 		Die();
 	}
+	hp->UpdateUiHp(GameMgr::GetInst()->GetHamgingText());
 }
 
 const void Hamging::Heal(int addHP)
@@ -68,6 +69,7 @@ const void Hamging::Heal(int addHP)
 	{
 		hp->SetHP(hp->GetMaxHP());
 	}
+	hp->UpdateUiHp(GameMgr::GetInst()->GetHamgingText());
 }
 
 const void Hamging::AttackStress(int damage)

@@ -28,9 +28,9 @@ public:
 	const void SetHamgingState(HAMGING_STATE value) { m_hamgingState = value; }
 public:
 	const void SetPlayerText(Text* playerTxt) { m_playerText = playerTxt; }
-	const Text* GetPlayerText() { return m_playerText; }
+	Text* GetPlayerText() { return m_playerText; }
 	const void SetHamgingText(Text* hamgingTxt) { m_hamgingText = hamgingTxt; }
-	const Text* GetHamgingText() { return m_hamgingText; }
+	Text* GetHamgingText() { return m_hamgingText; }
 public:
 	const void AttackPlayer(int damage);
 	const void AttackHamging(int damage);
