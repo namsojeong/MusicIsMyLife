@@ -4,8 +4,8 @@
 
 void CardMgr::Init()
 {
-	for (UINT i = 0; i < (UINT)CARD_TYPE::END; i++)
+	for (UINT i = (UINT)CARD_TYPE::A; i < (UINT)CARD_TYPE::END; i++)
 	{
-		m_vCard[i] = { 1,1 };
+		m_vCard[i] = { hpStats[i],  stressStats[i] };
 	}
-}
+} 

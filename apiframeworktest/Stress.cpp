@@ -30,7 +30,7 @@ void Stress::UpdateUiStress(HDC hdc, Vec2 pos)
 	SelectGDI bb(hdc, BRUSH_TYPE::HOLLOW);
 	Rectangle(hdc, rect.left, rect.top, rect.right, rect.bottom);
 
-	SelectGDI pg(hdc, PEN_TYPE::GREEN);
+	SelectGDI pg(hdc, PEN_TYPE::RED);
 	Core::GetInst()->SetBrushColor(&hdc, RGB(255, 0, 0));
 	SelectGDI bg(hdc, BRUSH_TYPE::COLOR);
 	Rectangle(hdc, rect.left, rect.bottom-curStress, rect.right, rect.bottom);
