@@ -47,11 +47,9 @@ void Card::Attack()
 	{
 		POINT* m_point = EventMgr::GetInst()->GetPoint();
 		GetCursorPos(m_point);
-		if (EventMgr::GetInst()->isOn(GetPos(), GetScale()))
+		if (EventMgr::GetInst()->isOn(GetPos()+GetScale()/2, GetScale()))
 		{
 			SetPos(vPos + Vec2(0, -50));
-			GameMgr::GetInst()->AttackHamging(10);
-			GameMgr::GetInst()->SetIsPlayerAttack(true);
 		}
 	}
 	if (KEY_AWAY(KEY::CLICK))
@@ -59,6 +57,8 @@ void Card::Attack()
 		POINT* m_point = EventMgr::GetInst()->GetPoint();
 		if (EventMgr::GetInst()->isOn(GetPos(), GetScale()))
 		{
+			GameMgr::GetInst()->AttackHamging(10);
+			GameMgr::GetInst()->SetIsPlayerAttack(true);
 			SetPos(vPos + Vec2(0, 50));
 		}
 	}

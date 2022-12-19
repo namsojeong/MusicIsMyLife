@@ -20,6 +20,25 @@ void DeleteObject(Object* _pObj)
 	EventMgr::GetInst()->AddEvent(evn);
 }
 
+void CreateUI(UI* _pObj, UI_TYPE _eGroup)
+{
+	tEvent evn = {};
+	evn.eEven = EVENT_TYPE::CREATE_OBJECT;
+	evn.lParam = (DWORD_PTR)_pObj;
+	evn.wParam = (DWORD_PTR)_eGroup;
+
+	EventMgr::GetInst()->AddEvent(evn);
+}
+
+void DeleteUI(UI* _pObj)
+{
+	tEvent evn = {};
+	evn.eEven = EVENT_TYPE::DELETE_OBJECT;
+	evn.lParam = (DWORD_PTR)_pObj;
+
+	EventMgr::GetInst()->AddEvent(evn);
+}
+
 void ChangeScene(SCENE_TYPE _eNext)
 {
 	tEvent evn = {};

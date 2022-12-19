@@ -47,7 +47,8 @@ void Player::Update()
 {
 	if (GameMgr::GetInst()->GetIsPlayerAttack())
 	{
-		GameMgr::GetInst()->PlayerAttackTimer();
+		if (GameMgr::GetInst()->PlayerAttackTimer())
+			GameMgr::GetInst()->SetIsPlayerAttack(true);
 	}
 	else
 	{

@@ -99,10 +99,11 @@ void Scene::DeleteGroup(GROUP_TYPE _eTarget)
 
 void Scene::DeleteUIGroup(UI_TYPE _eTarget)
 {
-	for (UINT i = 0; i < (UINT)UI_TYPE::END; i++)
+	for (size_t i = 0; i < m_vecObj[(UINT)_eTarget].size(); i++)
 	{
-		DeleteUIGroup((UI_TYPE)i);
+		delete m_vecUI[(UINT)_eTarget][i];
 	}
+	m_vecUI[(UINT)_eTarget].clear();
 }
 
 void Scene::DeleteAll()

@@ -35,7 +35,7 @@ void Hamging::Update()
 	{
 		if (state != HAMGING_STATE::WAIT)
 			state = HAMGING_STATE::WAIT;
-		if (state == HAMGING_STATE::WAIT && GameMgr::GetInst()->GetIsChooseCard())
+		if (state == HAMGING_STATE::WAIT)
 		{
 			// 시간 함수
 			if (TimeMgr::GetInst()->IsCanPlayerAttack())// 플레이어 공격시간이 지났다면
@@ -52,7 +52,6 @@ void Hamging::Update()
 	}
 	if (HAMGING_ATTACKEND)
 	{
-		GameMgr::GetInst()->SetIsChooseCard(false);
 		state = HAMGING_STATE::WAIT;
 	}
 	GetAnimator()->Update();

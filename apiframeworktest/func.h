@@ -1,8 +1,11 @@
 #pragma once
 
 class Object;
+class UI;
 void CreateObject(Object* _pObj, GROUP_TYPE _eGroup);
 void DeleteObject(Object* _pObj);
+void CreateUI(UI* _pObj, UI_TYPE _eGroup);
+void DeleteUI(UI* _pObj);
 void ChangeScene(SCENE_TYPE _eNext);
 
 template<typename T>
