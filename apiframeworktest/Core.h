@@ -32,6 +32,7 @@ public:
 	const HDC& GetMainDC() { return m_hDC; }
 	HBRUSH GetBrush(BRUSH_TYPE _eType) { return m_arrBrush[(UINT)_eType]; }
 	HPEN GetPen(PEN_TYPE _eType) { return m_arrPen[(UINT)_eType]; }
+	void SetBrushColor(HDC* hdc, COLORREF color);
 public:
 	int Init(HWND _hWnd, POINT _ptResolution);
 	void Progress();

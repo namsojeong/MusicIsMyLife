@@ -76,10 +76,30 @@ enum class CARD_TYPE
 	END,
 };
 
+enum class CARD_HP
+{
+	A = 10,
+	B = 20,
+	C = 30,
+	D = 40,
+	E = 50,
+	END = 0,
+};
+enum class CARD_STRESS
+{
+	A = 10,
+	B = 20,
+	C = 30,
+	D = 40,
+	E = 50,
+	END = 0,
+};
+
 enum class SCENE_TYPE
 {
 	START,
 	GAME,
+	WIN,
 	OVER,
 	END,
 };
@@ -87,6 +107,7 @@ enum class SCENE_TYPE
 enum class BRUSH_TYPE
 {
 	HOLLOW,
+	COLOR,
 	END,
 };
 enum class PEN_TYPE
@@ -94,6 +115,7 @@ enum class PEN_TYPE
 	RED,
 	GREEN,
 	BLUE,
+	BLACK,
 	END,
 };
 

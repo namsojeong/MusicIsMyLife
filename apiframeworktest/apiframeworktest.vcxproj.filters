@@ -116,6 +116,9 @@
     <Filter Include="Engine\03. Manager\GameMgr">
       <UniqueIdentifier>{948d1832-78d5-4c46-9ce1-562804c5126e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\05. Scene\Scene_Win">
+      <UniqueIdentifier>{a17baae6-a0f9-4da5-ab71-3567282f295d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core.h">
@@ -253,6 +256,9 @@
     <ClInclude Include="GameMgr.h">
       <Filter>Engine\03. Manager\GameMgr</Filter>
     </ClInclude>
+    <ClInclude Include="Scene_Win.h">
+      <Filter>Engine\05. Scene\Scene_Win</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="apiframeworktest.rc">
@@ -385,6 +391,9 @@
     </ClCompile>
     <ClCompile Include="GameMgr.cpp">
       <Filter>Engine\03. Manager\GameMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene_Win.cpp">
+      <Filter>Engine\05. Scene\Scene_Win</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

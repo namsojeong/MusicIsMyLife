@@ -11,6 +11,16 @@ GameMgr::~GameMgr()
 {
 }
 
+const void GameMgr::AttackPlayer(int damage)
+{
+	m_player->Attack(damage);
+}
+
+const void GameMgr::AttackHamging(int damage)
+{
+	m_hamging->Attack(damage);
+}
+
 void GameMgr::Init()
 {
 

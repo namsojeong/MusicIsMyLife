@@ -37,7 +37,9 @@ void SceneMgr::Init()
 	m_arrScene[(UINT)SCENE_TYPE::START]->SetName(L"Start Scene");
 	m_arrScene[(UINT)SCENE_TYPE::GAME] = new Scene_Game;
 	m_arrScene[(UINT)SCENE_TYPE::GAME]->SetName(L"Game Scene");
-	m_arrScene[(UINT)SCENE_TYPE::OVER] = new Scene_Over;
+	m_arrScene[(UINT)SCENE_TYPE::WIN] = new Scene_Over;
+	m_arrScene[(UINT)SCENE_TYPE::WIN]->SetName(L"Win Scene");
+    m_arrScene[(UINT)SCENE_TYPE::OVER] = new Scene_Over;
 	m_arrScene[(UINT)SCENE_TYPE::OVER]->SetName(L"Over Scene");
 
 

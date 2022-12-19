@@ -9,18 +9,20 @@ class GameMgr
 public:
 	SINGLE(GameMgr);
 private:
+	bool isChooseCard;
 	HAMGING_STATE m_hamgingState;
 	Hamging* m_hamging;
-	Player* m_player;//ÃÖ°­ ±âÈ¹ÀÚ °­´ëÈñ
+	Player* m_player;//ï¿½Ö°ï¿½ ï¿½ï¿½È¹ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	Text* m_playerText;
-	Text* m_hamgingText;//ÇÁÁ§¾ÈÇÏ°í ·ÑÃ¼ÇØ¾ßÁö
+	Text* m_hamgingText;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½Ã¼ï¿½Ø¾ï¿½ï¿½ï¿½
 public:
-	bool isHamgingAttack; // ÇÜ±ëÀÌ°¡ °ø°Ý Çß´Ù¸é
-	bool isPlayerAttack; // ÇÃ·¹ÀÌ¾î°¡ °ø°Ý Çß´Ù¸é
-public://´ëÈñ´Â ºýºýÀÌ´Ù ÀÎÁ¤ÇÏ´Â°¡?
+	bool isHamgingAttack; // ï¿½Ü±ï¿½ï¿½Ì°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß´Ù¸ï¿½
+	bool isPlayerAttack; // ï¿½Ã·ï¿½ï¿½Ì¾î°¡ ï¿½ï¿½ï¿½ï¿½ ï¿½ß´Ù¸ï¿½
+public://ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´Â°ï¿½?
 	GameMgr();
 	~GameMgr();
 public:
+	const int GetRound() { return round; }
 	const void SetObject(Player * p, Hamging * h);
 public:
 	const HAMGING_STATE GetHamgingState() { return m_hamgingState; }
@@ -31,8 +33,8 @@ public:
 	const void SetHamgingText(Text* hamgingTxt) { m_hamgingText = hamgingTxt; }
 	const Text* GetHamgingText() { return m_hamgingText; }
 public:
-	const void AttackPlayer(int _attackPow);
-	const void AttackHamging(int _attackPow);
+	const void AttackPlayer(int damage);
+	const void AttackHamging(int damage);
 public:
 	const void SetIsPlayerAttack(bool value) { isPlayerAttack = value; }
 	const bool GetIsPlayerAttack() { return isPlayerAttack; }
@@ -40,8 +42,8 @@ public:
 	const void SetIsHamgingAttack(bool value) { isHamgingAttack = value; }
 	const bool GetIsHamgingAttack() { return isHamgingAttack; }
 public:
-	const bool HamgingAttackTimer();//ÇÜ±ëÀÌ°¡ °ø°ÝÇÏ°í ÃÊ ¼¼±â
-	const bool PlayerAttackTimer();//ÇÃ·¹ÀÌ¾î°¡ °ø°ÝÇÏ°í ÃÊ ¼¼±â
+	const bool HamgingAttackTimer();//ï¿½Ü±ï¿½ï¿½Ì°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	const bool PlayerAttackTimer();//ï¿½Ã·ï¿½ï¿½Ì¾î°¡ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 public:
 	void Init();
 	void Update();
