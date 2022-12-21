@@ -33,7 +33,7 @@ public:
 	Text* GetHamgingText() { return m_hamgingText; }
 public:
 	const void AttackPlayer(int damage);
-	const void AttackHamging(int damage);
+	const void AttackHamging(int damage, int stress);
 public:
 	const void SetIsPlayerAttack(bool value) { isPlayerAttack = value; }
 	const bool GetIsPlayerAttack() { return isPlayerAttack; }

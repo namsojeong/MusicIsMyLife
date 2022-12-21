@@ -46,11 +46,12 @@ void Scene_Game::Enter()
 
 	for (int i = 0; i < GetCardAmount(); i++)
 	{
-		pCardObj = new Card(1, player);
+		
+		pCardObj = new Card(player);
 		pCardObj->SetName(L"Card");
 		pCardObj->SetPos(Vec2((1280/ (GetCardAmount() + 1)) * (i + 1),
 			800 / 2));
-		pCardObj->SetScale(Vec2(200.f, 277.f));
+		pCardObj->SetScale(Vec2(200.f, 275.f));
 		pCardObj->SetCenterPos(pCardObj->GetPos());
 		AddObject(pCardObj, GROUP_TYPE::CARD);
 	}

@@ -16,9 +16,10 @@ const void GameMgr::AttackPlayer(int damage)
 	m_player->Attack(damage);
 }
 
-const void GameMgr::AttackHamging(int damage)
+const void GameMgr::AttackHamging(int damage, int stress)
 {
 	m_hamging->Attack(damage);
+	m_hamging->AddStress(stress);
 }
 
 void GameMgr::Init()

@@ -1,4 +1,7 @@
 #pragma once
+#include "ResMgr.h"
+
+class Image;
 
 struct CardStats
 {
@@ -10,11 +13,38 @@ class CardMgr
 public:
 	SINGLE(CardMgr);
 private:
+	Image* A = ResMgr::GetInst()->ImgLoad(L"CardA", L"Image\\Card\\Card_A.bmp");
+	Image* B = ResMgr::GetInst()->ImgLoad(L"CardB", L"Image\\Card\\Card_B.bmp");
+	Image* C = ResMgr::GetInst()->ImgLoad(L"CardC", L"Image\\Card\\Card_C.bmp");
+	Image* D = ResMgr::GetInst()->ImgLoad(L"CardD", L"Image\\Card\\Card_D.bmp");
+	Image* E = ResMgr::GetInst()->ImgLoad(L"CardE", L"Image\\Card\\Card_E.bmp");
+	map<UINT, Image*> images = {
+		{(UINT)CARD_TYPE::A, A},
+		{(UINT)CARD_TYPE::B, B},
+		{(UINT)CARD_TYPE::C, C},
+		{(UINT)CARD_TYPE::D, D},
+		{(UINT)CARD_TYPE::E, E}
+	};
 	CardStats m_vCard[(UINT)CARD_TYPE::END];
-	map<UINT, int> hpStats = { {(UINT)CARD_TYPE::A,  10}, {(UINT)CARD_TYPE::B, 20}, {(UINT)CARD_TYPE::C, 30}, {(UINT)CARD_TYPE::D, 40},{(UINT)CARD_TYPE::E, 50} };
-	map<UINT, int> stressStats = { {(UINT)CARD_TYPE::A,  10}, {(UINT)CARD_TYPE::B, 20}, {(UINT)CARD_TYPE::C, 30}, {(UINT)CARD_TYPE::D, 40},{(UINT)CARD_TYPE::E, 50} };
+	map<UINT, int> hpStats = 
+	{ 
+		{(UINT)CARD_TYPE::A, 10},
+		{(UINT)CARD_TYPE::B, 20},
+		{(UINT)CARD_TYPE::C, 30}, 
+		{(UINT)CARD_TYPE::D, 40},
+		{(UINT)CARD_TYPE::E, 50} 
+	};
+	map<UINT, int> stressStats = 
+	{ 
+		{(UINT)CARD_TYPE::A, 10}, 
+		{(UINT)CARD_TYPE::B, 20}, 
+		{(UINT)CARD_TYPE::C, 30}, 
+		{(UINT)CARD_TYPE::D, 40},
+		{(UINT)CARD_TYPE::E, 50} 
+	};
 public:
 	const CardStats GetCardStat(int idx) { return m_vCard[idx]; }
+	Image* GetCardImage(int idx) { return images[idx]; }
 public:
 	void Init();
 };

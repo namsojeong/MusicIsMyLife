@@ -15,7 +15,7 @@ private:
     Player* m_player;
     bool isUsed = false;
 public:
-    Card(int type, Player* p);
+    Card(Player* p);
     ~Card();
     CLONE(Card);
 public:

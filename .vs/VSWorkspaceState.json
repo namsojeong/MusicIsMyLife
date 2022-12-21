@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\apiframeworktest"
   ],
-  "SelectedNode": "\\Gamep_winapiframework.sln",
+  "SelectedNode": "\\apiframeworktest\\CardMgr.h",
   "PreviewInSolutionExplorer": false
 }

@@ -10,17 +10,19 @@
 #include "CardMgr.h"
 #include "GameMgr.h"
 #include "Player.h"
-Card::Card(int type, Player* p) :
+Card::Card(Player* p) :
 	_attackPower(0),
 	_stressPower(0),
 	m_pImage(nullptr)
 {
 	m_player = p;
 	// image ¾÷·Îµå
-	m_pImage = ResMgr::GetInst()->ImgLoad(L"card", L"Image\\Cardb.bmp");
+	srand((unsigned int)time(NULL));
+	int a = rand() % 5 + 1;
+	m_pImage = CardMgr::GetInst()->GetCardImage(a);
 	for (UINT i = 0; i < (UINT)CARD_TYPE::END; i++)
 	{
-		if (type == i)
+		if (a == i)
 		{
 			_attackPower = CardMgr::GetInst()->GetCardStat(i)._attackPower;
 			_stressPower = CardMgr::GetInst()->GetCardStat(i)._stressPower;
@@ -61,7 +63,7 @@ void Card::Attack()
 		{
 			SetPos(vPos + Vec2(0, -50));
 			GameMgr::GetInst()->SetIsPlayerAttack(true);
-			GameMgr::GetInst()->AttackHamging(10);
+			GameMgr::GetInst()->AttackHamging(_attackPower, _stressPower);
 			isUsed = true;
 		}
 	}
