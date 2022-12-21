@@ -25,7 +25,6 @@ Hamging::Hamging(int setHP) :state(HAMGING_STATE::WAIT)
 		Vec2(330.f, 0.f),
 		4,
 		0.2f);
-	pImg;
 	Animation* pAnim = GetAnimator()->FindAnimation(L"HamgingAni");
 	GetAnimator()->Play(L"HamgingAni", true);
 }
