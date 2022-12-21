@@ -7,7 +7,7 @@ class Card;
 class GameMgr
 {
 public:
-	SINGLE(GameMgr);
+SINGLE(GameMgr);
 private:
 	bool isChooseCard;
 	HAMGING_STATE m_hamgingState;

@@ -81,6 +81,28 @@ bool TimeMgr::IsOverAttackTextDelay(double delay)
 	return false;
 }
 
+bool TimeMgr::IsOverBeforeHamgingAttackDelay(double delay)
+{
+	m_beforeAttackHamgingAcc += m_dDT;
+	if (m_beforeAttackHamgingAcc >= delay)
+	{
+		m_beforeAttackHamgingAcc = 0.;
+		return true;
+	}
+	return false;
+}
+
+bool TimeMgr::IsOverAfterHamgingAttackDelay(double delay)
+{
+	m_delayPlayerAcc += m_dDT;
+	if (m_delayPlayerAcc >= delay)
+	{
+		m_delayPlayerAcc = 0.;
+		return true;
+	}
+	return false;
+}
+
 bool TimeMgr::IsOverPlayerAttackDelay(double delay)
 {
 	m_delayPlayerAcc += m_dDT;

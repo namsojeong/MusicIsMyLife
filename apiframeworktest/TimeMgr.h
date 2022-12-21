@@ -14,11 +14,14 @@ private:
 	UINT		  m_iFPS;		// 초당 호출 횟수
 
 
-	double		  m_delayAcc; // 딜레이 초 체크를 위한 누적 시간
+	double		  m_delayAcc = 0; // 딜레이 초 체크를 위한 누적 시간
 
-	double		  m_delayHamgingAcc;
-	double		  m_delayPlayerAcc;
-	double		  m_delayAttackTextAcc;
+	double		  m_delayHamgingAcc = 0;
+	double		  m_delayPlayerAcc = 0;
+	double		  m_delayAttackTextAcc = 0;
+
+	double		  m_beforeAttackHamgingAcc = 0;
+	double		  m_afterAttackHamgingAcc = 0;
 	// FPS 
 	// 1 프레임당 시간(delta time)
 private:
@@ -36,5 +39,7 @@ public:
 	bool IsOverPlayerAttackDelay(double delay);
 	bool IsOverHamgingAttackDelay(double delay);
 	bool IsOverAttackTextDelay(double delay);
+	bool IsOverBeforeHamgingAttackDelay(double delay);
+	bool IsOverAfterHamgingAttackDelay(double delay);
 };
 

@@ -36,18 +36,18 @@ private:
 	map<UINT, int> hpStats = 
 	{ 
 		{(UINT)CARD_TYPE::A, 10},
-		{(UINT)CARD_TYPE::B, 20},
-		{(UINT)CARD_TYPE::C, 30}, 
-		{(UINT)CARD_TYPE::D, 40},
-		{(UINT)CARD_TYPE::E, 50} 
+		{(UINT)CARD_TYPE::B, 0},
+		{(UINT)CARD_TYPE::C, 10}, 
+		{(UINT)CARD_TYPE::D, 5},
+		{(UINT)CARD_TYPE::E, 0} 
 	};
 	map<UINT, int> stressStats = 
 	{ 
-		{(UINT)CARD_TYPE::A, 10}, 
-		{(UINT)CARD_TYPE::B, 20}, 
-		{(UINT)CARD_TYPE::C, 30}, 
-		{(UINT)CARD_TYPE::D, 40},
-		{(UINT)CARD_TYPE::E, 50} 
+		{(UINT)CARD_TYPE::A, 5}, 
+		{(UINT)CARD_TYPE::B, 5}, 
+		{(UINT)CARD_TYPE::C, 0}, 
+		{(UINT)CARD_TYPE::D, -10},
+		{(UINT)CARD_TYPE::E, 30} 
 	};
 public:
 	const CardStats GetCardStat(int idx) { return m_vCard[idx]; }

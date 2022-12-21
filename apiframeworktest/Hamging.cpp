@@ -94,33 +94,41 @@ const void Hamging::HealStress(int addHP)
 
 void Hamging::Update()
 {
-	if (HAMGING_WAIT)
+	if (state == HAMGING_STATE::WAIT)
 	{
+		GameMgr::GetInst()->SetIsHamgingAttack(false);
 		if (state != HAMGING_STATE::WAIT)
+		{
 			state = HAMGING_STATE::WAIT;
+		}
 		if (state == HAMGING_STATE::WAIT)
 		{
+			bool isOverBefore = TimeMgr::GetInst()->IsOverBeforeHamgingAttackDelay(2);
+			bool isPlayerAttack = GameMgr::GetInst()->GetIsPlayerAttack();
 			// 시간 함수
-			if (GameMgr::GetInst()->GetIsPlayerAttack())
+			if (isPlayerAttack && isOverBefore)
 			{
 				state = HAMGING_STATE::ATTACKING;
 				GameMgr::GetInst()->SetHamgingState(state);
 			}
 		}
 	}
-	if (HAMGING_ATTACKING)
+	else if (HAMGING_ATTACKING)
 	{
-		if (!GameMgr::GetInst()->GetIsHamgingAttack())
+		bool playerAttack = GameMgr::GetInst()->GetIsPlayerAttack();
+		bool hamgingAttack = GameMgr::GetInst()->GetIsHamgingAttack();
+		if (!hamgingAttack && playerAttack)
 		{
 			GameMgr::GetInst()->AttackPlayer(10 + m_attackPower * m_stress / 100);
 			GameMgr::GetInst()->SetIsHamgingAttack(true);
-			state = TimeMgr::GetInst()->IsOverDelay(2)?HAMGING_STATE::ATTACKEND:state;
 		}
-	}
-	if (HAMGING_ATTACKEND)
-	{
-		state = HAMGING_STATE::WAIT;
-		GameMgr::GetInst()->SetIsHamgingAttack(false);
+		bool isOverAfter = TimeMgr::GetInst()->IsOverAfterHamgingAttackDelay(2);
+		if (isOverAfter)
+		{
+			state = HAMGING_STATE::WAIT;
+			GameMgr::GetInst()->SetHamgingState(state);
+			GameMgr::GetInst()->SetIsPlayerAttack(false);
+		}
 	}
 	GetAnimator()->Update();
 }
@@ -131,13 +139,13 @@ void Hamging::Render(HDC _dc)
 	int Width = (int)pImg->GetWidth();
 	int Height = (int)pImg->GetHeight();
 	//마젠타 색상 뺄때 transparent: 투명한
-	TransparentBlt(_dc
+	/*TransparentBlt(_dc
 		, (int)(vPos.x - (float)(Width / 2))  
 		, (int)(vPos.y - (float)(Height / 2))
 		,Width, Height
 	    , pImg->GetDC()
 	    ,0,0, Width, Height
-	    , RGB(255,0,255));
+	    , RGB(255,0,255));*/
 
 	stress->Render(_dc);
 	stress->Update();

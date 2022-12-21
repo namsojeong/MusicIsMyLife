@@ -77,7 +77,7 @@ const bool GameMgr::HamgingAttackTimer()
 
 const bool GameMgr::PlayerAttackTimer()
 {
-	isPlayerAttack = !TimeMgr::GetInst()->IsOverPlayerAttackDelay(3);
+	isPlayerAttack = TimeMgr::GetInst()->IsOverPlayerAttackDelay(4);
 	return isPlayerAttack;
 }
 

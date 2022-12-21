@@ -64,11 +64,7 @@ void Player::Heal(int addHP)
 }
 void Player::Update()
 {
-	if (GameMgr::GetInst()->GetIsPlayerAttack())
-	{
-		if (GameMgr::GetInst()->PlayerAttackTimer())
-			GameMgr::GetInst()->SetIsPlayerAttack(true);
-	}
+	
 }
 
 

@@ -37,7 +37,9 @@ Card::~Card()
 void Card::Update()
 {
 	Vec2 vPos = GetPos();
-	if (!GameMgr::GetInst()->GetIsPlayerAttack())
+	HAMGING_STATE hamging_state = GameMgr::GetInst()->GetHamgingState();
+	bool isPlayerAttack = GameMgr::GetInst()->GetIsPlayerAttack();
+	if (!isPlayerAttack && hamging_state == HAMGING_STATE::WAIT)
 	{
 		Attack();
 	}
