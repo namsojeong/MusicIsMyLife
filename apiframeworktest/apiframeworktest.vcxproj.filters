@@ -259,6 +259,9 @@
     <ClInclude Include="Scene_Win.h">
       <Filter>Engine\05. Scene\Scene_Win</Filter>
     </ClInclude>
+    <ClInclude Include="RestartButton.h">
+      <Filter>Engine\09. UI\Button</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="apiframeworktest.rc">
@@ -394,6 +397,9 @@
     </ClCompile>
     <ClCompile Include="Scene_Win.cpp">
       <Filter>Engine\05. Scene\Scene_Win</Filter>
+    </ClCompile>
+    <ClCompile Include="RestartButton.cpp">
+      <Filter>Engine\09. UI\Button</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
