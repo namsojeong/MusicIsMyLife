@@ -7,9 +7,12 @@
 #include "Image.h"
 #include "Core.h"
 #include "Player.h"
+#include "CollisionMgr.h"
+#include "Collider.h"
 
-Hamging::Hamging(int setHP) :state(HAMGING_STATE::WAIT)
+Hamging::Hamging(int setHP, Vec2 scale) :state(HAMGING_STATE::WAIT)
 {
+	SetScale(scale);
 	Vec2 vResolution(Vec2(Core::GetInst()->GetResolution()));
 	hp = new HP(setHP);
 	stress = new Stress(100, Vec2(vResolution.x-50, vResolution.y/2 + 150));
@@ -28,6 +31,8 @@ Hamging::Hamging(int setHP) :state(HAMGING_STATE::WAIT)
 		0.2f);
 	Animation* pAnim = GetAnimator()->FindAnimation(L"HamgingAni");
 	GetAnimator()->Play(L"HamgingAni", true);
+	CreateCollider();
+	GetCollider()->SetScale(GetScale());
 }
 
 Hamging::Hamging():state(HAMGING_STATE::WAIT)
@@ -161,4 +166,13 @@ void Hamging::Die()
 
 Hamging::~Hamging()
 {
+}
+
+void Hamging::EnterCollision(Collider* _pOther)
+{
+	Object* pOtherObj = _pOther->GetObj();
+	if (pOtherObj->GetName() == L"BULLET_CARD")
+	{
+
+	}
 }

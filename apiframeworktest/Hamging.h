@@ -35,12 +35,13 @@ public:
 public:
     void Update()       override;
     void Render(HDC _dc) override;
+    virtual void	EnterCollision(Collider* _pOther);
 private:
     void Die();
 private:
     CLONE(Hamging);
 public:
-    Hamging(int setHP);
+    Hamging(int setHP, Vec2 scale);
 public:
     Hamging();
     ~Hamging();

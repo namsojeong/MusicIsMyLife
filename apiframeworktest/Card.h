@@ -27,6 +27,7 @@ public:
     void UpCard();
     void DownCard();
     void SetCardType(int type);
+    void CreateBullet();
 public:
     virtual void Update() override;
     void Render(HDC _dc) override;

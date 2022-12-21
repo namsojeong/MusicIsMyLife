@@ -33,9 +33,9 @@ void Scene_Game::Enter()
 	Vec2 vResolution(Vec2(Core::GetInst()->GetResolution()));
 
 	// Object Ãß°¡
-	hamging = new Hamging(100);
-	hamging->SetPos(Vec2(vResolution.x / 2, vResolution.y / 4));
-	hamging->SetScale(Vec2(330.f, 370.f));
+	hamging = new Hamging(100, Vec2(330.f, 370.f));
+	hamging->SetName(L"Hamging");
+	hamging->SetPos(Vec2(vResolution.x / 2, vResolution.y / 4) );
 	AddObject(hamging, GROUP_TYPE::HAMGING);
 
 	player = new Player();
@@ -106,6 +106,5 @@ void Scene_Game::Exit()
 void Scene_Game::Update()
 {
 	Scene::Update();
-
 }
 

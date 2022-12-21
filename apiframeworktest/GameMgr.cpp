@@ -91,3 +91,13 @@ const bool GameMgr::AttackEffectDuration(long delayTime)
 {
 	return TimeMgr::GetInst()->IsOverHamgingAttackDelay(delayTime);
 }
+
+Vec2 GameMgr::GetHamgingPos()
+{
+	return m_hamging->GetPos();
+}
+
+Vec2 GameMgr::GetHamgingScale()
+{
+	return m_hamging->GetScale();
+}

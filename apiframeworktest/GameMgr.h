@@ -7,7 +7,7 @@ class Card;
 class GameMgr
 {
 public:
-SINGLE(GameMgr);
+	SINGLE(GameMgr);
 private:
 	bool isChooseCard;
 	HAMGING_STATE m_hamgingState;
@@ -26,6 +26,9 @@ public://����� �����̴� �����ϴ°�?
 	~GameMgr();
 public:
 	const void SetObject(Player * p, Hamging * h);
+public:
+	Vec2 GetHamgingPos();
+	Vec2 GetHamgingScale();
 public:
 	const HAMGING_STATE GetHamgingState() { return m_hamgingState; }
 	const void SetHamgingState(HAMGING_STATE value);

@@ -10,6 +10,8 @@
 #include "CardMgr.h"
 #include "GameMgr.h"
 #include "Player.h"
+#include "Bullet.h"
+#include "Scene.h"
 Card::Card(int type, Player* p) :
 	_attackPower(0),
 	_stressPower(0),
@@ -80,6 +82,7 @@ void Card::Attack()
 			GameMgr::GetInst()->SetIsPlayerAttack(true);
 			GameMgr::GetInst()->AttackHamging(_attackPower, _stressPower);
 			GameMgr::GetInst()->AttackTextEffect(cardType);
+			CreateBullet();
 			isUsed = true;
 		}
 	}
@@ -127,6 +130,19 @@ void Card::SetCardType(int type)
 		}
 	}
 }
+void Card::CreateBullet()
+{
+	Vec2 vBulletPos = GetPos();
+	Vec2 targetPos = GameMgr::GetInst()->GetHamgingPos() 
+		+ GameMgr::GetInst()->GetHamgingScale() / 2;
+	Bullet* pBullet = new Bullet(targetPos, vBulletPos + GetScale()/2, Vec2(100, 100));
+	pBullet->SetName(L"BULLET_CARD");
+	CreateObject(pBullet, GROUP_TYPE::BULLET_CARD);
+	Scene* pCurScene = SceneMgr::GetInst()->GetCurScene();
+	pCurScene->AddObject(pBullet,GROUP_TYPE::BULLET_CARD);
+
+	
+}
 
 void Card::Render(HDC _dc)
 {
@@ -142,3 +158,6 @@ void Card::Render(HDC _dc)
 		, RGB(255, 0, 255));
 	Component_Render(_dc);
 }
+
+
+
