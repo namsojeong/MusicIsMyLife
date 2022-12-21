@@ -43,6 +43,7 @@ public:
 public:
 	const void AttackPlayer(int damage);
 	const void AttackHamging(int damage, int stress);
+	
 	const void AttackTextEffect(CARD_TYPE type);
 	const bool AttackEffectDuration(long delayTime);
 public:

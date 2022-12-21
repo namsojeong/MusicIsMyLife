@@ -45,14 +45,22 @@ void Scene_Game::Enter()
 
 #pragma region 카드배치
 	Card* pCardObj = nullptr;
-
+	srand((unsigned int)time(NULL));
+	int a = rand() % 5 + 1;
+	int b = rand() % 5 + 1;
+	int c = rand() % 5 + 1;
 	for (int i = 0; i < GetCardAmount(); i++)
 	{
-		pCardObj = new Card(1, player);
+		if(i == 0)
+			pCardObj = new Card(a, player);
+		if (i == 1)
+			pCardObj = new Card(b, player);
+		if (i == 2)
+			pCardObj = new Card(c, player);
 		pCardObj->SetName(L"Card");
 		pCardObj->SetPos(Vec2((1280 / (GetCardAmount() + 1)) * (i + 1),
 			800 / 2));
-		pCardObj->SetScale(Vec2(200.f, 277.f));
+		pCardObj->SetScale(Vec2(200.f, 275.f));
 		pCardObj->SetCenterPos(pCardObj->GetPos());
 		AddObject(pCardObj, GROUP_TYPE::CARD);
 	}

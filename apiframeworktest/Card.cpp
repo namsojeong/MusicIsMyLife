@@ -16,8 +16,9 @@ Card::Card(int type, Player* p) :
 	m_pImage(nullptr)
 {
 	m_player = p;
-	// image ¾÷·Îµå
-	m_pImage = ResMgr::GetInst()->ImgLoad(L"card", L"Image\\Cardb.bmp");
+	// image ï¿½ï¿½ï¿½Îµï¿½
+
+	m_pImage = CardMgr::GetInst()->GetCardImage(type);
 	for (UINT i = 0; i < (UINT)CARD_TYPE::END; i++)
 	{
 		if (type == i)
