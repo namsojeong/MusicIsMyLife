@@ -13,7 +13,9 @@
 #include "SoundMgr.h"
 #include "GameMgr.h"
 #include "Card.h"
+#include "CardMgr.h"
 #include "Text.h"
+#include "TimeMgr.h"
 
 Scene_Game::Scene_Game()
 {
@@ -48,7 +50,7 @@ void Scene_Game::Enter()
 	{
 		pCardObj = new Card(1, player);
 		pCardObj->SetName(L"Card");
-		pCardObj->SetPos(Vec2((1280/ (GetCardAmount() + 1)) * (i + 1),
+		pCardObj->SetPos(Vec2((1280 / (GetCardAmount() + 1)) * (i + 1),
 			800 / 2));
 		pCardObj->SetScale(Vec2(200.f, 277.f));
 		pCardObj->SetCenterPos(pCardObj->GetPos());
@@ -57,21 +59,29 @@ void Scene_Game::Enter()
 #pragma endregion
 
 #pragma region Text
-	Vec2 timePos = Vec2(0, 0);
-	wstring timeT = L"Time : " + to_wstring(gameTime);
-	Text* timeText = new Text(timePos, 30, timeT);
-	AddUI(timeText, UI_TYPE::TEXT);
 
+	Vec2 turnPos = Vec2(vResolution.x / 2, 0.f);
+	Vec2 attackEffectPos = Vec2(50.0f, 500.f);
 	Vec2 playerHPTextPos = Vec2(0.0f, vResolution.y / 2);
 	Vec2 hamgingHPTextPos = Vec2(0.0f, vResolution.y / 4);
+
+	wstring turnStr = L"Turn Player";
+	wstring attackEffectStr = L"";
 	wstring playerHPTextStr = L"HP : " + to_wstring(player->GetPlayerHP());
 	wstring hamgingHPTextStr = L"HP : " + to_wstring(hamging->GetHamgingHP());
-	playerHPText = new Text(playerHPTextPos, 30, playerHPTextStr);
 
+	turnText = new Text(turnPos, 30, turnStr);
+	playerHPText = new Text(playerHPTextPos, 30, playerHPTextStr);
 	hamgingHPText = new Text(hamgingHPTextPos, 30, hamgingHPTextStr);
+	attackEffectText = new Text(attackEffectPos, 20, attackEffectStr);
+
+	AddUI(turnText, UI_TYPE::TEXT);
 	AddUI(playerHPText, UI_TYPE::TEXT);
 	AddUI(hamgingHPText, UI_TYPE::TEXT);
+	AddUI(attackEffectText, UI_TYPE::TEXT);
 
+	GameMgr::GetInst()->SetAttackText(attackEffectText);
+	GameMgr::GetInst()->SetTurnText(turnText);
 	GameMgr::GetInst()->SetHamgingText(hamgingHPText);
 	GameMgr::GetInst()->SetPlayerText(playerHPText);
 
@@ -89,9 +99,5 @@ void Scene_Game::Update()
 {
 	Scene::Update();
 
-	if (KEY_TAP(KEY::SPACE))
-	{
-		hamging->Attack(10);
-		hamging->AttackStress(10);
-	}
 }
+

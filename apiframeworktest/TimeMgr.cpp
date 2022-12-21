@@ -70,6 +70,17 @@ bool TimeMgr::IsOverDelay(double delay)
 	return false;
 }
 
+bool TimeMgr::IsOverAttackTextDelay(double delay)
+{
+	m_delayAttackTextAcc += m_dDT;
+	if (m_delayAttackTextAcc >= delay)
+	{
+		m_delayAttackTextAcc = 0.;
+		return true;
+	}
+	return false;
+}
+
 bool TimeMgr::IsOverPlayerAttackDelay(double delay)
 {
 	m_delayPlayerAcc += m_dDT;

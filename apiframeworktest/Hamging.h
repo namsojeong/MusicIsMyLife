@@ -20,6 +20,7 @@ public:
     Text* hpText;
     Text* stressText;
 public:
+    const HAMGING_STATE GetState() { return state; }
     const int GetHamgingHP() { return hp->GetHP(); }
     const int GetAttackPower() { return m_attackPower; }
     const void SetAttackPower(int value) { m_attackPower = value; }

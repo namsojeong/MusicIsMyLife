@@ -18,6 +18,7 @@ private:
 
 	double		  m_delayHamgingAcc;
 	double		  m_delayPlayerAcc;
+	double		  m_delayAttackTextAcc;
 	// FPS 
 	// 1 프레임당 시간(delta time)
 private:
@@ -34,5 +35,6 @@ public:
 	bool IsOverDelay(double delay);
 	bool IsOverPlayerAttackDelay(double delay);
 	bool IsOverHamgingAttackDelay(double delay);
+	bool IsOverAttackTextDelay(double delay);
 };
 

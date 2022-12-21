@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "CardMgr.h"
 #include "Card.h"
+#include "Text.h"
 
 void CardMgr::Init()
 {

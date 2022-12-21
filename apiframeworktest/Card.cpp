@@ -22,6 +22,7 @@ Card::Card(int type, Player* p) :
 	{
 		if (type == i)
 		{
+			cardType = (CARD_TYPE)type;
 			_attackPower = CardMgr::GetInst()->GetCardStat(i)._attackPower;
 			_stressPower = CardMgr::GetInst()->GetCardStat(i)._stressPower;
 		}
@@ -61,7 +62,8 @@ void Card::Attack()
 		{
 			SetPos(vPos + Vec2(0, -50));
 			GameMgr::GetInst()->SetIsPlayerAttack(true);
-			GameMgr::GetInst()->AttackHamging(10);
+			GameMgr::GetInst()->AttackHamging(_attackPower, _stressPower);
+			GameMgr::GetInst()->AttackTextEffect(cardType);
 			isUsed = true;
 		}
 	}
