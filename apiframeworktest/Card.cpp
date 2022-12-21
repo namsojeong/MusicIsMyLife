@@ -16,13 +16,14 @@ Card::Card(int type, Player* p) :
 	m_pImage(nullptr)
 {
 	m_player = p;
-	// image ¾÷·Îµå
+	// image ï¿½ï¿½ï¿½Îµï¿½
 
 	m_pImage = CardMgr::GetInst()->GetCardImage(type);
 	for (UINT i = 0; i < (UINT)CARD_TYPE::END; i++)
 	{
 		if (type == i)
 		{
+			cardType = (CARD_TYPE)type;
 			_attackPower = CardMgr::GetInst()->GetCardStat(i)._attackPower;
 			_stressPower = CardMgr::GetInst()->GetCardStat(i)._stressPower;
 		}
@@ -63,6 +64,7 @@ void Card::Attack()
 			SetPos(vPos + Vec2(0, -50));
 			GameMgr::GetInst()->SetIsPlayerAttack(true);
 			GameMgr::GetInst()->AttackHamging(_attackPower, _stressPower);
+			GameMgr::GetInst()->AttackTextEffect(cardType);
 			isUsed = true;
 		}
 	}

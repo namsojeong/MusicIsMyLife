@@ -11,6 +11,13 @@ struct CardStats
 class CardMgr
 {
 public:
+	map<UINT, wstring> cardStr = {
+	  {(UINT)CARD_TYPE::A,  L"ÀÌ¹ø °úÁ¦´Â ÀÌ°Å¶û ÀÌ°Å¶û,,,\nÁÖÀú¸®ÁÖÀú¸®¾îÂ¼±¸ÀúÂ¼±¸"}
+	, {(UINT)CARD_TYPE::B, L"¿¨ ¿Ö ¹ú½á ±â¸»?\n ±×·²¸®°¡ ~"}
+	, {(UINT)CARD_TYPE::C, L"¤¾..¤¾È£È£È¥¹äÂëÀÌ¾ß...\n¹ä ¸Ó±à¤© Ä£±¸µµ ¾ø´Â ÀÎ»ı..."}
+	, {(UINT)CARD_TYPE::D, L"°úÁ¦ µûÀ§ ³¯ ¸·À» ¼ö ¾øÀ¸¼À!" }
+	,{(UINT)CARD_TYPE::E, L"¾Æ´Ï Ä£±¸µé ¸»ÀÌ¶óµµ ÇØÁÖÁö..±Ã½Ã··±Ã½Ã··\n¾Æ¸Â´Ù ³ª Ä£±¸¾øÁö..." } };
+public:
 	SINGLE(CardMgr);
 private:
 	Image* A = ResMgr::GetInst()->ImgLoad(L"CardA", L"Image\\Card\\Card_A.bmp");

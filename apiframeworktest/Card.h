@@ -9,6 +9,7 @@ private:
     int _mType;
     int _attackPower;
     int _stressPower;
+    CARD_TYPE cardType;
     Image* m_pImage;
     Vec2 m_vPos;
     RECT m_rect;

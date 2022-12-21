@@ -1,13 +1,15 @@
 #pragma once
 #include "HP.h"
+#include "UI.h"
 
-class Stress
+class Stress:
+	public UI
 {
 private:
 	RECT rect;
 	float offsetX = 100.f;
 	float offsetY = 300.f;
-	float curStress;
+	float curStress = 0;
 	float maxStress;
 public:
 	const float GetStress() { return curStress; }
@@ -17,9 +19,12 @@ public:
 	void SetBackgroundColor(const HDC hdc, const BRUSH_TYPE brush);
 	void SetPenColor(const HDC hdc, const PEN_TYPE pen);
 public:
-	void UpdateUiStress(HDC hdc, Vec2 pos);
+	void Update() override;
+	void Render(HDC hdc) override;
 public:
-	Stress();
-	Stress(const int maxStress);
+	CLONE(Stress);
+public:
+	Stress(Vec2 pos);
+	Stress(const int maxStress, Vec2 pos);
 	~Stress();
 };
