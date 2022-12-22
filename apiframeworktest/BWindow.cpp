@@ -63,8 +63,18 @@ ATOM BWindow::MyRegisterClass()
 
 void BWindow::WindowCreate()
 {
-	m_hWnd = CreateWindowW(WINDOW_NAME, L"주뇽's Gameframework", WS_OVERLAPPEDWINDOW,
-		CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, m_hInstance, nullptr);
+	m_hWnd = CreateWindowW(
+		  WINDOW_NAME
+		, L"Music is my life 무식은 내 인생"
+		, WS_OVERLAPPED | WS_SYSMENU
+		, CW_USEDEFAULT
+		, 0
+		, 1280
+		, 768
+		, nullptr
+		, nullptr
+		, m_hInstance
+		, nullptr);
 }
 
 void BWindow::WindowShow(int nCmdShow)

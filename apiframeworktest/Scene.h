@@ -1,6 +1,7 @@
 #pragma once
 class Object;
 class UI;
+class Image;
 class Scene
 {
 private:
@@ -9,6 +10,7 @@ private:
 	vector<Object*> m_vecObj[(UINT)GROUP_TYPE::END];
 	vector<Object*> m_vecUI[(UINT)UI_TYPE::END];
 	wstring         m_strName; // Scene¿Ã∏ß
+	Image* m_background;
 private:
 	int iCard = 3;
 public:
@@ -18,6 +20,7 @@ public:
 	}
 	const int& GetCardAmount() { return iCard; }
 public:
+	void SetBackground(wstring _strName, wstring _path);
 	void SetName(const wstring& _strName) { m_strName = _strName; }
 	const wstring& GetName() { return m_strName; }
 

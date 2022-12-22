@@ -19,6 +19,7 @@
 
 Scene_Game::Scene_Game()
 {
+	SetBackground(L"Background_Game", L"Image//background_1.bmp");
 }
 
 Scene_Game::~Scene_Game()
@@ -100,10 +101,7 @@ void Scene_Game::Enter()
 void Scene_Game::Exit()
 {
 	CollisionMgr::GetInst()->CheckReset();
-	DeleteUIGroup(UI_TYPE::TEXT);
-	DeleteGroup(GROUP_TYPE::PLAYER);
-	DeleteGroup(GROUP_TYPE::HAMGING);
-	DeleteGroup(GROUP_TYPE::CARD);
+	DeleteAll();
 }
 
 void Scene_Game::Update()
@@ -113,5 +111,5 @@ void Scene_Game::Update()
 	{
 		ChangeScene(SCENE_TYPE::OVER);
 	}
-}
 
+}

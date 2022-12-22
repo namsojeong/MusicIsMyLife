@@ -9,7 +9,7 @@
 
 Scene_Start::Scene_Start()
 {
-	
+	SetBackground(L"", L"");
 }
 
 Scene_Start::~Scene_Start()
@@ -34,7 +34,7 @@ void Scene_Start::Enter()
 
 void Scene_Start::Exit()
 {
-	
+	DeleteAll();
 }
 
 void Scene_Start::Update()

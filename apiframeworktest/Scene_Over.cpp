@@ -39,6 +39,7 @@ void Scene_Over::Update()
 
 Scene_Over::Scene_Over()
 {
+	SetBackground(L"", L"");
 }
 
 Scene_Over::~Scene_Over()

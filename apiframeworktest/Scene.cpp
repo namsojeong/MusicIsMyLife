@@ -1,6 +1,18 @@
 #include "pch.h"
 #include "Scene.h"
 #include "Object.h"
+#include "ResMgr.h"
+#include "Image.h"
+
+void Scene::SetBackground(wstring _strName, wstring _path)
+{
+	if (_strName == L"")
+	{
+		_strName = L"Background_Default";
+		_path = L"Image\\Default_Background.bmp";
+	}
+	m_background = ResMgr::GetInst()->ImgLoad(_strName, _path);
+}
 
 void Scene::Update()
 {
@@ -42,6 +54,19 @@ void Scene::FinalUpdate()
 
 void Scene::Render(HDC _dc)
 {
+	int Width = (int)m_background->GetWidth();
+	int Height = (int)m_background->GetHeight();
+
+	TransparentBlt(_dc
+		, (int)(0 - (float)(Width / 2))
+		, (int)(0 - (float)(Height / 2))
+		, Width, Height
+		, m_background->GetDC()
+		, 0, 0, Width, Height
+		, RGB(255, 0, 255));
+
+
+
 	for (UINT i = 0; i < (UINT)GROUP_TYPE::END; i++)
 	{
 		vector<Object*>::iterator iter = m_vecObj[i].begin();
@@ -75,14 +100,8 @@ void Scene::Render(HDC _dc)
 			}
 		}
 	}
-	//for (UINT i = 0; i < (UINT)GROUP_TYPE::END; i++)
-	//{
-	//	for (size_t j = 0; j < m_vecObj[i].size(); j++)
-	//	{
-	//		if (!m_vecObj[i][j]->IsDead())
-	//		m_vecObj[i][j]->Render(_dc);
-	//	}
-	//}
+
+	
 }
 
 void Scene::DeleteGroup(GROUP_TYPE _eTarget)
@@ -122,6 +141,7 @@ void Scene::DeleteAll()
 
 Scene::Scene()
 {
+	
 }
 
 Scene::~Scene()
