@@ -1,6 +1,8 @@
 #pragma once
+
 class Image;
 class Res;
+
 class ResMgr
 {
 private:

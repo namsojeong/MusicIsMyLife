@@ -137,11 +137,9 @@ void Card::CreateBullet()
 		+ GameMgr::GetInst()->GetHamgingScale() / 2;
 	Bullet* pBullet = new Bullet(targetPos, vBulletPos + GetScale()/2, Vec2(100, 100));
 	pBullet->SetName(L"BULLET_CARD");
-	CreateObject(pBullet, GROUP_TYPE::BULLET_CARD);
-	Scene* pCurScene = SceneMgr::GetInst()->GetCurScene();
-	pCurScene->AddObject(pBullet,GROUP_TYPE::BULLET_CARD);
+	//CreateObject(pBullet, GROUP_TYPE::BULLET_CARD);
 
-	
+	SceneMgr::GetInst()->GetCurScene()->AddObject(pBullet, GROUP_TYPE::BULLET_CARD);
 }
 
 void Card::Render(HDC _dc)

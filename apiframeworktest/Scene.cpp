@@ -87,13 +87,13 @@ void Scene::Render(HDC _dc)
 
 void Scene::DeleteGroup(GROUP_TYPE _eTarget)
 {
-	//for (size_t i = 0; i < m_vecObj[(UINT)_eTarget].size(); i++)
-	//{
-	//	delete m_vecObj[(UINT)_eTarget][i];
-	//}
-	//m_vecObj[(UINT)_eTarget].clear();
+	for (size_t i = 0; i < m_vecObj[(UINT)_eTarget].size(); i++)
+	{
+		delete m_vecObj[(UINT)_eTarget][i];
+	}
+	m_vecObj[(UINT)_eTarget].clear();
 //	Safe_Delete_Vec(m_vecObj[(UINT)_eTarget]);
-	Safe_Delete_Vec<Object*>(m_vecObj[(UINT)_eTarget]);
+	//Safe_Delete_Vec<Object*>(m_vecObj[(UINT)_eTarget]);
 
 }
 

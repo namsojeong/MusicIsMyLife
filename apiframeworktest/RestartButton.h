@@ -2,7 +2,7 @@
 #include "Button.h"
 
 class RestartButton :
-	public Button
+    public Button
 {
 private:
     Image* m_rImage;
@@ -17,4 +17,4 @@ public:
 private:
     RestartButton();
     ~RestartButton();
-}
+};
