@@ -1,6 +1,6 @@
 #pragma once
 class Scene;
-class SceneMgr 
+class SceneMgr
 {
 public:
 	SINGLE(SceneMgr);

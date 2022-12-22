@@ -27,20 +27,19 @@ void Stress::Render(HDC hdc)
 {
 	rect.left = GetPos().x;
 	rect.bottom = GetPos().y;
-	rect.right = rect.left - offsetX;
+	rect.right = rect.left + offsetX;
 	rect.top = rect.bottom - offsetY;
 
 	SelectGDI pb(hdc, PEN_TYPE::BLACK);
 	Core::GetInst()->SetBrushColor(&hdc, RGB(255, 255, 255));
 	SelectGDI bb(hdc, BRUSH_TYPE::COLOR);
-	int top2 = rect.top;
 	Rectangle(hdc, rect.left, rect.top, rect.right, rect.bottom);
 
-	SelectGDI pg(hdc, PEN_TYPE::RED);
-	Core::GetInst()->SetBrushColor(&hdc, RGB(255, 0, 0));
+	SelectGDI pg(hdc, PEN_TYPE::BLACK);
+	Core::GetInst()->SetBrushColor(&hdc, RGB(0, 255, 0));
 	SelectGDI bg(hdc, BRUSH_TYPE::COLOR);
-	int top = rect.bottom - curStress * (offsetY / maxStress);
-	Rectangle(hdc, rect.left, top, rect.right, rect.bottom);
+	int right = rect.left + curStress * (offsetX / maxStress);
+	Rectangle(hdc, rect.left, rect.top, right, rect.bottom);
 
 	Component_Render(hdc);
 }

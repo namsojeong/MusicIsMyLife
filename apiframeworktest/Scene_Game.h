@@ -6,14 +6,12 @@ class Hamging;
 class Text;
 class Image;
 class Scene_Game
-	:public Scene
+    :public Scene
 {
 private:
     Player* player;
     Hamging* hamging;
 private:
-    Text* playerHPText;
-    Text* hamgingHPText;
     Text* turnText;
     Text* attackEffectText;
 private:

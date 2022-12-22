@@ -16,7 +16,6 @@ private:
     HP* hp;
     //void CreateBullet();
 public:
-    Text* hpText;
     int GetPlayerHP(){ return hp->GetHP(); }
     void SetAttackPower(int value) { m_attackPower = value; }
 public:

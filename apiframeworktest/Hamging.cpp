@@ -14,8 +14,8 @@ Hamging::Hamging(int setHP, Vec2 scale) :state(HAMGING_STATE::WAIT)
 {
 	SetScale(scale);
 	Vec2 vResolution(Vec2(Core::GetInst()->GetResolution()));
-	hp = new HP(setHP);
-	stress = new Stress(100, Vec2(vResolution.x-50, vResolution.y/2 + 150));
+	hp = new HP(100, Vec2(vResolution.x / 2 - 150, 50.0f));
+	stress = new Stress(100, Vec2(vResolution.x / 2 - 150, 70.0f));
 	// image 업로드
 	pImg = ResMgr::GetInst()->ImgLoad(L"HamgingAni", L"Image\\Hamging_Attack.bmp");
 
@@ -39,8 +39,8 @@ Hamging::Hamging():state(HAMGING_STATE::WAIT)
 {
 	Vec2 vResolution(Vec2(Core::GetInst()->GetResolution()));
 
-	hp = new HP(100);
-	stress = new Stress(100, Vec2(vResolution.x, vResolution.y / 2));
+	hp = new HP(100, Vec2(vResolution.x / 2, vResolution.y / 2));
+	stress = new Stress(100, Vec2(vResolution.x / 2 - 150, 100.0f));
 	// image 업로드
 	pImg = ResMgr::GetInst()->ImgLoad(L"HamgingAni", L"Image\\Hamging_Attack.bmp");
 
@@ -54,7 +54,6 @@ Hamging::Hamging():state(HAMGING_STATE::WAIT)
 		Vec2(330.f, 0.f),
 		4, 
 		0.2f);
-	pImg;
 	Animation* pAnim = GetAnimator()->FindAnimation(L"HamgingAni");
 	GetAnimator()->Play(L"HamgingAni", true);
 }
@@ -66,7 +65,7 @@ const void Hamging::Attack(int damage)
 	{
 		Die();
 	}
-	hp->UpdateUiHp(GameMgr::GetInst()->GetHamgingText());
+	//hp->UpdateUiHp(GameMgr::GetInst()->GetHamgingText());
 }
 
 const void Hamging::Heal(int addHP)
@@ -76,7 +75,7 @@ const void Hamging::Heal(int addHP)
 	{
 		hp->SetHP(hp->GetMaxHP());
 	}
-	hp->UpdateUiHp(GameMgr::GetInst()->GetHamgingText());
+	//hp->UpdateUiHp(GameMgr::GetInst()->GetHamgingText());
 }
 
 const void Hamging::AttackStress(int damage)
@@ -105,11 +104,13 @@ void Hamging::Update()
 		if (state != HAMGING_STATE::WAIT)
 		{
 			state = HAMGING_STATE::WAIT;
+			GameMgr::GetInst()->UpdateTurnText(state);
 		}
 		if (state == HAMGING_STATE::WAIT)
 		{
 			bool isOverBefore = TimeMgr::GetInst()->IsOverBeforeHamgingAttackDelay(4);
 			bool isPlayerAttack = GameMgr::GetInst()->GetIsPlayerAttack();
+				GameMgr::GetInst()->UpdateTurnText(state);
 			// 시간 함수
 			if (isPlayerAttack && isOverBefore)
 			{
@@ -152,6 +153,7 @@ void Hamging::Render(HDC _dc)
 	    ,0,0, Width, Height
 	    , RGB(255,0,255));*/
 
+	hp->Render(_dc);
 	stress->Render(_dc);
 	stress->Update();
 

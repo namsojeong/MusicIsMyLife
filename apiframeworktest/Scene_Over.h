@@ -1,7 +1,7 @@
 #pragma once
 #include "Scene.h"
 class Scene_Over
-	:public Scene
+    :public Scene
 {
 private:
     vector<UI*> m_vecUI[(UINT)UI_TYPE::END];

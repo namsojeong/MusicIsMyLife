@@ -5,8 +5,8 @@ class Image;
 class Scene
 {
 private:
-//	Object a;
-	// 오브젝트를 저장 및 관리할 벡터를 그룹 개수만큼 선언
+	//	Object a;
+		// 오브젝트를 저장 및 관리할 벡터를 그룹 개수만큼 선언
 	vector<Object*> m_vecObj[(UINT)GROUP_TYPE::END];
 	vector<Object*> m_vecUI[(UINT)UI_TYPE::END];
 	wstring         m_strName; // Scene이름

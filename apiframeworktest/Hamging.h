@@ -17,8 +17,6 @@ private:
 public:
     HP* hp;
     Stress* stress;
-    Text* hpText;
-    Text* stressText;
 public:
     const HAMGING_STATE GetState() { return state; }
     const int GetHamgingHP() { return hp->GetHP(); }

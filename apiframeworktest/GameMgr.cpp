@@ -6,6 +6,7 @@
 #include "Scene_Game.h"
 #include "Text.h"
 #include "CardMgr.h"
+#include "Core.h"
 
 GameMgr::GameMgr() :m_hamgingState(HAMGING_STATE::WAIT)
 {
@@ -15,16 +16,20 @@ GameMgr::~GameMgr()
 {
 }
 
+
 const void GameMgr::UpdateTurnText(HAMGING_STATE state)
 {
 	wstring str = L"TURN ";
+	Vec2 res = Core::GetInst()->GetResolution();
 	if (state == HAMGING_STATE::ATTACKING)
 	{
 		str += L"HAMGING";
+		m_turnText->SetPos(Vec2(0.0f, res.y / 2));
 	}
 	else if (state == HAMGING_STATE::END)
 	{
 		str += L"PLAYER";
+		m_turnText->SetPos(Vec2(res.x - 300, res.y / 2));
 	}
 	m_turnText->SetText(str);
 }

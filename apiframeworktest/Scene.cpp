@@ -16,7 +16,7 @@ void Scene::SetBackground(wstring _strName, wstring _path)
 
 void Scene::Update()
 {
-	
+
 	for (UINT i = 0; i < (UINT)GROUP_TYPE::END; i++)
 	{
 		for (size_t j = 0; j < m_vecObj[i].size(); j++)
@@ -83,7 +83,7 @@ void Scene::Render(HDC _dc)
 			}
 		}
 	}
-	
+
 	for (UINT i = 0; i < (UINT)UI_TYPE::END; i++)
 	{
 		vector<Object*>::iterator iter = m_vecUI[i].begin();
@@ -101,7 +101,7 @@ void Scene::Render(HDC _dc)
 		}
 	}
 
-	
+
 }
 
 void Scene::DeleteGroup(GROUP_TYPE _eTarget)
@@ -111,8 +111,8 @@ void Scene::DeleteGroup(GROUP_TYPE _eTarget)
 		delete m_vecObj[(UINT)_eTarget][i];
 	}
 	m_vecObj[(UINT)_eTarget].clear();
-//	Safe_Delete_Vec(m_vecObj[(UINT)_eTarget]);
-	//Safe_Delete_Vec<Object*>(m_vecObj[(UINT)_eTarget]);
+	//	Safe_Delete_Vec(m_vecObj[(UINT)_eTarget]);
+		//Safe_Delete_Vec<Object*>(m_vecObj[(UINT)_eTarget]);
 
 }
 
@@ -131,7 +131,7 @@ void Scene::DeleteAll()
 	{
 		DeleteGroup((GROUP_TYPE)i);
 	}
-	
+
 	for (UINT i = 0; i < (UINT)UI_TYPE::END; i++)
 	{
 		DeleteUIGroup((UI_TYPE)i);
@@ -141,7 +141,7 @@ void Scene::DeleteAll()
 
 Scene::Scene()
 {
-	
+
 }
 
 Scene::~Scene()

@@ -2,13 +2,13 @@
 #include "HP.h"
 #include "UI.h"
 
-class Stress:
+class Stress :
 	public UI
 {
 private:
 	RECT rect;
-	float offsetX = 100.f;
-	float offsetY = 300.f;
+	float offsetX = 350.0f;
+	float offsetY = 10.f;
 	float curStress = 0;
 	float maxStress;
 public:

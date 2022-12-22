@@ -19,9 +19,9 @@
 
 Player::Player()
 {
-	hp = new HP(100);
+	Vec2 vResolution(Vec2(Core::GetInst()->GetResolution()));
+	hp = new HP(100, Vec2(100.0f, vResolution.y - 50));
 
-	
 	// collider »õ¼º
 	CreateCollider();
 	GetCollider()->SetScale(Vec2(20.f, 30.f));
@@ -51,7 +51,7 @@ void Player::Attack(int damage)
 	{
 		Die();
 	}
-	hp->UpdateUiHp(GameMgr::GetInst()->GetPlayerText());
+	//hp->UpdateUiHp(GameMgr::GetInst()->GetPlayerText());
 }
 void Player::Heal(int addHP)
 {
@@ -60,7 +60,7 @@ void Player::Heal(int addHP)
 	{
 		hp->SetHP(hp->GetMaxHP());
 	}
-	hp->UpdateUiHp(GameMgr::GetInst()->GetPlayerText());
+	//hp->UpdateUiHp(GameMgr::GetInst()->GetPlayerText());
 }
 void Player::Update()
 {
@@ -70,6 +70,9 @@ void Player::Update()
 
 void Player::Render(HDC _dc)
 {
+	hp->Render(_dc);
+	hp->Update();
+
 	Component_Render(_dc);
 }
 
