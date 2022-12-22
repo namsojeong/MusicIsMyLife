@@ -108,7 +108,7 @@ void Hamging::Update()
 		}
 		if (state == HAMGING_STATE::WAIT)
 		{
-			bool isOverBefore = TimeMgr::GetInst()->IsOverBeforeHamgingAttackDelay(2);
+			bool isOverBefore = TimeMgr::GetInst()->IsOverBeforeHamgingAttackDelay(4);
 			bool isPlayerAttack = GameMgr::GetInst()->GetIsPlayerAttack();
 			// 시간 함수
 			if (isPlayerAttack && isOverBefore)
@@ -127,7 +127,7 @@ void Hamging::Update()
 			GameMgr::GetInst()->AttackPlayer(10 + m_attackPower * m_stress / 100);
 			GameMgr::GetInst()->SetIsHamgingAttack(true);
 		}
-		bool isOverAfter = TimeMgr::GetInst()->IsOverAfterHamgingAttackDelay(2);
+		bool isOverAfter = TimeMgr::GetInst()->IsOverAfterHamgingAttackDelay(4);
 		if (isOverAfter)
 		{
 			state = HAMGING_STATE::WAIT;
