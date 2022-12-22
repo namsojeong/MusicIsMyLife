@@ -28,7 +28,8 @@ Scene_Game::~Scene_Game()
 
 void Scene_Game::Enter()
 {
-	SoundMgr::GetInst()->LoadSound(L"BGM", true, L"Sound\\pianobgm.wav");
+	SoundMgr::GetInst()->Stop(SOUND_CHANNEL::SC_BGM);
+	SoundMgr::GetInst()->LoadSound(L"BGM", true, L"Sound\\gameBgm.wav");
 	SoundMgr::GetInst()->Play(L"BGM");
 
 	Vec2 vResolution(Vec2(Core::GetInst()->GetResolution()));

@@ -6,6 +6,7 @@
 #include "Text.h"
 #include "QuitButton.h"
 #include "StartButton.h"
+#include "SoundMgr.h"
 
 Scene_Start::Scene_Start()
 {
@@ -18,6 +19,9 @@ Scene_Start::~Scene_Start()
 
 void Scene_Start::Enter()
 {
+	SoundMgr::GetInst()->Stop(SOUND_CHANNEL::SC_BGM);
+	SoundMgr::GetInst()->LoadSound(L"dBGM", true, L"Sound\\defaultBgm.wav");
+	SoundMgr::GetInst()->Play(L"dBGM");
 	Vec2 vResolution(Vec2(Core::GetInst()->GetResolution()));
 
 	Vec2 titlePos = Vec2(vResolution.x / 2 - 270, vResolution.y / 2 - 200);

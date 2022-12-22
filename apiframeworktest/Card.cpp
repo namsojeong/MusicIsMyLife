@@ -12,11 +12,14 @@
 #include "Player.h"
 #include "Bullet.h"
 #include "Scene.h"
+#include "SoundMgr.h"
+
 Card::Card(int type, Player* p) :
 	_attackPower(0),
 	_stressPower(0),
 	m_pImage(nullptr)
 {
+	SoundMgr::GetInst()->LoadSound(L"CARD", false, L"Sound\\card.wav");
 	m_type = type;
 	m_player = p;
 	// image ���ε�
@@ -52,6 +55,7 @@ void Card::Update()
 		POINT* m_point = EventMgr::GetInst()->GetPoint();
 		if (EventMgr::GetInst()->isOn(GetPos() + GetScale() / 2, GetScale())&& isUsed)
 		{
+			SoundMgr::GetInst()->Play(L"CARD");
 			SetPos(vPos + Vec2(0, 50));
 			isUsed = false;
 		}

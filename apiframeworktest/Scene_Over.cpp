@@ -7,9 +7,12 @@
 #include "QuitButton.h"
 #include "StartButton.h"
 #include "RestartButton.h"
+#include "SoundMgr.h"
 
 void Scene_Over::Enter()
 {
+	SoundMgr::GetInst()->Stop(SOUND_CHANNEL::SC_BGM);
+	SoundMgr::GetInst()->Play(L"dBGM");
 	Vec2 vResolution(Vec2(Core::GetInst()->GetResolution()));
 
 	Vec2 titlePos = Vec2(vResolution.x / 2 - 270, vResolution.y / 2 - 200);
