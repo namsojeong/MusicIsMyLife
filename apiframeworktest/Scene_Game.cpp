@@ -70,19 +70,24 @@ void Scene_Game::Enter()
 #pragma region Text
 
 	Vec2 turnPos = Vec2(0.0f, vResolution.y / 2);
+	Vec2 roundPos = Vec2(vResolution.x/2, 50.0f);
 	Vec2 attackEffectPos = Vec2(50.0f, 500.f);
 
 	wstring turnStr = L"Turn Player";
+	wstring roundStr = L"ROUND " + to_wstring(ROUND);
 	wstring attackEffectStr = L"";
 
 	turnText = new Text(turnPos, 30, turnStr);
+	roundText = new Text(roundPos, 30, roundStr);
 	attackEffectText = new Text(attackEffectPos, 20, attackEffectStr);
 
 	AddUI(turnText, UI_TYPE::TEXT);
+	AddUI(roundText, UI_TYPE::TEXT);
 	AddUI(attackEffectText, UI_TYPE::TEXT);
 
 	GameMgr::GetInst()->SetAttackText(attackEffectText);
 	GameMgr::GetInst()->SetTurnText(turnText);
+	GameMgr::GetInst()->SetRoundText(roundText);
 
 	GameMgr::GetInst()->SetObject(player, hamging);
 #pragma endregion
@@ -99,7 +104,7 @@ void Scene_Game::Update()
 	Scene::Update();
 	if (KEY_TAP(KEY::ENTER))
 	{
-		ChangeScene(SCENE_TYPE::OVER);
+		GameMgr::GetInst()->NextRound();
 	}
 
 }

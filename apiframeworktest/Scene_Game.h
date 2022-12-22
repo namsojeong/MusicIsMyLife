@@ -13,6 +13,7 @@ private:
     Hamging* hamging;
 private:
     Text* turnText;
+    Text* roundText;
     Text* attackEffectText;
 private:
     bool isAttackEffect = false;

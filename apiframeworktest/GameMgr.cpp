@@ -86,6 +86,14 @@ const bool GameMgr::PlayerAttackTimer()
 	return isPlayerAttack;
 }
 
+const void GameMgr::NextRound()
+{
+	round++;
+	hamging_hp *= 2;
+	hamging_power *= 1.5f;
+	ChangeScene(SCENE_TYPE::GAME);
+}
+
 const void GameMgr::AttackTextEffect(CARD_TYPE type)
 {
 	m_attackText->SetText(CardMgr::GetInst()->cardStr[(UINT)type]);

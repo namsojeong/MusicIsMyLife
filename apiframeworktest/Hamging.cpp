@@ -162,7 +162,7 @@ void Hamging::Render(HDC _dc)
 
 void Hamging::Die()
 {
-	ChangeScene(SCENE_TYPE::GAME);
+	GameMgr::GetInst()->NextRound();
 }
 
 
