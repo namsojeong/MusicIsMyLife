@@ -26,7 +26,7 @@ const void GameMgr::UpdateTurnText(HAMGING_STATE state)
 		str += L"HAMGING";
 		m_turnText->SetPos(Vec2(0.0f, res.y / 2));
 	}
-	else if (state == HAMGING_STATE::END)
+	else
 	{
 		str += L"PLAYER";
 		m_turnText->SetPos(Vec2(res.x - 300, res.y / 2));
