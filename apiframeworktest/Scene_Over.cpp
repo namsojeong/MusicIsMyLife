@@ -6,6 +6,7 @@
 #include "Text.h"
 #include "QuitButton.h"
 #include "StartButton.h"
+#include "RestartButton.h"
 
 void Scene_Over::Enter()
 {
@@ -14,13 +15,13 @@ void Scene_Over::Enter()
 	Vec2 titlePos = Vec2(vResolution.x / 2 - 270, vResolution.y / 2 - 200);
 	Text* titleText = new Text(titlePos, 80, L"SCORE\n" + to_wstring(100));
 	AddUI(titleText, UI_TYPE::TEXT);
-	/*
-	Vec2 titlePos = Vec2(vResolution.x / 2 - 270, vResolution.y / 2 - 200);
+
+	/* Vec2 titlePos = Vec2(vResolution.x / 2 - 270, vResolution.y / 2 - 200);
 	Text* titleText = new Text(titlePos, 80, L"Music is myLife");
 	AddUI(titleText, UI_TYPE::TEXT);*/
 
-	StartButton* startButton = new StartButton(Vec2(vResolution.x / 2, vResolution.y / 2));
-	AddUI(startButton, UI_TYPE::BUTTON);
+	RestartButton* restartButton = new RestartButton(Vec2(vResolution.x / 2, vResolution.y / 2));
+	AddUI(restartButton, UI_TYPE::BUTTON);
 
 	QuitButton* quitButton = new QuitButton(Vec2(vResolution.x / 2, vResolution.y / 2 + 150));
 	AddUI(quitButton, UI_TYPE::BUTTON);

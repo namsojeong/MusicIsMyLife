@@ -12,7 +12,7 @@ RestartButton::RestartButton(Vec2 pos)
 {
 	SetImage(BUTTON_STATE::NONE);
 
-	Vec2 scale = Vec2((int)m_rImage->GetWidth(), (int)m_rImage->GetHeight());
+	Vec2 scale = Vec2((int)m_pImage->GetWidth(), (int)m_pImage->GetHeight());
 	SetPos(pos);
 	SetScale(scale);
 	SetRect(pos, scale);
@@ -26,19 +26,19 @@ void RestartButton::SetImage(BUTTON_STATE state)
 	{
 	case BUTTON_STATE::NONE:
 	{
-		keyWord = L"Start_Button";
+		keyWord = L"Restart_Button";
 		path = restartBasicPath;
 	}
 	break;
 	case BUTTON_STATE::OVER:
 	{
-		keyWord = L"Start_Over_Button";
+		keyWord = L"Restart_Over_Button";
 		path = restartOverPath;
 	}
 	break;
 	}
 
-	m_rImage = ResMgr::GetInst()->ImgLoad(keyWord, path);
+	m_pImage = ResMgr::GetInst()->ImgLoad(keyWord, path);
 }
 
 RestartButton::RestartButton()

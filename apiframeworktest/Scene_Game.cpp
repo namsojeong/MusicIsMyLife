@@ -99,8 +99,11 @@ void Scene_Game::Enter()
 
 void Scene_Game::Exit()
 {
-	DeleteAll();
 	CollisionMgr::GetInst()->CheckReset();
+	DeleteUIGroup(UI_TYPE::TEXT);
+	DeleteGroup(GROUP_TYPE::PLAYER);
+	DeleteGroup(GROUP_TYPE::HAMGING);
+	DeleteGroup(GROUP_TYPE::CARD);
 }
 
 void Scene_Game::Update()
