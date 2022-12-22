@@ -135,7 +135,7 @@ void Card::CreateBullet()
 	Vec2 vBulletPos = GetPos();
 	Vec2 targetPos = GameMgr::GetInst()->GetHamgingPos() 
 		+ GameMgr::GetInst()->GetHamgingScale() / 2;
-	Bullet* pBullet = new Bullet(targetPos, vBulletPos + GetScale()/2, Vec2(100, 100));
+	Bullet* pBullet = new Bullet(targetPos - GetScale(), vBulletPos, Vec2(100, 100));
 	pBullet->SetName(L"BULLET_CARD");
 	//CreateObject(pBullet, GROUP_TYPE::BULLET_CARD);
 

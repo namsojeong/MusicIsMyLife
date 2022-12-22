@@ -11,11 +11,10 @@ Bullet::Bullet(Vec2 endPos, Vec2 startPos, Vec2 scale)
 	SetPos(startPos);
 	vStartPos = GetPos();
 	m_pImage = ResMgr::GetInst()->ImgLoad(L"heart", L"Image\\heart.bmp");
-	maxHeight = endPos.y;
 	CreateCollider();
 	SetScale(scale);
 	GetCollider()->SetScale(scale);
-	Init();
+	dir = (endPos - startPos).Normalize();
 }
 Bullet::~Bullet()
 {
@@ -23,36 +22,12 @@ Bullet::~Bullet()
 }
 
 
-void Bullet::Init()
-{
-	endHeight =-(vEndPos.y - vStartPos.y);
-	height = -(maxHeight - vStartPos.y);
-	gravity = 2 * height / powf(maxTime,2);
-	int g = (int)gravity;
-	int h = (int)height;
-	speed_y = sqrt(2 * g * h);
-	float a = gravity;
-	float b = -2 * speed_y;
-	float c = 2 * endHeight;
-	speed_x = -(vStartPos.x - vEndPos.x) / endTime;
-}
 
 void Bullet::Update()
 {
 	Vec2 curPos = GetPos();
-	if (curPos == vEndPos)
-	{
-		delete this;
-	}
-	float t = TimeMgr::GetInst()->GetfDT();
-	time = t;
-	float _x = vStartPos.x + speed_x * time* time;
-	float _y = vStartPos.y + (speed_y * time) - (0.5f * gravity * time * time);
-	float x = _x * powf(time,1.5f);
-	float y = -_y * powf(time, 1.5f);
-	if (speed_x < 0)
-		x *= -1;
-	Vec2 pos = curPos + Vec2(x, y);
+	
+	Vec2 pos = curPos + dir;
 	SetPos(pos);
 }
 
