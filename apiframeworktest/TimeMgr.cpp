@@ -124,3 +124,14 @@ bool TimeMgr::IsOverHamgingAttackDelay(double delay)
 	}
 	return false;
 }
+
+bool TimeMgr::IsOverTime()
+{
+	m_oneSecAcc += m_dDT;
+	if (m_oneSecAcc >= 0.02)
+	{
+		m_oneSecAcc = 0.;
+		return true;
+	}
+	return false;
+}

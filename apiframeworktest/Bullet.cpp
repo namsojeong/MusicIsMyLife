@@ -4,7 +4,11 @@
 #include "Image.h"
 #include "PathMgr.h"
 #include "ResMgr.h"
+#include "GameMgr.h"
+#include "SceneMgr.h"
+#include "Scene.h"
 #include "Collider.h"
+#include "BulletEffect.h"
 Bullet::Bullet(Vec2 endPos, Vec2 startPos, Vec2 scale)
 {
 	vEndPos = endPos;
@@ -15,10 +19,11 @@ Bullet::Bullet(Vec2 endPos, Vec2 startPos, Vec2 scale)
 	SetScale(scale);
 	GetCollider()->SetScale(scale);
 	dir = (endPos - startPos).Normalize();
+	CreateEffect();
 }
 Bullet::~Bullet()
 {
-	
+
 }
 
 
@@ -26,8 +31,12 @@ Bullet::~Bullet()
 void Bullet::Update()
 {
 	Vec2 curPos = GetPos();
-	
-	Vec2 pos = curPos + dir;
+
+	if (TimeMgr::GetInst()->IsOverTime())
+	{
+		CreateEffect();
+	}
+	Vec2 pos = curPos + dir * 5.f;
 	SetPos(pos);
 }
 
@@ -47,8 +56,14 @@ void Bullet::Render(HDC _dc)
 			, 0, 0, Width, Height
 			, RGB(255, 0, 255));
 		Component_Render(_dc);
-
 	}
+}
+void Bullet::CreateEffect()
+{
+	Vec2 vEffectPos = GetPos();
+	BulletEffect* pBullet = new BulletEffect(vEffectPos);
+
+	SceneMgr::GetInst()->GetCurScene()->AddObject(pBullet, GROUP_TYPE::BULLET_EFFECT);
 }
 
 void Bullet::EnterCollision(Collider* _pOther)

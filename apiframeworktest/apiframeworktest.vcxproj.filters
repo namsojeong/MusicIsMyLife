@@ -119,6 +119,9 @@
     <Filter Include="Engine\05. Scene\Scene_Win">
       <UniqueIdentifier>{a17baae6-a0f9-4da5-ab71-3567282f295d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\04. Object\Bullet\BulletEffect">
+      <UniqueIdentifier>{2a33229c-64bb-45fa-8415-0febd7fcb7e3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core.h">
@@ -262,6 +265,9 @@
     <ClInclude Include="RestartButton.h">
       <Filter>Engine\09. UI\Button</Filter>
     </ClInclude>
+    <ClInclude Include="BulletEffect.h">
+      <Filter>Engine\04. Object\Bullet\BulletEffect</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="apiframeworktest.rc">
@@ -400,6 +406,9 @@
     </ClCompile>
     <ClCompile Include="RestartButton.cpp">
       <Filter>Engine\09. UI\Button</Filter>
+    </ClCompile>
+    <ClCompile Include="BulletEffect.cpp">
+      <Filter>Engine\04. Object\Bullet\BulletEffect</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

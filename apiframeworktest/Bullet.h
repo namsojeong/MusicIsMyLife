@@ -12,6 +12,8 @@ private:
 private:
     Image* m_pImage;
 public:
+    void CreateEffect();
+public:
     virtual void Update() override;
     virtual void Render(HDC _dc) override;
     virtual void EnterCollision(Collider* _pOther);

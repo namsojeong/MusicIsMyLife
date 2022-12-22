@@ -22,6 +22,8 @@ private:
 
 	double		  m_beforeAttackHamgingAcc = 0;
 	double		  m_afterAttackHamgingAcc = 0;
+
+	double		  m_oneSecAcc = 0;
 	// FPS 
 	// 1 프레임당 시간(delta time)
 private:
@@ -41,5 +43,6 @@ public:
 	bool IsOverAttackTextDelay(double delay);
 	bool IsOverBeforeHamgingAttackDelay(double delay);
 	bool IsOverAfterHamgingAttackDelay(double delay);
+	bool IsOverTime();
 };
 
