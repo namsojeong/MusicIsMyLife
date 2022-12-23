@@ -17,7 +17,7 @@ Hamging::Hamging(int setHP, Vec2 scale) :state(HAMGING_STATE::WAIT)
 	SetScale(scale);
 	Vec2 vResolution(Vec2(Core::GetInst()->GetResolution()));
 
-	hp = new HP(100, Vec2(vResolution.x / 2 - 150, 160.0f));
+	hp = new HP(40, Vec2(vResolution.x / 2 - 150, 160.0f));
 	stress = new Stress(100, Vec2(vResolution.x / 2 - 150, 180.f));
 
 	// image ¾÷·Îµå

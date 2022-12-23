@@ -36,7 +36,7 @@ void Scene_Game::Enter()
 
 	// Object Ãß°¡
 	hamging = new Hamging(100, Vec2(330.f, 370.f));
-	hamging->SetName(L"Hamging");
+	hamging->SetName(L"HAMGING");
 	hamging->SetPos(Vec2(vResolution.x / 2, vResolution.y / 4+200));
 	AddObject(hamging, GROUP_TYPE::HAMGING);
 
@@ -60,8 +60,8 @@ void Scene_Game::Enter()
 		if (i == 2)
 			pCardObj = new Card(c, player);
 		pCardObj->SetName(L"Card");
-		pCardObj->SetPos(Vec2((1280 / (GetCardAmount() + 1)) * (i + 1),
-			800 / 2));
+		pCardObj->SetPos(Vec2((900 / (GetCardAmount() + 1)) * (i + 1),
+			1200 / 2) + Vec2(400,0));
 		pCardObj->SetScale(Vec2(200.f, 275.f));
 		pCardObj->SetCenterPos(pCardObj->GetPos());
 		AddObject(pCardObj, GROUP_TYPE::CARD);

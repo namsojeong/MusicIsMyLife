@@ -128,7 +128,7 @@ bool TimeMgr::IsOverHamgingAttackDelay(double delay)
 bool TimeMgr::IsOverTime()
 {
 	m_oneSecAcc += m_dDT;
-	if (m_oneSecAcc >= 0.02)
+	if (m_oneSecAcc >= 0.05)
 	{
 		m_oneSecAcc = 0.;
 		return true;
