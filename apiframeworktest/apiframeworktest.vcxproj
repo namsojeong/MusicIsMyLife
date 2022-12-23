@@ -177,6 +177,7 @@
     <ClInclude Include="func.h" />
     <ClInclude Include="GameMgr.h" />
     <ClInclude Include="Hamging.h" />
+    <ClInclude Include="HamgingEffect.h" />
     <ClInclude Include="HP.h" />
     <ClInclude Include="Image.h" />
     <ClInclude Include="KeyMgr.h" />
@@ -225,6 +226,7 @@
     <ClCompile Include="func.cpp" />
     <ClCompile Include="GameMgr.cpp" />
     <ClCompile Include="Hamging.cpp" />
+    <ClCompile Include="HamgingEffect.cpp" />
     <ClCompile Include="HP.cpp" />
     <ClCompile Include="Image.cpp" />
     <ClCompile Include="KeyMgr.cpp" />

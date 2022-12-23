@@ -35,6 +35,7 @@ public:
     void Render(HDC _dc) override;
     virtual void	EnterCollision(Collider* _pOther);
 private:    
+    void CreateEffect();
     void Die();
 private:
     CLONE(Hamging);

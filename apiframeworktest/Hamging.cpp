@@ -11,6 +11,9 @@
 #include "Collider.h"
 #include "Text.h"
 #include "Scene.h"
+#include "HamgingEffect.h"
+#include "SceneMgr.h"
+
 
 Hamging::Hamging(int setHP, Vec2 scale) :state(HAMGING_STATE::WAIT)
 {
@@ -172,7 +175,13 @@ void Hamging::Die()
 {
 	GameMgr::GetInst()->NextRound();
 }
+void Hamging::CreateEffect()
+{
+	Vec2 vEffectPos = GetPos();
+	HamgingEffect* pBullet = new HamgingEffect(vEffectPos);
 
+	SceneMgr::GetInst()->GetCurScene()->AddObject(pBullet, GROUP_TYPE::BULLET_EFFECT);
+}
 
 Hamging::~Hamging()
 {
@@ -183,6 +192,6 @@ void Hamging::EnterCollision(Collider* _pOther)
 	Object* pOtherObj = _pOther->GetObj();
 	if (pOtherObj->GetName() == L"BULLET_CARD")
 	{
-
+		CreateEffect();
 	}
 }

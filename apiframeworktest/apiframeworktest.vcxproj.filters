@@ -122,6 +122,9 @@
     <Filter Include="Engine\04. Object\Bullet\BulletEffect">
       <UniqueIdentifier>{2a33229c-64bb-45fa-8415-0febd7fcb7e3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\04. Object\Hamging\HamgingEffect">
+      <UniqueIdentifier>{f5eddc4a-b24f-44a2-9897-45461e443711}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core.h">
@@ -268,6 +271,9 @@
     <ClInclude Include="BulletEffect.h">
       <Filter>Engine\04. Object\Bullet\BulletEffect</Filter>
     </ClInclude>
+    <ClInclude Include="HamgingEffect.h">
+      <Filter>Engine\04. Object\Hamging\HamgingEffect</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="apiframeworktest.rc">
@@ -409,6 +415,9 @@
     </ClCompile>
     <ClCompile Include="BulletEffect.cpp">
       <Filter>Engine\04. Object\Bullet\BulletEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="HamgingEffect.cpp">
+      <Filter>Engine\04. Object\Hamging\HamgingEffect</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
