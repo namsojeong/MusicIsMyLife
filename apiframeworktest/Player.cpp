@@ -20,7 +20,8 @@
 Player::Player()
 {
 	Vec2 vResolution(Vec2(Core::GetInst()->GetResolution()));
-	hp = new HP(100, Vec2(100.0f, vResolution.y - 50));
+	
+	hp = new HP(100, Vec2(50.0f, vResolution.y - 50), Vec2(250, 30));
 
 	// collider »õ¼º
 	CreateCollider();

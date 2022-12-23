@@ -28,6 +28,7 @@ public:
 public:
 	HP(Vec2 pos);
 	HP(const int maxHP, Vec2 pos);
+	HP(const int maxHP, Vec2 pos, Vec2 scale);
 	HP();
 	~HP();
 

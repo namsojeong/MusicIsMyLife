@@ -23,6 +23,10 @@
 #define CLONE(type) type* Clone() {return new type(*this);}
 #define PI 3.1415926535897932384f
 
+#define ROUND GameMgr::GetInst()->GetRound()
+#define HAMGING_POWER GameMgr::GetInst()->GetHamgingPower()
+#define HAMGING_HP GameMgr::GetInst()->GetHamgingHP()
+
 enum class KEY_STATE
 {
 	NONE, // 눌리지 않았고, 이전에도 눌리지 않는 상태
