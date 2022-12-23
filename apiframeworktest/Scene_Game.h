@@ -4,15 +4,16 @@
 class Player;
 class Hamging;
 class Text;
-class Image;
+class TurnRect;
 class Scene_Game
     :public Scene
 {
 private:
     Player* player;
     Hamging* hamging;
+
+    TurnRect* turnUI;
 private:
-    Text* turnText;
     Text* roundText;
     Text* playerText;
     Text* hamgingHPText;

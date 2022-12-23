@@ -271,8 +271,13 @@
     <ClInclude Include="BulletEffect.h">
       <Filter>Engine\04. Object\Bullet\BulletEffect</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="HamgingEffect.h">
       <Filter>Engine\04. Object\Hamging\HamgingEffect</Filter>
+=======
+    <ClInclude Include="TurnRect.h">
+      <Filter>Engine\09. UI</Filter>
+>>>>>>> origin
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -416,8 +421,13 @@
     <ClCompile Include="BulletEffect.cpp">
       <Filter>Engine\04. Object\Bullet\BulletEffect</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="HamgingEffect.cpp">
       <Filter>Engine\04. Object\Hamging\HamgingEffect</Filter>
+=======
+    <ClCompile Include="TurnRect.cpp">
+      <Filter>Engine\09. UI</Filter>
+>>>>>>> origin
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
