@@ -268,6 +268,9 @@
     <ClInclude Include="BulletEffect.h">
       <Filter>Engine\04. Object\Bullet\BulletEffect</Filter>
     </ClInclude>
+    <ClInclude Include="TurnRect.h">
+      <Filter>Engine\09. UI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="apiframeworktest.rc">
@@ -409,6 +412,9 @@
     </ClCompile>
     <ClCompile Include="BulletEffect.cpp">
       <Filter>Engine\04. Object\Bullet\BulletEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="TurnRect.cpp">
+      <Filter>Engine\09. UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

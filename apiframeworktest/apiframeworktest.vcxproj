@@ -206,6 +206,7 @@
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Text.h" />
     <ClInclude Include="TimeMgr.h" />
+    <ClInclude Include="TurnRect.h" />
     <ClInclude Include="UI.h" />
     <ClInclude Include="UIManager.h" />
     <ClInclude Include="Vec2.h" />
@@ -258,6 +259,7 @@
     <ClCompile Include="Stress.cpp" />
     <ClCompile Include="Text.cpp" />
     <ClCompile Include="TimeMgr.cpp" />
+    <ClCompile Include="TurnRect.cpp" />
     <ClCompile Include="UI.cpp" />
     <ClCompile Include="UIManager.cpp" />
     <ClCompile Include="Vec2.cpp" />

@@ -64,7 +64,7 @@ void Card::Update()
 		DownCard();
 	else
 		UpCard();
-	if (m_vPos.y == 820)
+	if (m_vPos.y >= 800)
 	{
 		srand((unsigned int)time(NULL));
 		int a = rand() % 5 + 1;
@@ -96,29 +96,21 @@ void Card::Attack()
 void Card::UpCard()
 {
 	if (m_vPos.y > 800)
-		SetPos(GetPos() - Vec2(0, 5));
+		SetPos(GetPos() - Vec2(0, 20));
 	else if (m_vPos.y > 700)
-		SetPos(GetPos() - Vec2(0, 4));
+		SetPos(GetPos() - Vec2(0, 16));
 	else if(m_vPos.y > 600)
-		SetPos(GetPos() - Vec2(0, 3));
-	else if(m_vPos.y > 500)
-		SetPos(GetPos() - Vec2(0, 2));
-	else if(m_vPos.y > 400)
-		SetPos(GetPos() - Vec2(0, 1));
+		SetPos(GetPos() - Vec2(0, 12));
 }
 
 void Card::DownCard()
 {
-	if(m_vPos.y < 400)
-		SetPos(GetPos() + Vec2(0, 5));
-	else if(m_vPos.y < 500)
-		SetPos(GetPos() + Vec2(0, 4));
-	else if(m_vPos.y < 600)
-		SetPos(GetPos() + Vec2(0, 3));
+	if(m_vPos.y < 600)
+		SetPos(GetPos() + Vec2(0, 12));
 	else if (m_vPos.y < 700)
-		SetPos(GetPos() + Vec2(0, 2));
+		SetPos(GetPos() + Vec2(0, 8));
 	else if (m_vPos.y < 820)
-		SetPos(GetPos() + Vec2(0, 1));
+		SetPos(GetPos() + Vec2(0, 4));
 }
 
 void Card::SetCardType(int type)

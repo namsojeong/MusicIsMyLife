@@ -16,24 +16,6 @@ GameMgr::~GameMgr()
 {
 }
 
-
-const void GameMgr::UpdateTurnText(HAMGING_STATE state)
-{
-	wstring str = L"TURN ";
-	Vec2 res = Core::GetInst()->GetResolution();
-	if (state == HAMGING_STATE::ATTACKING)
-	{
-		str += L"HAMGING";
-		m_turnText->SetPos(Vec2(20.0f, res.y / 2));
-	}
-	else
-	{
-		str += L"PLAYER";
-		m_turnText->SetPos(Vec2(res.x-200, res.y / 2));
-	}
-	m_turnText->SetText(str);
-}
-
 const void GameMgr::AttackPlayer(int damage)
 {
 	m_player->Attack(damage);
@@ -72,7 +54,6 @@ const void GameMgr::SetObject(Player* p, Hamging* h)
 const void GameMgr::SetHamgingState(HAMGING_STATE value)
 {
 	m_hamgingState = value;
-	UpdateTurnText(m_hamgingState);
 }
 
 const bool GameMgr::HamgingAttackTimer()
