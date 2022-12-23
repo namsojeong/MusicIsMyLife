@@ -22,8 +22,10 @@ const void GameMgr::AttackPlayer(int damage)
 
 }
 
-const void GameMgr::AttackHamging(int damage, int stress)
+const void GameMgr::AttackHamging(CARD_TYPE type, int damage, int stress)
 {
+	m_hamging->SetHamgingSkin(type);
+	
 	m_hamging->Attack(damage);
 	m_hamging->AttackStress(stress);
 }
@@ -39,6 +41,7 @@ void GameMgr::Update()
 	{
 		if (AttackEffectDuration(2))
 		{
+	m_hamging->SetHamgingSkin(CARD_TYPE::END);
 			m_attackText->SetText(CardMgr::GetInst()->cardStr[(UINT)CARD_TYPE::END]);
 			isAttackEffect = false;
 		}

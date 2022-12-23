@@ -44,7 +44,7 @@ public:
 	Text* GetHamgingHPText() { return m_hamgingHPText; }
 public:
 	const void AttackPlayer(int damage);
-	const void AttackHamging(int damage, int stress);
+	const void AttackHamging(CARD_TYPE type, int damage, int stress);
 
 	const void AttackTextEffect(CARD_TYPE type);
 	const bool AttackEffectDuration(long delayTime);
