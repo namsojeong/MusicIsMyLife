@@ -35,10 +35,10 @@ void Scene_Game::Enter()
 
 	Vec2 vResolution(Vec2(Core::GetInst()->GetResolution()));
 
-	// Object Ãß°¡
+	// Object ï¿½ß°ï¿½
 	hamging = new Hamging(100, Vec2(330.f, 370.f));
-	hamging->SetName(L"Hamging");
-	hamging->SetPos(Vec2(vResolution.x / 2, vResolution.y / 4 + 200));
+	hamging->SetName(L"HAMGING");
+	hamging->SetPos(Vec2(vResolution.x / 2, vResolution.y / 4+200));
 	AddObject(hamging, GROUP_TYPE::HAMGING);
 
 	player = new Player();
@@ -46,7 +46,7 @@ void Scene_Game::Enter()
 	player->SetScale(Vec2(100.f, 100.f));
 	AddObject(player, GROUP_TYPE::PLAYER);
 
-#pragma region Ä«µå¹èÄ¡
+#pragma region Ä«ï¿½ï¿½ï¿½Ä¡
 	Card* pCardObj = nullptr;
 	srand((unsigned int)time(NULL));
 	int a = rand() % 5 + 1;
@@ -61,8 +61,8 @@ void Scene_Game::Enter()
 		if (i == 2)
 			pCardObj = new Card(c, player);
 		pCardObj->SetName(L"Card");
-		pCardObj->SetPos(Vec2((1280 / (GetCardAmount() + 1)) * (i + 1),
-			800 / 2));
+		pCardObj->SetPos(Vec2((900 / (GetCardAmount() + 1)) * (i + 1),
+			1200 / 2) + Vec2(400,0));
 		pCardObj->SetScale(Vec2(200.f, 275.f));
 		pCardObj->SetCenterPos(pCardObj->GetPos());
 		AddObject(pCardObj, GROUP_TYPE::CARD);
