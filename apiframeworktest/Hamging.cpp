@@ -21,20 +21,20 @@ Hamging::Hamging(int setHP, Vec2 scale) :state(HAMGING_STATE::WAIT)
 	stress = new Stress(100, Vec2(vResolution.x / 2 - 150, 180.f));
 
 	// image 업로드
-	pImg = ResMgr::GetInst()->ImgLoad(L"HamgingAni", L"Image\\Hamging_Attack.bmp");
+	SetHamgingSkin(CARD_TYPE::END);
 
-	// animator 생성 및 animation 사용
-	CreateAnimator();
-	GetAnimator()->CreateAnimation(
-		L"HamgingAni",
-		pImg,
-		Vec2(0.f, 0.f),
-		Vec2(330.f, 370.f),
-		Vec2(330.f, 0.f),
-		4,
-		0.2f);
-	Animation* pAnim = GetAnimator()->FindAnimation(L"HamgingAni");
-	GetAnimator()->Play(L"HamgingAni", true);
+	//// animator 생성 및 animation 사용
+	//CreateAnimator();
+	//GetAnimator()->CreateAnimation(
+	//	L"HamgingAni",
+	//	pImg,
+	//	Vec2(0.f, 0.f),
+	//	Vec2(330.f, 370.f),
+	//	Vec2(330.f, 0.f),
+	//	4,
+	//	0.2f);
+	//Animation* pAnim = GetAnimator()->FindAnimation(L"HamgingAni");
+	//GetAnimator()->Play(L"HamgingAni", true);
 	CreateCollider();
 	GetCollider()->SetScale(GetScale()/2);
 }
@@ -48,20 +48,32 @@ Hamging::Hamging() :state(HAMGING_STATE::WAIT)
 	GameMgr::GetInst()->GetHamgingHPText()->SetText(to_wstring(hp->GetHP()));
 
 	// image 업로드
-	pImg = ResMgr::GetInst()->ImgLoad(L"HamgingAni", L"Image\\Hamging_Attack.bmp");
+	SetHamgingSkin(CARD_TYPE::END);
 
-	// animator 생성 및 animation 사용
-	CreateAnimator();
-	GetAnimator()->CreateAnimation(
-		L"HamgingAni",
-		pImg,
-		Vec2(0.f, 0.f),
-		Vec2(330.f, 370.f),
-		Vec2(330.f, 0.f),
-		4,
-		0.2f);
-	Animation* pAnim = GetAnimator()->FindAnimation(L"HamgingAni");
-	GetAnimator()->Play(L"HamgingAni", true);
+	//// animator 생성 및 animation 사용
+	//CreateAnimator();
+	//GetAnimator()->CreateAnimation(
+	//	L"HamgingAni",
+	//	pImg,
+	//	Vec2(0.f, 0.f),
+	//	Vec2(330.f, 370.f),
+	//	Vec2(330.f, 0.f),
+	//	4,
+	//	0.2f);
+	//Animation* pAnim = GetAnimator()->FindAnimation(L"HamgingAni");
+	//GetAnimator()->Play(L"HamgingAni", true);
+}
+
+const void Hamging::SetHamgingSkin(CARD_TYPE type)
+{
+	if (type == CARD_TYPE::END)
+	{
+		pImg = ResMgr::GetInst()->ImgLoad(L"HamgingAni", L"Image\\Hamging_Attack.bmp");
+	}
+	else
+	{
+		pImg = GetEventImage(type);
+	}
 }
 
 const void Hamging::Attack(int damage)
@@ -142,7 +154,7 @@ void Hamging::Update()
 			GameMgr::GetInst()->SetIsPlayerAttack(false);
 		}
 	}
-	GetAnimator()->Update();
+	//GetAnimator()->Update();
 }
 
 void Hamging::Render(HDC _dc)
@@ -151,13 +163,13 @@ void Hamging::Render(HDC _dc)
 	int Width = (int)pImg->GetWidth();
 	int Height = (int)pImg->GetHeight();
 	//마젠타 색상 뺄때 transparent: 투명한
-	/*TransparentBlt(_dc
+	TransparentBlt(_dc
 		, (int)(vPos.x - (float)(Width / 2))
 		, (int)(vPos.y - (float)(Height / 2))
 		,Width, Height
 		, pImg->GetDC()
 		,0,0, Width, Height
-		, RGB(255,0,255));*/
+		, RGB(255,0,255));
 
 	hp->Render(_dc);
 	stress->Render(_dc);

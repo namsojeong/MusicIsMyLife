@@ -1,6 +1,7 @@
 #pragma once
 #include "ResMgr.h"
 
+
 class Image;
 
 struct CardStats
@@ -20,6 +21,7 @@ public:
 public:
 	SINGLE(CardMgr);
 private:
+	
 	Image* A = ResMgr::GetInst()->ImgLoad(L"CardA", L"Image\\Card\\Card_A.bmp");
 	Image* B = ResMgr::GetInst()->ImgLoad(L"CardB", L"Image\\Card\\Card_B.bmp");
 	Image* C = ResMgr::GetInst()->ImgLoad(L"CardC", L"Image\\Card\\Card_C.bmp");

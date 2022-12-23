@@ -84,6 +84,7 @@ void Card::Attack()
 		{
 			SetPos(vPos + Vec2(0, -50));
 			GameMgr::GetInst()->SetIsPlayerAttack(true);
+			GameMgr::GetInst()->AttackHamging(cardType, _attackPower, _stressPower);
 			GameMgr::GetInst()->AttackTextEffect(cardType);
 			CreateBullet();
 			isUsed = true;
