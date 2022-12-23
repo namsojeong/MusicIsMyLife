@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: 중간 디렉터리(x64\Debug\)에 다른 프로젝트(apiframeworktest.vcxproj)에서 공유하는 파일이 포함되어 있습니다.  이로 인해 잘못된 정리 및 다시 빌드 동작이 수행될 수 있습니다.
   Animation.cpp
   Animator.cpp
@@ -123,6 +124,8 @@ D:\Github\MusicIsMyLife\apiframeworktest\Vec2.cpp(26,5): warning C4244: '초기�
 D:\Github\MusicIsMyLife\apiframeworktest\Vec2.cpp(27,5): warning C4244: '초기화 중': 'long'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   apiframeworktest.vcxproj -> D:\Github\MusicIsMyLife\OutPut\bin_debug\Gamep_winapiframework.exe
 =======
+=======
+>>>>>>> 7f97f8b1047b672bb1fa830871eb075c3b764656
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(534,5): warning MSB8028: 중간 디렉터리(x64\Debug\)에 다른 프로젝트(apiframeworktest.vcxproj)에서 공유하는 파일이 포함되어 있습니다.  이로 인해 잘못된 정리 및 다시 빌드 동작이 수행될 수 있습니다.
   Hamging.cpp
 C:\Users\daehe\Documents\GitHub\MusicLife\apiframeworktest\GameMgr.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
