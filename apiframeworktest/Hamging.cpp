@@ -9,13 +9,17 @@
 #include "Player.h"
 #include "CollisionMgr.h"
 #include "Collider.h"
+#include "Text.h"
+#include "Scene.h"
 
 Hamging::Hamging(int setHP, Vec2 scale) :state(HAMGING_STATE::WAIT)
 {
 	SetScale(scale);
 	Vec2 vResolution(Vec2(Core::GetInst()->GetResolution()));
-	hp = new HP(100, Vec2(vResolution.x / 2 - 150, 50.0f));
-	stress = new Stress(100, Vec2(vResolution.x / 2 - 150, 70.0f));
+
+	hp = new HP(100, Vec2(vResolution.x / 2 - 150, 160.0f));
+	stress = new Stress(100, Vec2(vResolution.x / 2 - 150, 180.f));
+
 	// image 업로드
 	pImg = ResMgr::GetInst()->ImgLoad(L"HamgingAni", L"Image\\Hamging_Attack.bmp");
 
@@ -39,8 +43,10 @@ Hamging::Hamging():state(HAMGING_STATE::WAIT)
 {
 	Vec2 vResolution(Vec2(Core::GetInst()->GetResolution()));
 
-	hp = new HP(100, Vec2(vResolution.x / 2, vResolution.y / 2));
+	hp = new HP(100, Vec2(vResolution.x / 2, vResolution.y / 2 + 200));
 	stress = new Stress(100, Vec2(vResolution.x / 2 - 150, 100.0f));
+	GameMgr::GetInst()->GetHamgingHPText()->SetText(to_wstring(hp->GetHP()));
+
 	// image 업로드
 	pImg = ResMgr::GetInst()->ImgLoad(L"HamgingAni", L"Image\\Hamging_Attack.bmp");
 
@@ -65,6 +71,7 @@ const void Hamging::Attack(int damage)
 	{
 		Die();
 	}
+	GameMgr::GetInst()->GetHamgingHPText()->SetText(to_wstring(hp->GetHP()));
 	//hp->UpdateUiHp(GameMgr::GetInst()->GetHamgingText());
 }
 
@@ -75,6 +82,7 @@ const void Hamging::Heal(int addHP)
 	{
 		hp->SetHP(hp->GetMaxHP());
 	}
+	GameMgr::GetInst()->GetHamgingHPText()->SetText(to_wstring(hp->GetHP()));
 	//hp->UpdateUiHp(GameMgr::GetInst()->GetHamgingText());
 }
 

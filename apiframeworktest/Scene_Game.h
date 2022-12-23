@@ -14,6 +14,8 @@ private:
 private:
     Text* turnText;
     Text* roundText;
+    Text* playerText;
+    Text* hamgingHPText;
     Text* attackEffectText;
 private:
     bool isAttackEffect = false;

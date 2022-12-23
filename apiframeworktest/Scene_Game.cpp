@@ -36,7 +36,7 @@ void Scene_Game::Enter()
 	// Object Ãß°¡
 	hamging = new Hamging(100, Vec2(330.f, 370.f));
 	hamging->SetName(L"Hamging");
-	hamging->SetPos(Vec2(vResolution.x / 2, vResolution.y / 4));
+	hamging->SetPos(Vec2(vResolution.x / 2, vResolution.y / 4+200));
 	AddObject(hamging, GROUP_TYPE::HAMGING);
 
 	player = new Player();
@@ -69,25 +69,34 @@ void Scene_Game::Enter()
 
 #pragma region Text
 
-	Vec2 turnPos = Vec2(0.0f, vResolution.y / 2);
-	Vec2 roundPos = Vec2(vResolution.x/2, 50.0f);
-	Vec2 attackEffectPos = Vec2(50.0f, 500.f);
+	Vec2 turnPos = Vec2(20.0f, vResolution.y / 2);
+	Vec2 roundPos = Vec2(vResolution.x/2-40, 50.0f);
+	Vec2 playerPos = Vec2(50.0f, vResolution.y/2 + 280);
+	Vec2 hamgingHPPos = Vec2(vResolution.x / 2 - 145, 135.0f);
+	Vec2 attackEffectPos = Vec2(800.0f, 300.f);
 
 	wstring turnStr = L"Turn Player";
 	wstring roundStr = L"ROUND " + to_wstring(ROUND);
+	wstring playerStr = L"PLAYER";
+	wstring hamgingHPStr = to_wstring(hamging->hp->GetHP());
 	wstring attackEffectStr = L"";
 
 	turnText = new Text(turnPos, 30, turnStr);
 	roundText = new Text(roundPos, 30, roundStr);
+	playerText = new Text(playerPos, 25, playerStr);
+	hamgingHPText = new Text(hamgingHPPos, 25, hamgingHPStr);
 	attackEffectText = new Text(attackEffectPos, 20, attackEffectStr);
 
 	AddUI(turnText, UI_TYPE::TEXT);
 	AddUI(roundText, UI_TYPE::TEXT);
+	AddUI(playerText, UI_TYPE::TEXT);
+	AddUI(hamgingHPText, UI_TYPE::TEXT);
 	AddUI(attackEffectText, UI_TYPE::TEXT);
 
 	GameMgr::GetInst()->SetAttackText(attackEffectText);
 	GameMgr::GetInst()->SetTurnText(turnText);
 	GameMgr::GetInst()->SetRoundText(roundText);
+	GameMgr::GetInst()->SetHamgingHPText(hamgingHPText);
 
 	GameMgr::GetInst()->SetObject(player, hamging);
 #pragma endregion

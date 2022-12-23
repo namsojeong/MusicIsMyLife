@@ -7,6 +7,10 @@
 void Stress::AddStress(const int stress)
 {
 	curStress += stress;
+	if (curStress <= 0)
+	{
+		curStress = 0;
+	}
 }
 
 void Stress::SetBackgroundColor(const HDC hdc, const BRUSH_TYPE brush)

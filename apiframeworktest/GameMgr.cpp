@@ -24,12 +24,12 @@ const void GameMgr::UpdateTurnText(HAMGING_STATE state)
 	if (state == HAMGING_STATE::ATTACKING)
 	{
 		str += L"HAMGING";
-		m_turnText->SetPos(Vec2(0.0f, res.y / 2));
+		m_turnText->SetPos(Vec2(20.0f, res.y / 2));
 	}
 	else
 	{
 		str += L"PLAYER";
-		m_turnText->SetPos(Vec2(res.x - 300, res.y / 2));
+		m_turnText->SetPos(Vec2(res.x-200, res.y / 2));
 	}
 	m_turnText->SetText(str);
 }

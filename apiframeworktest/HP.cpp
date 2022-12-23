@@ -13,6 +13,8 @@ void HP::SetHP(const int hp)
 void HP::AddHP(const int hp)
 {
 	curHP += hp;
+	if (curHP < 0)curHP = 0;
+	else if (curHP > maxHP)curHP = maxHP;
 }
 
 //void HP::UpdateUiHp(Text* text)
@@ -66,6 +68,16 @@ HP::HP(const int maxHP, Vec2 pos)
 	, maxHP(maxHP)
 {
 	SetPos(pos);
+}
+
+HP::HP(const int maxHP, Vec2 pos, Vec2 scale)
+	:curHP(maxHP)
+	, maxHP(maxHP)
+{
+	SetPos(pos);
+	SetScale(scale);
+	offsetX = scale.x;
+	offsetY = scale.y;
 }
 
 HP::~HP()
