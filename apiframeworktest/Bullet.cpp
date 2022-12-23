@@ -9,7 +9,7 @@
 #include "Scene.h"
 #include "Collider.h"
 #include "BulletEffect.h"
-Bullet::Bullet(Vec2 endPos, Vec2 startPos, Vec2 scale)
+Bullet::Bullet(Vec2 endPos, Vec2 startPos, Vec2 scale, float damage, float stress)
 {
 	vEndPos = endPos;
 	SetPos(startPos);
@@ -20,6 +20,8 @@ Bullet::Bullet(Vec2 endPos, Vec2 startPos, Vec2 scale)
 	GetCollider()->SetScale(scale);
 	dir = (endPos - startPos).Normalize();
 	CreateEffect();
+	m_damage = damage;
+	m_stress = stress;
 }
 Bullet::~Bullet()
 {
@@ -71,7 +73,7 @@ void Bullet::EnterCollision(Collider* _pOther)
 	Object* pOtherObj = _pOther->GetObj();
 	if (pOtherObj->GetName() == L"HAMGING")
 	{
-
+		GameMgr::GetInst()->AttackHamging(m_damage, m_stress);
 		DeleteObject(this);
 	}
 }

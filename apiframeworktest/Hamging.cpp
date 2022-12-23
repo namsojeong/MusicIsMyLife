@@ -36,7 +36,7 @@ Hamging::Hamging(int setHP, Vec2 scale) :state(HAMGING_STATE::WAIT)
 	Animation* pAnim = GetAnimator()->FindAnimation(L"HamgingAni");
 	GetAnimator()->Play(L"HamgingAni", true);
 	CreateCollider();
-	GetCollider()->SetScale(GetScale());
+	GetCollider()->SetScale(GetScale()/2);
 }
 
 Hamging::Hamging() :state(HAMGING_STATE::WAIT)

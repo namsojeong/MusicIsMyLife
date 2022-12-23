@@ -11,6 +11,9 @@ private:
     Vec2 dir;
 private:
     Image* m_pImage;
+private:
+    float m_damage;
+    float m_stress;
 public:
     void CreateEffect();
 public:
@@ -19,7 +22,7 @@ public:
     virtual void EnterCollision(Collider* _pOther);
     CLONE(Bullet);
 public:
-    Bullet(Vec2 endPos,Vec2 startPos, Vec2 scale);
+    Bullet(Vec2 endPos,Vec2 startPos, Vec2 scale, float damage, float stress);
     ~Bullet();
 };
 

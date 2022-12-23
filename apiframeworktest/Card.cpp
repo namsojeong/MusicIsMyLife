@@ -84,7 +84,6 @@ void Card::Attack()
 		{
 			SetPos(vPos + Vec2(0, -50));
 			GameMgr::GetInst()->SetIsPlayerAttack(true);
-			GameMgr::GetInst()->AttackHamging(_attackPower, _stressPower);
 			GameMgr::GetInst()->AttackTextEffect(cardType);
 			CreateBullet();
 			isUsed = true;
@@ -131,7 +130,7 @@ void Card::CreateBullet()
 	Vec2 vBulletPos = GetPos();
 	Vec2 targetPos = GameMgr::GetInst()->GetHamgingPos() 
 		+ GameMgr::GetInst()->GetHamgingScale() / 2;
-	Bullet* pBullet = new Bullet(targetPos - GetScale(), vBulletPos, Vec2(100, 100));
+	Bullet* pBullet = new Bullet(targetPos - GetScale(), vBulletPos, Vec2(100, 100), _attackPower,_stressPower);
 	pBullet->SetName(L"BULLET_CARD");
 	//CreateObject(pBullet, GROUP_TYPE::BULLET_CARD);
 

@@ -17,6 +17,7 @@
 #include "Text.h"
 #include "TimeMgr.h"
 #include "TurnRect.h"
+#include "CollisionMgr.h"
 
 Scene_Game::Scene_Game()
 {
@@ -98,6 +99,7 @@ void Scene_Game::Enter()
 	GameMgr::GetInst()->SetHamgingHPText(hamgingHPText);
 
 	GameMgr::GetInst()->SetObject(player, hamging);
+	CollisionMgr::GetInst()->CheckGroup(GROUP_TYPE::BULLET_CARD, GROUP_TYPE::HAMGING);
 #pragma endregion
 }
 
