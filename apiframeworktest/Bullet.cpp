@@ -9,8 +9,9 @@
 #include "Scene.h"
 #include "Collider.h"
 #include "BulletEffect.h"
-Bullet::Bullet(Vec2 endPos, Vec2 startPos, Vec2 scale, float damage, float stress)
+Bullet::Bullet(CARD_TYPE card, Vec2 endPos, Vec2 startPos, Vec2 scale, float damage, float stress)
 {
+	card_type = card;
 	vEndPos = endPos;
 	SetPos(startPos);
 	vStartPos = GetPos();
@@ -73,7 +74,7 @@ void Bullet::EnterCollision(Collider* _pOther)
 	Object* pOtherObj = _pOther->GetObj();
 	if (pOtherObj->GetName() == L"HAMGING")
 	{
-		GameMgr::GetInst()->AttackHamging(m_damage, m_stress);
+		GameMgr::GetInst()->AttackHamging(card_type, m_damage, m_stress);
 		DeleteObject(this);
 	}
 }

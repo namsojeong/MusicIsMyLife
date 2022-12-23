@@ -12,6 +12,8 @@ private:
 private:
     Image* m_pImage;
 private:
+    CARD_TYPE card_type;
+private:
     float m_damage;
     float m_stress;
 public:
@@ -22,7 +24,7 @@ public:
     virtual void EnterCollision(Collider* _pOther);
     CLONE(Bullet);
 public:
-    Bullet(Vec2 endPos,Vec2 startPos, Vec2 scale, float damage, float stress);
+    Bullet(CARD_TYPE card, Vec2 endPos,Vec2 startPos, Vec2 scale, float damage, float stress);
     ~Bullet();
 };
 
