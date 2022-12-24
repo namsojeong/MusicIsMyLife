@@ -6,6 +6,7 @@
 #include "Scene_Game.h"
 #include "Text.h"
 #include "CardMgr.h"
+#include "PathMgr.h"
 #include "Core.h"
 
 GameMgr::GameMgr() :m_hamgingState(HAMGING_STATE::WAIT)
@@ -14,6 +15,7 @@ GameMgr::GameMgr() :m_hamgingState(HAMGING_STATE::WAIT)
 
 GameMgr::~GameMgr()
 {
+	RemoveFontResource(L"Katuri.ttf");
 }
 
 const void GameMgr::AttackPlayer(int damage)
@@ -38,7 +40,10 @@ const void GameMgr::AttackHamging(CARD_TYPE type, int damage, int stress)
 
 void GameMgr::Init()
 {
-
+	wstring strFilePath = PathMgr::GetInst()->GetRsrcPath();
+	strFilePath += L"Katuri.ttf";
+	LPCWSTR path = strFilePath.c_str();
+	AddFontResource(path);
 }
 
 void GameMgr::Update()
