@@ -17,7 +17,7 @@ Hamging::Hamging(int setHP, Vec2 scale) :state(HAMGING_STATE::WAIT)
 	SetScale(scale);
 	Vec2 vResolution(Vec2(Core::GetInst()->GetResolution()));
 
-	hp = new HP(40, Vec2(vResolution.x / 2 - 150, 160.0f));
+	hp = new HP(HAMGING_HP, Vec2(vResolution.x / 2 - 150, 160.0f));
 	stress = new Stress(100, Vec2(vResolution.x / 2 - 150, 180.f));
 
 	// image ¾÷·Îµå
@@ -43,7 +43,7 @@ Hamging::Hamging() :state(HAMGING_STATE::WAIT)
 {
 	Vec2 vResolution(Vec2(Core::GetInst()->GetResolution()));
 
-	hp = new HP(100, Vec2(vResolution.x / 2, vResolution.y / 2 + 200));
+	hp = new HP(HAMGING_HP, Vec2(vResolution.x / 2, vResolution.y / 2 + 200));
 	stress = new Stress(100, Vec2(vResolution.x / 2 - 150, 100.0f));
 	GameMgr::GetInst()->GetHamgingHPText()->SetText(to_wstring(hp->GetHP()));
 
@@ -82,6 +82,7 @@ const void Hamging::Attack(int damage)
 	if (hp->IsDead())
 	{
 		Die();
+		return;
 	}
 	GameMgr::GetInst()->GetHamgingHPText()->SetText(to_wstring(hp->GetHP()));
 	//hp->UpdateUiHp(GameMgr::GetInst()->GetHamgingText());

@@ -31,14 +31,14 @@ Player::Player()
 	Image* pImg = ResMgr::GetInst()->ImgLoad(L"PlayerAni", L"Image\\jiwoo.bmp");
 
 	// animator 생성 및 animation 사용
-	CreateAnimator();
-	GetAnimator()->CreateAnimation(L"Jiwoofront", pImg, Vec2(0.f, 150.f), Vec2(50.f, 50.f), Vec2(50.f, 0.f), 5, 0.2f);
-	GetAnimator()->Play(L"Jiwoofront", true);
+	//CreateAnimator();
+	//GetAnimator()->CreateAnimation(L"Jiwoofront", pImg, Vec2(0.f, 150.f), Vec2(50.f, 50.f), Vec2(50.f, 0.f), 5, 0.2f);
+	//GetAnimator()->Play(L"Jiwoofront", true);
 
-	// animation offset 위로 올리기. 
-	Animation* pAnim = GetAnimator()->FindAnimation(L"Jiwoofront");
-	for(size_t i=0;i<pAnim->GetMaxFrame();i++)
-		pAnim->GetFrame(i).vOffset = Vec2(10.f, -50.f);
+	//// animation offset 위로 올리기. 
+	//Animation* pAnim = GetAnimator()->FindAnimation(L"Jiwoofront");
+	//for(size_t i=0;i<pAnim->GetMaxFrame();i++)
+	//	pAnim->GetFrame(i).vOffset = Vec2(10.f, -50.f);
 }
 Player::~Player()
 {

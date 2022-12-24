@@ -153,4 +153,12 @@ Scene::~Scene()
 			delete m_vecObj[i][j];
 		}
 	}
+	
+	for (UINT i = 0; i < (UINT)UI_TYPE::END; i++)
+	{
+		for (size_t j = 0; j < m_vecUI[i].size(); j++)
+		{
+			delete m_vecUI[i][j];
+		}
+	}
 }
