@@ -24,16 +24,7 @@ Card::Card(int type, Player* p) :
 	m_player = p;
 	// image ���ε�
 
-	m_pImage = CardMgr::GetInst()->GetCardImage(m_type);
-	for (UINT i = 0; i < (UINT)CARD_TYPE::END; i++)
-	{
-		if (m_type == i)
-		{
-			cardType = (CARD_TYPE)m_type;
-			_attackPower = CardMgr::GetInst()->GetCardStat(i)._attackPower;
-			_stressPower = CardMgr::GetInst()->GetCardStat(i)._stressPower;
-		}
-	}
+	SetCardType(m_type);
 }
 
 Card::~Card()

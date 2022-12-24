@@ -38,10 +38,10 @@ private:
 	map<UINT, int> hpStats = 
 	{ 
 		{(UINT)CARD_TYPE::A, 10},
-		{(UINT)CARD_TYPE::B, 0},
+		{(UINT)CARD_TYPE::B, -10},
 		{(UINT)CARD_TYPE::C, 10}, 
 		{(UINT)CARD_TYPE::D, 5},
-		{(UINT)CARD_TYPE::E, 0} 
+		{(UINT)CARD_TYPE::E, -15} 
 	};
 	map<UINT, int> stressStats = 
 	{ 

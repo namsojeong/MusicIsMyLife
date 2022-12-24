@@ -144,7 +144,7 @@ void Hamging::Update()
 		bool hamgingAttack = GameMgr::GetInst()->GetIsHamgingAttack();
 		if (!hamgingAttack && playerAttack)
 		{
-			GameMgr::GetInst()->AttackPlayer(10 + m_attackPower * m_stress / 100);
+			GameMgr::GetInst()->AttackPlayer(5 + GameMgr::GetInst()->GetHamgingPower()*(stress->GetStress()*0.5f));
 			GameMgr::GetInst()->SetIsHamgingAttack(true);
 		}
 		bool isOverAfter = TimeMgr::GetInst()->IsOverAfterHamgingAttackDelay(2);

@@ -19,16 +19,13 @@ class Hamging :
 private:
     Image* pImg;
     HAMGING_STATE state;
-    int m_attackPower;
-    int m_stress;
+    float m_stress;
 public:
     HP* hp;
     Stress* stress;
 public:
     const HAMGING_STATE GetState() { return state; }
     const int GetHamgingHP() { return hp->GetHP(); }
-    const int GetAttackPower() { return m_attackPower; }
-    const void SetAttackPower(int value) { m_attackPower = value; }
     const int GetStress() { return m_stress; }
     const void SetStress(int value) { m_stress = value; }
     const void AddStress(int value) { m_stress += value; }
