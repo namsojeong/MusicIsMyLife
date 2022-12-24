@@ -11,6 +11,7 @@
 #include "Collider.h"
 #include "Text.h"
 #include "Scene.h"
+#include "SoundMgr.h"
 
 Hamging::Hamging(int setHP, Vec2 scale) :state(HAMGING_STATE::WAIT)
 {
@@ -194,6 +195,6 @@ void Hamging::EnterCollision(Collider* _pOther)
 	Object* pOtherObj = _pOther->GetObj();
 	if (pOtherObj->GetName() == L"BULLET_CARD")
 	{
-
+		SoundMgr::GetInst()->Play(L"bullet");
 	}
 }

@@ -8,6 +8,7 @@
 #include "StartButton.h"
 #include "RestartButton.h"
 #include "SoundMgr.h"
+#include "GameMgr.h"
 
 void Scene_Over::Enter()
 {
@@ -16,7 +17,7 @@ void Scene_Over::Enter()
 	Vec2 vResolution(Vec2(Core::GetInst()->GetResolution()));
 
 	Vec2 titlePos = Vec2(vResolution.x / 2 - 270, vResolution.y / 2 - 200);
-	Text* titleText = new Text(titlePos, 80, L"SCORE\n" + to_wstring(100));
+	Text* titleText = new Text(titlePos, 80, L"SCORE\n" + to_wstring(GameMgr::GetInst()->GetRound() * 10));
 	AddUI(titleText, UI_TYPE::TEXT);
 
 	/* Vec2 titlePos = Vec2(vResolution.x / 2 - 270, vResolution.y / 2 - 200);
