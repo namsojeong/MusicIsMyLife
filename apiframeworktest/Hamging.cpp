@@ -12,6 +12,9 @@
 #include "Text.h"
 #include "Scene.h"
 #include "SoundMgr.h"
+#include "HamgingEffect.h"
+#include "SceneMgr.h"
+#include "EventMgr.h"
 
 Hamging::Hamging(int setHP, Vec2 scale) :state(HAMGING_STATE::WAIT)
 {
@@ -118,6 +121,12 @@ const void Hamging::HealStress(int addHP)
 	}
 }
 
+void Hamging::CreateEffect()
+{
+	HamgingEffect* pEffect = new HamgingEffect(GetPos());
+	SceneMgr::GetInst()->GetCurScene()->AddObject(pEffect, GROUP_TYPE::UI);
+}
+
 void Hamging::Update()
 {
 	if (state == HAMGING_STATE::WAIT)
@@ -195,6 +204,7 @@ void Hamging::EnterCollision(Collider* _pOther)
 	Object* pOtherObj = _pOther->GetObj();
 	if (pOtherObj->GetName() == L"BULLET_CARD")
 	{
+		CreateEffect();
 		SoundMgr::GetInst()->Play(L"bullet");
 	}
 }

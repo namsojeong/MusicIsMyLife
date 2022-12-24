@@ -44,6 +44,7 @@ public:
     const void Heal(int addHP);
     const void AttackStress(int damage);
     const void HealStress(int addHP);
+    void CreateEffect();
 public:
     void Update()       override;
     void Render(HDC _dc) override;

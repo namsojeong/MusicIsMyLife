@@ -79,8 +79,8 @@ const bool GameMgr::PlayerAttackTimer()
 const void GameMgr::NextRound()
 {
 	round++;
-	hamging_hp *= 2;
-	hamging_power *= 1.5f;
+	hamging_hp *= 1.4;
+	hamging_power *= 1.2f;
 	ChangeScene(SCENE_TYPE::WIN);
 }
 
