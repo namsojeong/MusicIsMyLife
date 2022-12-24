@@ -2,6 +2,7 @@
 #include "SceneMgr.h"
 #include "Scene_Start.h"
 #include "Scene_Game.h"
+#include "Scene_Win.h"
 #include "Scene_Over.h"
 #include "EventMgr.h"
 #include "TimeMgr.h"
@@ -37,7 +38,7 @@ void SceneMgr::Init()
 	m_arrScene[(UINT)SCENE_TYPE::START]->SetName(L"Start Scene");
 	m_arrScene[(UINT)SCENE_TYPE::GAME] = new Scene_Game;
 	m_arrScene[(UINT)SCENE_TYPE::GAME]->SetName(L"Game Scene");
-	m_arrScene[(UINT)SCENE_TYPE::WIN] = new Scene_Over;
+	m_arrScene[(UINT)SCENE_TYPE::WIN] = new Scene_Win;
 	m_arrScene[(UINT)SCENE_TYPE::WIN]->SetName(L"Win Scene");
 	m_arrScene[(UINT)SCENE_TYPE::OVER] = new Scene_Over;
 	m_arrScene[(UINT)SCENE_TYPE::OVER]->SetName(L"Over Scene");

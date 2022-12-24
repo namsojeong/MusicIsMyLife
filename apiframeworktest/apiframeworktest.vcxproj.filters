@@ -271,6 +271,9 @@
     <ClInclude Include="TurnRect.h">
       <Filter>Engine\09. UI</Filter>
     </ClInclude>
+    <ClInclude Include="NextroundButton.h">
+      <Filter>Engine\09. UI\Button</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="apiframeworktest.rc">
@@ -415,6 +418,9 @@
     </ClCompile>
     <ClCompile Include="TurnRect.cpp">
       <Filter>Engine\09. UI</Filter>
+    </ClCompile>
+    <ClCompile Include="NextroundButton.cpp">
+      <Filter>Engine\09. UI\Button</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
