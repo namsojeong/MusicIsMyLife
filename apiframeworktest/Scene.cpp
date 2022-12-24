@@ -3,6 +3,7 @@
 #include "Object.h"
 #include "ResMgr.h"
 #include "Image.h"
+#include "GameMgr.h"
 
 void Scene::SetBackground(wstring _strName, wstring _path)
 {
@@ -127,6 +128,9 @@ void Scene::DeleteUIGroup(UI_TYPE _eTarget)
 
 void Scene::DeleteAll()
 {
+
+	GameMgr::GetInst()->isDeleteAll = true;
+
 	for (UINT i = 0; i < (UINT)GROUP_TYPE::END; i++)
 	{
 		DeleteGroup((GROUP_TYPE)i);

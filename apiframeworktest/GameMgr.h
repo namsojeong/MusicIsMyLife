@@ -11,7 +11,7 @@ public:
 private:
 	int round = 1;
 	int hamging_power = 1;
-	int hamging_hp = 20;
+	int hamging_hp = 40;
 private:
 	bool isChooseCard;
 	HAMGING_STATE m_hamgingState;
@@ -21,6 +21,7 @@ private:
 	Text* m_hamgingHPText;
 	Text* m_roundText;
 public:
+	bool isDeleteAll=false;
 	bool isHamgingAttack; // �ܱ��̰� ���� �ߴٸ�
 	bool isPlayerAttack; // �÷��̾ ���� �ߴٸ�
 	bool isAttackEffect; // �÷��̾ ���� �ߴٸ�

@@ -24,6 +24,7 @@ public:
 	}
 private:
 	void Excute(const tEvent& _eve);
+	void Delete();
 public:
 	POINT* GetPoint() { return &ptMouse; }
 	bool isOn(Vec2 pos, Vec2 scale)
