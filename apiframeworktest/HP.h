@@ -13,7 +13,7 @@ private:
 	int maxHP = 100;
 	bool isDead = false;
 public:
-	const bool IsDead() { return curHP <= 0; }
+	const bool Dead() { return curHP <= 0; }
 	const int GetHP() { return curHP; }
 	const int GetMaxHP() { return maxHP; }
 	void SetHP(const int hp);

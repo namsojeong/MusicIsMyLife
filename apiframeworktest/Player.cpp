@@ -48,9 +48,10 @@ Player::~Player()
 void Player::Attack(int damage)
 {
 	hp->AddHP(-damage);
-	if (hp->IsDead())
+	if (hp->Dead())
 	{
 		Die();
+		return;
 	}
 	//hp->UpdateUiHp(GameMgr::GetInst()->GetPlayerText());
 }

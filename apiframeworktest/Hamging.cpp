@@ -79,7 +79,7 @@ const void Hamging::SetHamgingSkin(CARD_TYPE type)
 const void Hamging::Attack(int damage)
 {
 	hp->AddHP(-damage);
-	if (hp->IsDead())
+	if (hp->Dead())
 	{
 		Die();
 		return;

@@ -11,7 +11,7 @@ public:
 private:
 	int round = 1;
 	int hamging_power = 1;
-	int hamging_hp = 40;
+	int hamging_hp = 20;
 private:
 	bool isChooseCard;
 	HAMGING_STATE m_hamgingState;
