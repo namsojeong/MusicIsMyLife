@@ -9,8 +9,12 @@
 #include "Scene.h"
 #include "Collider.h"
 #include "BulletEffect.h"
+#include "SoundMgr.h"
+
 Bullet::Bullet(CARD_TYPE card, Vec2 endPos, Vec2 startPos, Vec2 scale, float damage, float stress)
 {
+	SoundMgr::GetInst()->LoadSound(L"bullet", false, L"Sound\\gun.wav");
+	SoundMgr::GetInst()->Play(L"bullet");
 	card_type = card;
 	vEndPos = endPos;
 	SetPos(startPos);
