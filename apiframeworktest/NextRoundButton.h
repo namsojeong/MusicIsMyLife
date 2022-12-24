@@ -5,8 +5,8 @@ class NextroundButton
     : public Button
 {
 private:
-    wstring nextGameOverPath = L"Image\\RestartButton_Over.bmp";
-    wstring nextGameBasicPath = L"Image\\RestartButton.bmp";
+    wstring nextGameOverPath = L"Image\\NextButton_Over.bmp";
+    wstring nextGameBasicPath = L"Image\\NextButton.bmp";
 private:
     void ButtonEvent() override;
     void SetImage(BUTTON_STATE state) final;
