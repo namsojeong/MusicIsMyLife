@@ -1,12 +1,144 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(499,5): warning MSB8004: Output 디렉터리가 슬래시로 끝나지 않습니다. Output 디렉터리의 적절한 평가를 허용하는 데 필요하므로 이 빌드 인스턴스에서 슬래시를 추가합니다.
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(503,5): warning MSB8004: Output 디렉터리가 슬래시로 끝나지 않습니다. Output 디렉터리의 적절한 평가를 허용하는 데 필요하므로 이 빌드 인스턴스에서 슬래시를 추가합니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: 중간 디렉터리(x64\Release\)에 다른 프로젝트(apiframeworktest.vcxproj)에서 공유하는 파일이 포함되어 있습니다.  이로 인해 잘못된 정리 및 다시 빌드 동작이 수행될 수 있습니다.
+  Animation.cpp
+  Animator.cpp
+  Bullet.cpp
+D:\Github\MusicIsMyLife\apiframeworktest\GameMgr.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+D:\Github\MusicIsMyLife\apiframeworktest\SoundMgr.h(2,10): fatal  error C1083: 포함 파일을 열 수 없습니다. 'fmod.hpp': No such file or directory
+  BulletEffect.cpp
+  Button.cpp
+D:\Github\MusicIsMyLife\apiframeworktest\Button.h(2,9): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+D:\Github\MusicIsMyLife\apiframeworktest\EventMgr.h(33,19): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\EventMgr.h(34,20): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\EventMgr.h(35,18): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\EventMgr.h(36,21): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\Button.cpp(24,22): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\Button.cpp(25,23): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\Button.cpp(26,21): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\Button.cpp(27,24): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Card.cpp
+D:\Github\MusicIsMyLife\apiframeworktest\EventMgr.h(33,19): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\EventMgr.h(34,20): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\EventMgr.h(35,18): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\EventMgr.h(36,21): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\GameMgr.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+D:\Github\MusicIsMyLife\apiframeworktest\SoundMgr.h(2,10): fatal  error C1083: 포함 파일을 열 수 없습니다. 'fmod.hpp': No such file or directory
+  CardMgr.cpp
+D:\Github\MusicIsMyLife\apiframeworktest\Text.h(2,9): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  Collider.cpp
+  CollisionMgr.cpp
   Core.cpp
+D:\Github\MusicIsMyLife\apiframeworktest\EventMgr.h(33,19): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\EventMgr.h(34,20): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\EventMgr.h(35,18): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\EventMgr.h(36,21): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\SoundMgr.h(2,10): fatal  error C1083: 포함 파일을 열 수 없습니다. 'fmod.hpp': No such file or directory
+  EventMgr.cpp
+D:\Github\MusicIsMyLife\apiframeworktest\EventMgr.h(33,19): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\EventMgr.h(34,20): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\EventMgr.h(35,18): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\EventMgr.h(36,21): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\GameMgr.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  func.cpp
+D:\Github\MusicIsMyLife\apiframeworktest\EventMgr.h(33,19): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\EventMgr.h(34,20): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\EventMgr.h(35,18): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\EventMgr.h(36,21): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  GameMgr.cpp
+D:\Github\MusicIsMyLife\apiframeworktest\GameMgr.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+D:\Github\MusicIsMyLife\apiframeworktest\Hamging.h(29,36): warning C4244: 'return': 'float'에서 'const int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\Hamging.h(30,50): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\Text.h(2,9): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+D:\Github\MusicIsMyLife\apiframeworktest\GameMgr.cpp(87,16): warning C4244: '*=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\GameMgr.cpp(88,19): warning C4244: '*=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Hamging.cpp
+D:\Github\MusicIsMyLife\apiframeworktest\Hamging.h(29,36): warning C4244: 'return': 'float'에서 'const int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\Hamging.h(30,50): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\GameMgr.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+D:\Github\MusicIsMyLife\apiframeworktest\Text.h(2,9): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+D:\Github\MusicIsMyLife\apiframeworktest\SoundMgr.h(2,10): fatal  error C1083: 포함 파일을 열 수 없습니다. 'fmod.hpp': No such file or directory
+  HamgingEffect.cpp
+  HP.cpp
+D:\Github\MusicIsMyLife\apiframeworktest\Text.h(2,9): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+D:\Github\MusicIsMyLife\apiframeworktest\HP.cpp(33,22): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\HP.cpp(34,24): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\HP.cpp(35,25): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\HP.cpp(36,25): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\HP.cpp(46,12): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Image.cpp
+  KeyMgr.cpp
+  main.cpp
+  BWindow.cpp
+  Monster.cpp
+  NextroundButton.cpp
+D:\Github\MusicIsMyLife\apiframeworktest\Button.h(2,9): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  Object.cpp
   PathMgr.cpp
-LINK : warning C4727: 타임스탬프가 동일한 c:\users\user\source\repos\apiframeworktest\apiframeworktest\x64\release\apiframeworktest.pch PCH가 c:\users\user\source\repos\apiframeworktest\apiframeworktest\x64\release\keymgr.obj 및 c:\users\user\source\repos\apiframeworktest\apiframeworktest\x64\release\image.obj에 있습니다.  첫 번째 PCH를 사용합니다.
-LINK : warning C4727: 타임스탬프가 동일한 c:\users\user\source\repos\apiframeworktest\apiframeworktest\x64\release\apiframeworktest.pch PCH가 c:\users\user\source\repos\apiframeworktest\apiframeworktest\x64\release\object.obj 및 c:\users\user\source\repos\apiframeworktest\apiframeworktest\x64\release\monster.obj에 있습니다.  첫 번째 PCH를 사용합니다.
-LINK : warning C4727: 타임스탬프가 동일한 c:\users\user\source\repos\apiframeworktest\apiframeworktest\x64\release\apiframeworktest.pch PCH가 c:\users\user\source\repos\apiframeworktest\apiframeworktest\x64\release\scenemgr.obj 및 c:\users\user\source\repos\apiframeworktest\apiframeworktest\x64\release\scene.obj에 있습니다.  첫 번째 PCH를 사용합니다.
-  코드를 생성하고 있습니다.
-  12 of 293 functions ( 4.1%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    5 functions had inline decision re-evaluated but remain unchanged
-  코드를 생성했습니다.
-  apiframeworktest.vcxproj -> C:\Users\user\source\repos\apiframeworktest\OutPut\bin\apiframeworktest.exe
+D:\Github\MusicIsMyLife\apiframeworktest\PathMgr.cpp(17,35): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Player.cpp
+D:\Github\MusicIsMyLife\apiframeworktest\GameMgr.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+D:\Github\MusicIsMyLife\apiframeworktest\Text.h(2,9): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+D:\Github\MusicIsMyLife\apiframeworktest\Hamging.h(29,36): warning C4244: 'return': 'float'에서 'const int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\Hamging.h(30,50): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  QuitButton.cpp
+D:\Github\MusicIsMyLife\apiframeworktest\Button.h(2,9): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  Res.cpp
+  ResMgr.cpp
+  RestartButton.cpp
+D:\Github\MusicIsMyLife\apiframeworktest\Button.h(2,9): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  Scene.cpp
+D:\Github\MusicIsMyLife\apiframeworktest\GameMgr.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  SceneMgr.cpp
+D:\Github\MusicIsMyLife\apiframeworktest\EventMgr.h(33,19): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\EventMgr.h(34,20): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\EventMgr.h(35,18): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\EventMgr.h(36,21): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Scene_Game.cpp
+D:\Github\MusicIsMyLife\apiframeworktest\Scene_Game.cpp(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+D:\Github\MusicIsMyLife\apiframeworktest\Hamging.h(29,36): warning C4244: 'return': 'float'에서 'const int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\Hamging.h(30,50): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\SoundMgr.h(2,10): fatal  error C1083: 포함 파일을 열 수 없습니다. 'fmod.hpp': No such file or directory
+  Scene_Over.cpp
+D:\Github\MusicIsMyLife\apiframeworktest\Button.h(2,9): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+D:\Github\MusicIsMyLife\apiframeworktest\Text.h(2,9): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+D:\Github\MusicIsMyLife\apiframeworktest\SoundMgr.h(2,10): fatal  error C1083: 포함 파일을 열 수 없습니다. 'fmod.hpp': No such file or directory
+  Scene_Start.cpp
+D:\Github\MusicIsMyLife\apiframeworktest\Button.h(2,9): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+D:\Github\MusicIsMyLife\apiframeworktest\Text.h(2,9): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+D:\Github\MusicIsMyLife\apiframeworktest\SoundMgr.h(2,10): fatal  error C1083: 포함 파일을 열 수 없습니다. 'fmod.hpp': No such file or directory
+  Scene_Win.cpp
+D:\Github\MusicIsMyLife\apiframeworktest\Button.h(2,9): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+D:\Github\MusicIsMyLife\apiframeworktest\Text.h(2,9): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+D:\Github\MusicIsMyLife\apiframeworktest\SoundMgr.h(2,10): fatal  error C1083: 포함 파일을 열 수 없습니다. 'fmod.hpp': No such file or directory
+  SelectGDI.cpp
+  Sound.cpp
+  SoundMgr.cpp
+D:\Github\MusicIsMyLife\apiframeworktest\SoundMgr.h(2,10): fatal  error C1083: 포함 파일을 열 수 없습니다. 'fmod.hpp': No such file or directory
+  StartButton.cpp
+D:\Github\MusicIsMyLife\apiframeworktest\Button.h(2,9): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  Stress.cpp
+D:\Github\MusicIsMyLife\apiframeworktest\Stress.cpp(32,22): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\Stress.cpp(33,24): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\Stress.cpp(34,25): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\Stress.cpp(35,25): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\Stress.cpp(45,12): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\Stress.cpp(60,13): warning C4244: '초기화 중': 'const int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Text.cpp
+D:\Github\MusicIsMyLife\apiframeworktest\Text.h(2,9): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+D:\Github\MusicIsMyLife\apiframeworktest\Text.cpp(37,10): warning C4244: '=': 'COLORREF'에서 'COLOR16'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\Text.cpp(59,35): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\Text.cpp(59,23): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  TimeMgr.cpp
+D:\Github\MusicIsMyLife\apiframeworktest\EventMgr.h(33,19): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\EventMgr.h(34,20): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\EventMgr.h(35,18): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\EventMgr.h(36,21): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\TimeMgr.cpp(57,113): warning C4474: 'swprintf_s' : 서식 문자열에 전달된 인수가 너무 많습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\TimeMgr.cpp(57,113): message : 자리 표시자 및 해당 매개 변수에는 variadic 인수가 1개 필요하지만 2개가 제공되었습니다.
+  TurnRect.cpp
+D:\Github\MusicIsMyLife\apiframeworktest\GameMgr.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+  UI.cpp
+  UIManager.cpp
+  Vec2.cpp
+D:\Github\MusicIsMyLife\apiframeworktest\Vec2.cpp(26,5): warning C4244: '초기화 중': 'long'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Github\MusicIsMyLife\apiframeworktest\Vec2.cpp(27,5): warning C4244: '초기화 중': 'long'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
